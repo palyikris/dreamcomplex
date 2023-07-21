@@ -8,21 +8,27 @@ export default function ApartmentPageComponent({ children }) {
   let pathName = usePathname();
   pathName = pathName.replace("/", "");
 
-  return (
-    <div className={styles.pageContainerContainer}>
-      <div className={styles.pageContainer}>
-        <span>Dream Lelle</span>
+  if (pathName === "dreamlelle") {
+    return (
+      <div className={styles.pageContainerContainer}>
+        <div className={styles.pageContainer}>
+          <span>Dream Lelle</span>
+        </div>
+        <div>{children}</div>
+        <button
+          onClick={() => {
+            router.push(`reservation/${pathName}`);
+          }}
+        >
+          foglalás
+        </button>
       </div>
-      <div>
-        {children}
-      </div>
-      <button
-        onClick={() => {
-          router.push(`reservation/${pathName}`);
-        }}
-      >
-        foglalás
-      </button>
-    </div>
-  );
+    );
+  }
+  if (pathName === "dreamtopart") {
+    return <div></div>;
+  }
+  if (pathName === "dreamoszod") {
+    return <div></div>;
+  }
 }
