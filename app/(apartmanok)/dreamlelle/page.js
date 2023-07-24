@@ -14,10 +14,18 @@ export default function LellePage() {
     <ApartmentPageComponent>
       <div className={styles.heroSection}>
         <div className={styles.title}>
-          <p>{apartmanName} Foglalás</p>
+          <h1>
+            {apartmanName} Apartmanok
+          </h1>
+          <h4>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+            perferendis odit, aperiam, recusandae laborum ad architecto
+            molestias harum aliquid incidunt pariatur culpa est voluptatibus
+            quos veniam nemo tenetur voluptatem quia?
+          </h4>
         </div>
+        <div className={styles.heroImg} />
       </div>
-      <div className={styles.bg}></div>
     </ApartmentPageComponent>
   );
 }

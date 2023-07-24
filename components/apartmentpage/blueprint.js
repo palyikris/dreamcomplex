@@ -14,11 +14,14 @@ export default function ApartmentPageComponent({ children }) {
         <div className={styles.pageContainer}>
           <span>Dream Lelle</span>
         </div>
-        <div>{children}</div>
+        <div>
+          {children}
+        </div>
         <button
           onClick={() => {
             router.push(`reservation/${pathName}`);
           }}
+          className={styles.reserveButton}
         >
           foglalás
         </button>
@@ -26,9 +29,9 @@ export default function ApartmentPageComponent({ children }) {
     );
   }
   if (pathName === "dreamtopart") {
-    return <div></div>;
+    return <div />;
   }
   if (pathName === "dreamoszod") {
-    return <div></div>;
+    return <div />;
   }
 }

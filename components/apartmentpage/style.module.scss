@@ -1,2 +1,15 @@
 @import "../../csscomponent/apartmanoldalak/apartman.style";
-@include ApartmanOldalStyle()
+@include ApartmanOldalStyle();
+
+.reserveButton {
+    position: fixed;
+    z-index: 1000;
+    right: 5%;
+    top: 75%;
+    background-color: $accent1;
+    color: white;
+    padding: 7vmin 5vmin;
+    border: none;
+    border-radius: 100%;
+    text-transform: uppercase;
+}
