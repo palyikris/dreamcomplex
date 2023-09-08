@@ -1,7 +1,206 @@
+@charset "UTF-8";
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
+  flex-direction: column;
+}
+.container .heroSection {
+  background: url("../public/blob-scene-haikei.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  height: 100vh;
+}
+.container .heroSection .line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   flex-direction: row;
+  height: 50vh;
+  padding: 0 1rem;
+}
+.container .heroSection .line:first-child {
+  justify-content: flex-end;
+}
+.container .heroSection .line:first-child .textContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 60%;
+  background: url("../public/felkialto.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.container .heroSection .line:first-child .textContainer .text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  width: 50%;
+  text-align: left;
+  color: white;
+}
+.container .heroSection .line:first-child .title {
+  color: white;
+  font-weight: bold;
+  font-size: 60px;
+  width: 100%;
+  text-align: center;
+}
+.container .heroSection .line:first-child .title .underline {
+  width: 100%;
+  height: 100px;
+  background: url("../public/alahuzas.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: contain;
+}
+.container .heroSection .line:last-child .apartments {
+  height: 100%;
+  padding-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  background: url("../public/kor.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: auto;
+}
+.container .heroSection .line:last-child .apartments h1 {
+  color: white;
+  width: 100%;
+  text-align: center;
+}
+.container .heroSection .line:last-child .apartments svg {
+  width: 3rem;
+  font-weight: bold;
+  color: white;
+}
+.container .heroSection .line:last-child .textContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.container .heroSection .line:last-child .textContainer .text {
+  width: 50%;
+  color: white;
+  text-align: right;
+}
+.container .apartmanSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  padding: 1rem 2rem 0 2rem;
+  position: relative;
+  height: 100vh;
+  justify-content: flex-start;
+}
+.container .apartmanSection::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: url("../public/blob-scene-haikei.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: rotateX(180deg);
+}
+.container .apartmanSection .title {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  font-weight: bold;
+  font-size: 50px;
+  background: url("../public/singlealahuzas.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.container .apartmanSection .apartments {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 5rem;
+}
+.container .apartmanSection .apartments button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 15rem;
+  padding: 1vmin;
+  background-color: transparent;
+  color: white;
+  border: 2px solid #FF876E;
+  border-radius: 5px;
+  height: 18rem;
+  margin: 0.5rem;
+  padding: 0 1rem;
+  padding-top: 2rem;
+  position: relative;
+}
+.container .apartmanSection .apartments button::after {
+  content: "Részletek";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  position: absolute;
+  z-index: 100;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #FF876E;
+  transition: height 0.6s;
+  opacity: 0;
+}
+.container .apartmanSection .apartments button h1 {
+  margin-bottom: 5rem;
+  font-size: 20px;
+}
+.container .apartmanSection .apartments button:hover {
+  cursor: pointer;
+}
+.container .apartmanSection .apartments button:hover::after {
+  height: 100%;
+  opacity: 1;
+}
+.container .apartmanSection .apartments button:nth-of-type(2)::after {
+  top: 0;
 }/*# sourceMappingURL=page.module.css.map */

@@ -1,5 +1,184 @@
 @import "../uniform/style.module";
 
 .container {
-    @include centerDiv(row);
+    @include centerDiv(column);
+
+    .heroSection {
+        background: url("../public/blob-scene-haikei.svg");
+        @include pic();
+        @include centerDiv(column);
+        height: 100vh;
+
+        .line {
+            @include centerDiv(row);
+            height: 50vh;
+            padding: 0 1rem;
+
+            &:first-child {
+                justify-content: flex-end;
+
+                .textContainer {
+                    @include centerDiv(row);
+                    justify-content: flex-start;
+                    width: 60%;
+                    background: url("../public/felkialto.png");
+                    @include pic();
+
+                    .text {
+                        @include centerDiv(row);
+                        width: 50%;
+                        text-align: left;
+                        color: white;
+                    }
+                }
+
+                .title {
+                    color: white;
+                    font-weight: bold;
+                    font-size: 60px;
+                    width: 100%;
+                    text-align: center;
+
+                    .underline {
+                        width: 100%;
+                        height: 100px;
+                        background: url("../public/alahuzas.png");
+                        @include pic();
+                        background-size: contain;
+                    }
+                }
+
+            }
+
+            &:last-child {
+
+                .apartments {
+                    height: 100%;
+                    padding-bottom: 3rem;
+                    @include centerDiv(column);
+                    background: url("../public/kor.png");
+                    @include pic();
+                    width: auto;
+
+                    h1 {
+                        color: white;
+                        width: 100%;
+                        text-align: center;
+                    }
+
+                    svg {
+                        width: 3rem;
+                        font-weight: bold;
+                        color: white;
+                    }
+
+
+                }
+
+                .textContainer {
+                    @include centerDiv(row);
+                    justify-content: flex-end;
+
+                    .text {
+                        width: 50%;
+                        color: white;
+                        text-align: right;
+                    }
+                }
+            }
+
+        }
+    }
+
+    .apartmanSection {
+        @include centerDiv(column);
+        padding: 1rem 2rem 0 2rem;
+        position: relative;
+        height: 100vh;
+        justify-content: flex-start;
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background: url("../public/blob-scene-haikei.svg");
+            @include pic();
+            transform: rotateX(180deg);
+        }
+
+        .title {
+            color: white;
+            @include centerDiv(row);
+            font-weight: bold;
+            font-size: 50px;
+            background: url("../public/singlealahuzas.png");
+            @include pic();
+        }
+
+        .apartments {
+            @include centerDiv(row);
+            justify-content: space-evenly;
+            margin-top: 5rem;
+
+            button {
+                @include centerDiv(column);
+                justify-content: flex-start;
+                width: 15rem;
+                padding: 1vmin;
+                background-color: transparent;
+                color: white;
+                border: 2px solid $accent1;
+                border-radius: 5px;
+                height: 18rem;
+                margin: .5rem;
+                padding: 0 1rem;
+                padding-top: 2rem;
+                position: relative;
+
+                &::after {
+                    content: "Részletek";
+                    @include centerDiv(row);
+                    position: absolute;
+                    z-index: 100;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 0;
+                    background-color: $accent1;
+                    transition: height .6s;
+                    opacity: 0;
+
+                }
+
+                h1 {
+                    margin-bottom: 5rem;
+                    font-size: 20px;
+                }
+
+                &:hover {
+                    cursor: pointer;
+
+                    &::after {
+                        height: 100%;
+                        opacity: 1;
+                    }
+                }
+
+                &:nth-of-type(2) {
+                    &::after {
+                        top: 0;
+                    }
+                }
+            }
+
+
+
+
+
+        }
+    }
 }
