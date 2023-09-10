@@ -39,6 +39,9 @@
 .container .nav:hover::after {
   width: 100%;
 }
+.container .nav:hover p {
+  color: #DAA06D;
+}
 .container .nav svg {
   width: 1.5rem;
   margin-right: 1rem;

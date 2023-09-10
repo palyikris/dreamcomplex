@@ -1,50 +1,53 @@
 @import "../../uniform/style.module";
 
-
 .container {
+  @include centerDiv(row);
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  justify-content: flex-end;
+  padding: 1rem;
+
+  .nav {
     @include centerDiv(row);
-    position: absolute;
-    z-index: 1000;
-    top: 0;
-    left: 0;
-    justify-content: flex-end;
-    padding: 1rem;
+    width: auto;
+    margin-right: 5rem;
+    background-color: transparent;
+    border: none;
+    position: relative;
 
-    .nav {
-        @include centerDiv(row);
-        width: auto;
-        margin-right: 5rem;
-        background-color: transparent;
-        border: none;
-        position: relative;
-
-        &::after {
-            content: "";
-            width: 0;
-            height: 2px;
-            position: absolute;
-            bottom: -.5rem;
-            background-color: $main;
-            transition: all 0.6s;
-            left: 0;
-        }
-
-        &:hover {
-            cursor: pointer;
-
-            &::after {
-                width: 100%;
-            }
-        }
-
-        svg {
-            width: 1.5rem;
-            margin-right: 1rem;
-            color: $main;
-        }
-
-        p {
-            color: white;
-        }
+    &::after {
+      content: "";
+      width: 0;
+      height: 2px;
+      position: absolute;
+      bottom: -0.5rem;
+      background-color: $main;
+      transition: all 0.6s;
+      left: 0;
     }
+
+    &:hover {
+      cursor: pointer;
+
+      &::after {
+        width: 100%;
+      }
+
+      p {
+        color: $main;
+      }
+    }
+
+    svg {
+      width: 1.5rem;
+      margin-right: 1rem;
+      color: $main;
+    }
+
+    p {
+      color: white;
+    }
+  }
 }

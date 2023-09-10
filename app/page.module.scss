@@ -1,154 +1,348 @@
 @import "../uniform/style.module";
 
 .container {
-    @include centerDiv(column);
+  @include centerDiv(column);
 
-    .heroSections {
-        @include centerDiv(row);
-        justify-content: flex-start;
-        height: 100vh;
-        background-image: url("../public/balcsipartdark.jpeg");
-        @include pic();
-        padding-left: 10rem;
+  .heroSections {
+    @include centerDiv(row);
+    justify-content: flex-start;
+    height: 100vh;
+    background-image: url("../public/balcsipartdark.jpeg");
+    @include pic();
+    padding-left: 10rem;
 
-        .heroElements {
-            @include centerDiv(column);
-            width: 50%;
-            border: 2px solid $main;
-            padding: 1rem;
-            position: relative;
-            border-right: 0;
+    .heroElements {
+      @include centerDiv(column);
+      width: 50%;
+      border: 2px solid $main;
+      padding: 1rem;
+      position: relative;
+      border-right: 0;
 
-            &::after {
-                content: "";
-                position: absolute;
-                right: 0;
-                top: 0;
-                height: 20%;
-                width: 2px;
-                background-color: $main;
-            }
+      &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 20%;
+        width: 2px;
+        background-color: $main;
+      }
 
-            &::before {
-                content: "";
-                position: absolute;
-                right: 0;
-                bottom: 0;
-                height: 20%;
-                width: 2px;
-                background-color: $main;
+      &::before {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        height: 20%;
+        width: 2px;
+        background-color: $main;
+      }
 
-            }
+      h1,
+      p {
+        color: white;
+        width: 100%;
+        text-align: left;
+      }
 
+      h1 {
+        font-size: 50px;
+        margin-bottom: 1rem;
 
-            h1,
-            p {
-                color: white;
-                width: 100%;
-                text-align: left;
-            }
-
-            h1 {
-                font-size: 50px;
-
-                span {
-                    color: $main;
-                }
-            }
-
-            p {
-                font-style: italic;
-            }
-
-            .icons {
-                @include centerDiv(row);
-                margin-top: 2rem;
-
-                .icon {
-                    @include centerDiv(row);
-                    margin: 0 1rem;
-
-                    svg {
-                        width: 1.5rem;
-                        color: $main;
-                    }
-
-                    p {
-                        font-style: normal;
-                        font-size: 10px;
-                        width: 100%;
-                        text-align: center;
-                    }
-                }
-            }
+        span {
+          color: $main;
         }
+      }
+
+      p {
+        font-style: italic;
+      }
+
+      .icons {
+        @include centerDiv(row);
+        margin-top: 3rem;
+
+        .icon {
+          @include centerDiv(row);
+          margin: 0 1rem;
+
+          svg {
+            width: 1.5rem;
+            color: $main;
+          }
+
+          p {
+            font-style: normal;
+            font-size: 10px;
+            width: 100%;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+  .detailElement {
+    @include centerDiv(row);
+    padding: 8rem 2rem;
+    align-items: flex-start;
+
+    .picContainer {
+      @include centerDiv(row);
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        z-index: 10;
+        bottom: -4rem;
+        right: 0;
+        height: 1px;
+        width: 40%;
+        background-color: $main;
+      }
+
+      .pic {
+        background-image: url("../public/lellehazdark.jpeg");
+        @include pic();
+        height: 20rem;
+        width: 60%;
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          z-index: 10;
+          left: -2rem;
+          width: 1px;
+          height: 60%;
+          background-color: $main;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 2rem;
+          left: 2rem;
+          z-index: -1;
+          width: 100%;
+          height: 100%;
+          background-color: rgba($main, 0.6);
+        }
+      }
+
+      .text,
+      .helper {
+        @include centerDiv(row);
+        position: absolute;
+        z-index: 10;
+        width: 30%;
+        background-color: rgba($main, 0.6);
+        height: 20%;
+        color: white;
+        text-align: center;
+        top: calc(100% - 40%);
+        padding: 1rem;
+        right: 5%;
+      }
+
+      .helper {
+        z-index: 5;
+        background-color: white;
+      }
     }
 
-    .detailElement {
-        @include centerDiv(row);
-        padding: 5rem 2rem;
+    .details {
+      @include centerDiv(column);
+      padding: 0 3rem;
+      color: $bg;
+      height: 100%;
+
+      h1 {
+        font-size: 40px;
+        text-align: center;
+        span {
+          color: $main;
+        }
+      }
+
+      .sep {
+        width: 60%;
+        height: 1px;
+        background-color: $main;
+        margin: 4rem 0;
+
+        &:not(:nth-child(2)) {
+          width: 20%;
+          margin: 2rem 0;
+        }
+      }
+
+      button {
+        @include MyButton();
+      }
+    }
+  }
+
+  .bigTitle {
+    @include centerDiv(row);
+    justify-content: flex-start;
+    padding-left: 5rem;
+    margin: 5rem;
+
+    h1 {
+      font-size: 50px;
+      color: $bg;
+    }
+  }
+
+  .cards {
+    @include centerDiv(row);
+    padding: 5rem 1rem;
+
+    .card {
+      @include centerDiv(column);
+      margin: 0 1rem;
+
+      .cardPic {
+        background-image: url("../public/lellehazdark.jpeg");
+        @include pic();
+        width: 100%;
+        height: 15rem;
+      }
+
+      .description {
+        @include centerDiv(column);
+        background-color: white;
+        color: $bg;
+        border: 1px solid $main;
+        border-top: none;
+        padding: 0 1rem 1rem 1rem;
+
+        h1 {
+          font-size: 30px;
+          margin: 2rem 0 3rem 0;
+        }
+
+        .cardDetails {
+          @include centerDiv(row);
+          padding: 0 5rem;
+
+          svg {
+            width: 3rem;
+            color: $main;
+            margin-right: 1rem;
+          }
+        }
+
+        button {
+          margin: 5rem 0 1rem 0;
+          @include MyButton();
+          z-index: 10;
+        }
+      }
+    }
+  }
+
+  .footer {
+    @include centerDiv(row);
+    color: white;
+    background-color: $main;
+    padding: 4rem 2rem;
+    margin-top: 5rem;
+
+    .logoContainer {
+      @include centerDiv(column);
+
+      .logo {
+        width: 10rem;
+        height: 10rem;
+        border: 1px solid white;
+      }
+
+      .logoDescription {
+        @include centerDiv(column);
         align-items: flex-start;
 
-        .picContainer {
-            @include centerDiv(row);
-            position: relative;
-
-            .pic {
-                background-image: url("../public/lellehazdark.jpeg");
-                @include pic();
-                height: 20rem;
-                width: 60%;
-                position: relative;
-
-                &::after {
-                    content: "";
-                    position: absolute;
-                    top: 2rem;
-                    left: 2rem;
-                    z-index: -1;
-                    width: 100%;
-                    height: 100%;
-                    background-color: rgba($main, .6);
-                }
-            }
-
-            .text,
-            .helper {
-                @include centerDiv(row);
-                position: absolute;
-                z-index: 10;
-                width: 30%;
-                background-color: rgba($main, .6);
-                height: 20%;
-                color: white;
-                text-align: center;
-                top: calc(100% - 40%);
-                padding: 1rem 0;
-                right: 15%;
-
-            }
-
-            .helper {
-                z-index: 5;
-                background-color: white;
-            }
+        h1 {
+          font-size: 25px;
+          margin: 5rem 0 1rem 0;
         }
-
-        .details {
-            @include centerDiv(column);
-            padding: 0 3rem;
-            color: $bg;
-            height: 100%;
-
-            h1 {
-                font-size: 40px;
-                text-align: center;
-                margin-bottom: 2rem;
-
-                span {
-                    color: $main;
-                }
-            }
-        }
+      }
     }
+
+    .else {
+      @include centerDiv(row);
+
+      .documents {
+        @include centerDiv(column);
+        p {
+          margin: 1rem 0;
+        }
+      }
+
+      .social {
+        @include centerDiv(column);
+        border-left: 1px solid white;
+
+        p {
+          font-size: 20px;
+          margin-bottom: 2rem;
+        }
+
+        .socialApps {
+          @include centerDiv(row);
+          a {
+            margin: 0 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1500px) {
+  .container .cards .card .description .cardDetails svg {
+    width: 5rem;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .container .cards .card .description .cardDetails {
+    padding: 0 1rem;
+  }
+}
+
+@media only screen and (max-width: 1050px) {
+  .container .cards {
+    @include centerDiv(column);
+
+    .card {
+      @include centerDiv(row);
+      margin: 1rem 5rem;
+      max-width: 90%;
+
+      .cardPic {
+        height: 25rem;
+      }
+
+      .description {
+        border: 1px solid $main;
+        border-left: none;
+        height: 25rem;
+      }
+    }
+  }
+
+  .container .heroSections {
+    padding-left: 5rem;
+  }
+
+  .container .cards .card .description .cardDetails svg {
+    width: 3rem;
+  }
+}
+
+@media only screen and (max-width: 770px) {
 }
