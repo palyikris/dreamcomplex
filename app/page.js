@@ -1,7 +1,11 @@
-import Link from "next/link";
+"use client";
+
 import styles from "./page.module.css";
+import { useRouter } from "next/navigation";
 
 export default function Page() {
+  let router = useRouter;
+
   return (
     <div className={styles.container}>
       <div className={styles.heroSection}>
@@ -42,7 +46,11 @@ export default function Page() {
       <div className={styles.apartmanSection}>
         <div className={styles.title}>Apartmanjaink:</div>
         <div className={styles.apartments}>
-          <button>
+          <button
+            onClick={() => {
+              router.push("/apartment/dreamhouse");
+            }}
+          >
             <div>
               <span>
                 <h1>Dream House</h1>
@@ -54,7 +62,11 @@ export default function Page() {
               <span>Részletek</span>
             </div>
           </button>
-          <button>
+          <button
+            onClick={() => {
+              router.push("/apartment/dreamtopart");
+            }}
+          >
             <div>
               <span>
                 <h1>Dream Tópart</h1>
@@ -66,7 +78,11 @@ export default function Page() {
               <span>Részletek</span>
             </div>
           </button>
-          <button>
+          <button
+            onClick={() => {
+              router.push("/apartment/dreamlelle");
+            }}
+          >
             <div>
               <span>
                 <h1>Dream Apartman</h1>
