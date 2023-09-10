@@ -93,6 +93,13 @@ export default function Page() {
       </div>
       <div className={styles.bigTitle}>
         <h1>Lehetőségeink:</h1>
+        <div className={styles.picContainer}>
+          <div className={styles.pic} />
+          <div className={styles.helper} />
+          <div className={styles.text}>
+            <p>Dream House</p>
+          </div>
+        </div>
       </div>
       <div className={styles.cards}>
         <div className={styles.card}>

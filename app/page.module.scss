@@ -194,6 +194,72 @@
     h1 {
       font-size: 50px;
       color: $bg;
+      width: 100%;
+    }
+
+    .picContainer {
+      @include centerDiv(row);
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        z-index: 10;
+        bottom: -4rem;
+        left: 0;
+        height: 1px;
+        width: 40%;
+        background-color: $main;
+      }
+
+      .pic {
+        background-image: url("../public/lellehazdark.jpeg");
+        @include pic();
+        height: 20rem;
+        width: 60%;
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          z-index: 10;
+          right: -2rem;
+          width: 1px;
+          height: 60%;
+          background-color: $main;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 2rem;
+          right: 2rem;
+          z-index: -1;
+          width: 100%;
+          height: 100%;
+          background-color: rgba($main, 0.6);
+        }
+      }
+
+      .text,
+      .helper {
+        @include centerDiv(row);
+        position: absolute;
+        z-index: 10;
+        width: 30%;
+        background-color: rgba($main, 0.6);
+        height: 20%;
+        color: white;
+        text-align: center;
+        top: calc(100% - 40%);
+        padding: 1rem;
+        left: 5%;
+      }
+
+      .helper {
+        z-index: 5;
+        background-color: white;
+      }
     }
   }
 
