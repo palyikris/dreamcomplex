@@ -4,4 +4,165 @@
   align-items: center;
   width: 100%;
   flex-direction: column;
+}
+.container .heroSections {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  justify-content: flex-start;
+  height: 100vh;
+  background-image: url("../public/balcsipartdark.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-left: 10rem;
+}
+.container .heroSections .heroElements {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  width: 50%;
+  border: 2px solid #DAA06D;
+  padding: 1rem;
+  position: relative;
+  border-right: 0;
+}
+.container .heroSections .heroElements::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 20%;
+  width: 2px;
+  background-color: #DAA06D;
+}
+.container .heroSections .heroElements::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 20%;
+  width: 2px;
+  background-color: #DAA06D;
+}
+.container .heroSections .heroElements h1,
+.container .heroSections .heroElements p {
+  color: white;
+  width: 100%;
+  text-align: left;
+}
+.container .heroSections .heroElements h1 {
+  font-size: 50px;
+}
+.container .heroSections .heroElements h1 span {
+  color: #DAA06D;
+}
+.container .heroSections .heroElements p {
+  font-style: italic;
+}
+.container .heroSections .heroElements .icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  margin-top: 2rem;
+}
+.container .heroSections .heroElements .icons .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  margin: 0 1rem;
+}
+.container .heroSections .heroElements .icons .icon svg {
+  width: 1.5rem;
+  color: #DAA06D;
+}
+.container .heroSections .heroElements .icons .icon p {
+  font-style: normal;
+  font-size: 10px;
+  width: 100%;
+  text-align: center;
+}
+.container .detailElement {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  padding: 5rem 2rem;
+  align-items: flex-start;
+}
+.container .detailElement .picContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  position: relative;
+}
+.container .detailElement .picContainer .pic {
+  background-image: url("../public/lellehazdark.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 20rem;
+  width: 60%;
+  position: relative;
+}
+.container .detailElement .picContainer .pic::after {
+  content: "";
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(218, 160, 109, 0.6);
+}
+.container .detailElement .picContainer .text,
+.container .detailElement .picContainer .helper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  position: absolute;
+  z-index: 10;
+  width: 30%;
+  background-color: rgba(218, 160, 109, 0.6);
+  height: 20%;
+  color: white;
+  text-align: center;
+  top: 60%;
+  padding: 1rem 0;
+  right: 15%;
+}
+.container .detailElement .picContainer .helper {
+  z-index: 5;
+  background-color: white;
+}
+.container .detailElement .details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  padding: 0 3rem;
+  color: #2F4858;
+  height: 100%;
+}
+.container .detailElement .details h1 {
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.container .detailElement .details h1 span {
+  color: #DAA06D;
 }/*# sourceMappingURL=page.module.css.map */

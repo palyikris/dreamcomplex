@@ -3,5 +3,152 @@
 .container {
     @include centerDiv(column);
 
+    .heroSections {
+        @include centerDiv(row);
+        justify-content: flex-start;
+        height: 100vh;
+        background-image: url("../public/balcsipartdark.jpeg");
+        @include pic();
+        padding-left: 10rem;
 
+        .heroElements {
+            @include centerDiv(column);
+            width: 50%;
+            border: 2px solid $main;
+            padding: 1rem;
+            position: relative;
+            border-right: 0;
+
+            &::after {
+                content: "";
+                position: absolute;
+                right: 0;
+                top: 0;
+                height: 20%;
+                width: 2px;
+                background-color: $main;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                height: 20%;
+                width: 2px;
+                background-color: $main;
+
+            }
+
+
+            h1,
+            p {
+                color: white;
+                width: 100%;
+                text-align: left;
+            }
+
+            h1 {
+                font-size: 50px;
+
+                span {
+                    color: $main;
+                }
+            }
+
+            p {
+                font-style: italic;
+            }
+
+            .icons {
+                @include centerDiv(row);
+                margin-top: 2rem;
+
+                .icon {
+                    @include centerDiv(row);
+                    margin: 0 1rem;
+
+                    svg {
+                        width: 1.5rem;
+                        color: $main;
+                    }
+
+                    p {
+                        font-style: normal;
+                        font-size: 10px;
+                        width: 100%;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+
+    .detailElement {
+        @include centerDiv(row);
+        padding: 5rem 2rem;
+        align-items: flex-start;
+
+        .picContainer {
+            @include centerDiv(row);
+            position: relative;
+
+            .pic {
+                background-image: url("../public/lellehazdark.jpeg");
+                @include pic();
+                height: 20rem;
+                width: 60%;
+                position: relative;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 2rem;
+                    left: 2rem;
+                    z-index: -1;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba($main, .6);
+                }
+            }
+
+            .text,
+            .helper {
+                @include centerDiv(row);
+                position: absolute;
+                z-index: 10;
+                width: 30%;
+                background-color: rgba($main, .6);
+                height: 20%;
+                color: white;
+                text-align: center;
+                top: calc(100% - 40%);
+                padding: 1rem 0;
+                right: 15%;
+
+            }
+
+            .helper {
+                z-index: 5;
+                background-color: white;
+            }
+        }
+
+        .details {
+            @include centerDiv(column);
+            padding: 0 3rem;
+            color: $bg;
+            height: 100%;
+
+            h1 {
+                font-size: 40px;
+                text-align: center;
+                margin-bottom: 2rem;
+
+                span {
+                    color: $main;
+                }
+            }
+        }
+    }
 }

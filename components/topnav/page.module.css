@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+.container .nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  width: auto;
+  margin-right: 5rem;
+  background-color: transparent;
+  border: none;
+  position: relative;
+}
+.container .nav::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  position: absolute;
+  bottom: -0.5rem;
+  background-color: #DAA06D;
+  transition: all 0.6s;
+  left: 0;
+}
+.container .nav:hover {
+  cursor: pointer;
+}
+.container .nav:hover::after {
+  width: 100%;
+}
+.container .nav svg {
+  width: 1.5rem;
+  margin-right: 1rem;
+  color: #DAA06D;
+}
+.container .nav p {
+  color: white;
+}/*# sourceMappingURL=page.module.css.map */
