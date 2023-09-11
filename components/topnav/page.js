@@ -1,9 +1,17 @@
+import { useRouter } from "next/navigation";
 import styles from "./page.module.css";
 
 export default function Topnav() {
+  let router = useRouter();
+
   return (
     <div className={styles.container}>
-      <button className={styles.nav}>
+      <button
+        className={styles.nav}
+        onClick={() => {
+          router.push("/");
+        }}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -15,7 +23,12 @@ export default function Topnav() {
         </svg>
         <p>Főoldal</p>
       </button>
-      <button className={styles.nav}>
+      <button
+        className={styles.nav}
+        onClick={() => {
+          router.push("/options");
+        }}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -31,7 +44,12 @@ export default function Topnav() {
         </svg>
         <p>Lehetőségek</p>
       </button>
-      <button className={styles.nav}>
+      <button
+        className={styles.nav}
+        onClick={() => {
+          router.push("/reservation");
+        }}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
