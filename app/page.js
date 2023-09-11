@@ -4,6 +4,7 @@ import styles from "./page.module.css";
 import { useRouter } from "next/navigation";
 import Topnav from "./../components/topnav/page";
 import { SocialIcon } from "react-social-icons";
+import Footer from "@/components/footer/page";
 
 export default function Page() {
   let router = useRouter();
@@ -88,7 +89,13 @@ export default function Page() {
             praesentium quibusdam sit possimus maiores.
           </p>
           <div className={styles.sep} />
-          <button>Lehetőségek</button>
+          <button
+            onClick={() => {
+              router.push("/options");
+            }}
+          >
+            Lehetőségek
+          </button>
         </div>
       </div>
       <div className={styles.bigTitle}>
@@ -124,7 +131,13 @@ export default function Page() {
                 ipsum meg túl hosszú
               </p>
             </div>
-            <button>Részletek</button>
+            <button
+              onClick={() => {
+                router.push("/options#dreamHouse");
+              }}
+            >
+              Részletek
+            </button>
           </div>
         </div>
         <div className={styles.card}>
@@ -149,7 +162,13 @@ export default function Page() {
                 ipsum meg túl hosszú
               </p>
             </div>
-            <button>Részletek</button>
+            <button
+              onClick={() => {
+                router.push("/options#dreamApartman");
+              }}
+            >
+              Részletek
+            </button>
           </div>
         </div>
         <div className={styles.card}>
@@ -174,50 +193,17 @@ export default function Page() {
                 ipsum meg túl hosszú
               </p>
             </div>
-            <button>Részletek</button>
+            <button
+              onClick={() => {
+                router.push("/options#dreamLelle");
+              }}
+            >
+              Részletek
+            </button>
           </div>
         </div>
       </div>
-      <div className={styles.footer}>
-        <div className={styles.logoContainer}>
-          <div className={styles.logo}>Valami logo</div>
-          <div className={styles.logoDescription}>
-            <h1>Dream Konplexumok</h1>
-            <p>Nagyon örülünk, hogy minket választ a nyaralásához!</p>
-          </div>
-        </div>
-        <div className={styles.else}>
-          <div className={styles.documents}>
-            <p>Példa valami</p>
-            <p>Másik példa</p>
-          </div>
-          <div className={styles.social}>
-            <p>Kövess minket!</p>
-            <div className={styles.socialApps}>
-              <SocialIcon
-                url="https://twitter.com/"
-                fgColor="#daa06d"
-                bgColor="#FFFFFF"
-              />
-              <SocialIcon
-                url="https://facebook.com/"
-                fgColor="#daa06d"
-                bgColor="#FFFFFF"
-              />
-              <SocialIcon
-                url="https://instagram.com/"
-                fgColor="#daa06d"
-                bgColor="#FFFFFF"
-              />
-              <SocialIcon
-                url="https://tiktok.com/"
-                fgColor="#daa06d"
-                bgColor="#FFFFFF"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+      <Footer></Footer>
     </div>
   );
 }

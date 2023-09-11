@@ -1,0 +1,93 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  color: white;
+  background-color: #daa06d;
+  padding: 4rem 2rem;
+  margin-top: 5rem;
+}
+.footer .logoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+}
+.footer .logoContainer .logo {
+  width: 10rem;
+  height: 10rem;
+  border: 1px solid white;
+}
+.footer .logoContainer .logoDescription {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.footer .logoContainer .logoDescription h1 {
+  font-size: 25px;
+  margin: 5rem 0 1rem 0;
+}
+.footer .else {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+}
+.footer .else .documents {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+}
+.footer .else .documents p {
+  margin: 1rem 0;
+}
+.footer .else .social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  border-left: 1px solid white;
+}
+.footer .else .social p {
+  font-size: 20px;
+  margin-bottom: 2rem;
+}
+.footer .else .social .socialApps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+}
+.footer .else .social .socialApps a {
+  margin: 0 0.5rem;
+}
+
+@media only screen and (max-width: 770px) {
+  .container .footer .else {
+    flex-direction: column;
+  }
+  .container .footer .else .social {
+    border: none;
+    border-top: 1px solid white;
+    padding-top: 2rem;
+  }
+}
+@media only screen and (max-width: 560px) {
+  .container .footer {
+    flex-direction: column;
+  }
+  .container .footer .else {
+    margin-top: 6rem;
+  }
+}/*# sourceMappingURL=page.module.css.map */
