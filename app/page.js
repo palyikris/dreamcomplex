@@ -6,7 +6,7 @@ import Topnav from "./../components/topnav/page";
 import { SocialIcon } from "react-social-icons";
 
 export default function Page() {
-  let router = useRouter;
+  let router = useRouter();
 
   return (
     <div className={styles.container}>
@@ -87,7 +87,7 @@ export default function Page() {
             voluptate tenetur iste quam assumenda quo, officia harum dolor,
             praesentium quibusdam sit possimus maiores.
           </p>
-          <div className={styles.sep}></div>
+          <div className={styles.sep} />
           <button>Lehetőségek</button>
         </div>
       </div>
@@ -103,7 +103,7 @@ export default function Page() {
       </div>
       <div className={styles.cards}>
         <div className={styles.card}>
-          <div className={styles.cardPic}></div>
+          <div className={styles.cardPic} />
           <div className={styles.description}>
             <h1>Dream House</h1>
             <div className={styles.cardDetails}>
@@ -128,7 +128,7 @@ export default function Page() {
           </div>
         </div>
         <div className={styles.card}>
-          <div className={styles.cardPic}></div>
+          <div className={styles.cardPic} />
           <div className={styles.description}>
             <h1>Dream Apartman</h1>
             <div className={styles.cardDetails}>
@@ -153,7 +153,7 @@ export default function Page() {
           </div>
         </div>
         <div className={styles.card}>
-          <div className={styles.cardPic}></div>
+          <div className={styles.cardPic} />
           <div className={styles.description}>
             <h1>Dream Tópart</h1>
             <div className={styles.cardDetails}>
@@ -198,22 +198,22 @@ export default function Page() {
                 url="https://twitter.com/"
                 fgColor="#daa06d"
                 bgColor="#FFFFFF"
-              ></SocialIcon>
+              />
               <SocialIcon
                 url="https://facebook.com/"
                 fgColor="#daa06d"
                 bgColor="#FFFFFF"
-              ></SocialIcon>
+              />
               <SocialIcon
                 url="https://instagram.com/"
                 fgColor="#daa06d"
                 bgColor="#FFFFFF"
-              ></SocialIcon>
+              />
               <SocialIcon
                 url="https://tiktok.com/"
                 fgColor="#daa06d"
                 bgColor="#FFFFFF"
-              ></SocialIcon>
+              />
             </div>
           </div>
         </div>

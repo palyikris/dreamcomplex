@@ -49,4 +49,14 @@
 }
 .container .nav p {
   color: white;
+}
+
+@media only screen and (max-width: 770px) {
+  .container {
+    justify-content: center;
+  }
+  .container .nav {
+    margin-right: 0;
+    margin: 0 auto;
+  }
 }/*# sourceMappingURL=page.module.css.map */

@@ -162,6 +162,7 @@
       h1 {
         font-size: 40px;
         text-align: center;
+
         span {
           color: $main;
         }
@@ -343,6 +344,7 @@
 
       .documents {
         @include centerDiv(column);
+
         p {
           margin: 1rem 0;
         }
@@ -359,6 +361,7 @@
 
         .socialApps {
           @include centerDiv(row);
+
           a {
             margin: 0 0.5rem;
           }
@@ -411,4 +414,71 @@
 }
 
 @media only screen and (max-width: 770px) {
+  .container .heroSections .heroElements h1 {
+    font-size: 35px;
+  }
+
+  .container .heroSections .heroElements .icons .icon {
+    flex-direction: column;
+  }
+
+  .container .detailElement {
+    flex-direction: column;
+
+    .details {
+      margin-top: 15rem;
+    }
+  }
+
+  .container .bigTitle {
+    flex-direction: column-reverse;
+
+    h1 {
+      margin-top: 15rem;
+    }
+  }
+
+  .container .footer .else {
+    flex-direction: column;
+
+    .social {
+      border: none;
+      border-top: 1px solid white;
+      padding-top: 2rem;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 560px) {
+  .container .heroSections .heroElements {
+    width: 70%;
+  }
+
+  .container .cards .card {
+    flex-direction: column;
+
+    .description {
+      border: 1px solid $main;
+      border-top: none;
+    }
+  }
+
+  .container .footer {
+    flex-direction: column;
+
+    .else {
+      margin-top: 6rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 466px) {
+  .container .bigTitle {
+    padding-left: 1rem;
+
+    h1 {
+      font-size: 35px;
+    }
+  }
 }
