@@ -10,14 +10,15 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  flex-direction: row;
-  justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
   height: 100vh;
   background-image: url("../../public/naplemente.jpeg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding-left: 10rem;
+  justify-content: flex-end;
+  padding-bottom: 1rem;
 }
 .container .heroSections .heroElements {
   display: flex;
@@ -30,6 +31,7 @@
   padding: 2rem 1rem;
   position: relative;
   border-right: 0;
+  margin-left: 5rem;
 }
 .container .heroSections .heroElements::after {
   content: "";
@@ -74,10 +76,9 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  flex-direction: column;
-  width: 50%;
-  align-items: flex-end;
-  padding-right: 4rem;
+  flex-direction: row;
+  padding: 1rem;
+  margin-top: 3rem;
 }
 .container .heroSections .apartmans .apartman {
   display: flex;
@@ -87,7 +88,7 @@
   flex-direction: column;
   background-color: #daa06d;
   color: white;
-  width: 70%;
+  width: 60%;
   padding: 1.5rem 1rem;
   margin: 2rem 1rem;
   position: relative;
@@ -113,6 +114,9 @@
   top: 0rem;
   left: 0rem;
 }
+.container .heroSections .apartmans .apartman h1 {
+  font-size: 25px;
+}
 .container .heroSections .apartmans .apartman p {
   font-style: italic;
   width: 80%;
@@ -133,8 +137,71 @@
   align-items: center;
   width: 100%;
   flex-direction: row;
+  padding: 1rem 5rem;
+  color: #2f4858;
+  padding-left: 8rem;
 }
-.container .apartmansDetailed .apartmanDetailed .pic {
+.container .apartmansDetailed .apartmanDetailed .intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+}
+.container .apartmansDetailed .apartmanDetailed .intro .description {
+  padding: 1rem 3rem;
+  margin-left: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+}
+.container .apartmansDetailed .apartmanDetailed .intro .description h1 {
+  width: 100%;
+  font-size: 50px;
+  text-align: center;
+  color: #daa06d;
+}
+.container .apartmansDetailed .apartmanDetailed .intro .description .sep {
+  width: 50%;
+  height: 1px;
+  background-color: #daa06d;
+  margin: 3rem 0;
+}
+.container .apartmansDetailed .apartmanDetailed .intro .description p {
+  text-align: center;
+  width: 100%;
+  padding-bottom: 3rem;
+}
+.container .apartmansDetailed .apartmanDetailed .intro .description button {
+  background-color: transparent;
+  border: none;
+  position: relative;
+  padding: 1rem 4rem;
+  color: #daa06d;
+  transition: all 0.6s;
+}
+.container .apartmansDetailed .apartmanDetailed .intro .description button::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 0px 19px 3px rgba(218, 160, 109, 0.75);
+  transition: all 0.6s;
+}
+.container .apartmansDetailed .apartmanDetailed .intro .description button:hover {
+  color: white;
+}
+.container .apartmansDetailed .apartmanDetailed .intro .description button:hover::after {
+  background-color: #daa06d;
+  transform: skewX(-10deg);
+}
+
+.pic {
   background-image: url("../../public/lellehazdark.jpeg");
   background-position: center;
   background-repeat: no-repeat;
@@ -142,32 +209,9 @@
   width: 30rem;
   height: 15rem;
   position: relative;
+  float: left;
+  transition: all 0.6s;
 }
-.container .apartmansDetailed .apartmanDetailed .pic::after, .container .apartmansDetailed .apartmanDetailed .pic::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  border: 2px solid #daa06d;
-  width: 100%;
-  height: 100%;
-}
-.container .apartmansDetailed .apartmanDetailed .pic::before {
-  bottom: 3rem;
-  right: 3rem;
-  border-bottom: none;
-  border-right: none;
-}
-.container .apartmansDetailed .apartmanDetailed .pic::after {
-  top: 3rem;
-  left: 3rem;
-  border-top: none;
-  border-left: none;
-}
-.container .apartmansDetailed .apartmanDetailed .pic .caption {
-  background-color: #daa06d;
-  color: white;
-  position: absolute;
-  padding: 1rem 2rem;
-  bottom: 0;
-  right: 0;
+.pic:nth-child(1) {
+  background-image: url("../../public/naplemente.jpeg");
 }/*# sourceMappingURL=page.module.css.map */
