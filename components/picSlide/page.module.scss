@@ -105,3 +105,55 @@
         margin-bottom: 0;
     }
 }
+
+
+@media only screen and (max-width: 1000px) {
+    .picContainer {
+        width: 20rem;
+        height: 15rem;
+
+        .picWindow {
+            width: 20rem;
+            height: 15rem;
+
+            .pics {
+                width: 20rem;
+                height: 15rem;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 840px) {
+    .picContainer {
+        width: 60%;
+        height: 15rem;
+
+        .picWindow {
+            width: 60%;
+            height: 15rem;
+
+            .pics {
+                width: 60%;
+                height: 15rem;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 710px) {
+    .picContainer {
+        width: 60%;
+        height: 15rem;
+
+        .picWindow {
+            width: 100%;
+            height: 15rem;
+
+            .pics {
+                width: 100%;
+                height: 15rem;
+            }
+        }
+    }
+}

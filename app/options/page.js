@@ -4,12 +4,15 @@ import Topnav from "@/components/topnav/page";
 import styles from "./page.module.css";
 import Link from "next/link";
 import Footer from "@/components/footer/page";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import PicSlide from "./../../components/picSlide/page";
+import { useState } from "react";
 
 export default function OptionsPage() {
   let router = useRouter();
-
+  let [onlyHouse, setOnlyHouse] = useState(false);
+  let [onlyApartman, setOnlyApartman] = useState(false);
+  let [onlyTopart, setOnlyTopart] = useState(false);
   return (
     <div className={styles.container}>
       <Topnav />
@@ -24,7 +27,9 @@ export default function OptionsPage() {
           <button
             className={styles.apartman}
             onClick={() => {
-              router.push("/options#dreamhouse");
+              setOnlyHouse(true);
+              setOnlyApartman(false);
+              setOnlyTopart(false);
             }}
           >
             <h1>Dream House</h1>
@@ -33,7 +38,9 @@ export default function OptionsPage() {
           <button
             className={styles.apartman}
             onClick={() => {
-              router.push("/options#dreamaparman");
+              setOnlyHouse(false);
+              setOnlyApartman(true);
+              setOnlyTopart(false);
             }}
           >
             <h1>Dream Apartman</h1>
@@ -42,7 +49,9 @@ export default function OptionsPage() {
           <button
             className={styles.apartman}
             onClick={() => {
-              router.push("/options#dreamtopart");
+              setOnlyHouse(false);
+              setOnlyApartman(false);
+              setOnlyTopart(true);
             }}
           >
             <h1>Dream Tópart</h1>
@@ -51,9 +60,9 @@ export default function OptionsPage() {
         </div>
       </div>
       <div className={styles.apartmansDetailed}>
-        <div className={styles.apartmanDetailed} id={styles.dreamhouse}>
+        {onlyHouse || (!onlyHouse && !onlyApartman && !onlyTopart) ? (<div className={styles.apartmanDetailed} id={styles.dreamhouse}>
           <div className={styles.intro}>
-            <PicSlide>
+            <PicSlide text="Dream House">
               <div className={styles.pic} />
               <div className={styles.pic} />
               <div className={styles.pic} />
@@ -69,7 +78,13 @@ export default function OptionsPage() {
                 nesciunt soluta magnam, sunt ipsa commodi possimus? Neque
                 deserunt rerum fuga dolorum eligendi!
               </p>
-              <button>Foglalás</button>
+              <button
+                onClick={() => {
+                  router.push("/reservation/dreamhouse");
+                }}
+              >
+                Foglalás
+              </button>
             </div>
           </div>
           <div className={styles.details}>
@@ -90,7 +105,269 @@ export default function OptionsPage() {
                 </svg>
                 <p>Esztétikus modern szobák</p>
               </div>
-              <div className={styles.service} />
+              <div className={styles.service}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M2.25 5.25a3 3 0 013-3h13.5a3 3 0 013 3V15a3 3 0 01-3 3h-3v.257c0 .597.237 1.17.659 1.591l.621.622a.75.75 0 01-.53 1.28h-9a.75.75 0 01-.53-1.28l.621-.622a2.25 2.25 0 00.659-1.59V18h-3a3 3 0 01-3-3V5.25zm1.5 0v7.5a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5v-7.5a1.5 1.5 0 00-1.5-1.5H5.25a1.5 1.5 0 00-1.5 1.5z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                <p>Tv, wifi minden szobához</p>
+              </div>
+              <div className={styles.service}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M7.5 5.25a3 3 0 013-3h3a3 3 0 013 3v.205c.933.085 1.857.197 2.774.334 1.454.218 2.476 1.483 2.476 2.917v3.033c0 1.211-.734 2.352-1.936 2.752A24.726 24.726 0 0112 15.75c-2.73 0-5.357-.442-7.814-1.259-1.202-.4-1.936-1.541-1.936-2.752V8.706c0-1.434 1.022-2.7 2.476-2.917A48.814 48.814 0 017.5 5.455V5.25zm7.5 0v.09a49.488 49.488 0 00-6 0v-.09a1.5 1.5 0 011.5-1.5h3a1.5 1.5 0 011.5 1.5zm-3 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z"
+                    clipRule="evenodd"
+                  />
+                  <path d="M3 18.4v-2.796a4.3 4.3 0 00.713.31A26.226 26.226 0 0012 17.25c2.892 0 5.68-.468 8.287-1.335.252-.084.49-.189.713-.311V18.4c0 1.452-1.047 2.728-2.523 2.923-2.12.282-4.282.427-6.477.427a49.19 49.19 0 01-6.477-.427C4.047 21.128 3 19.852 3 18.4z" />
+                </svg>
+                <p>Egyszerű foglalás</p>
+              </div>
+              <div className={styles.service}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M12.963 2.286a.75.75 0 00-1.071-.136 9.742 9.742 0 00-3.539 6.177A7.547 7.547 0 016.648 6.61a.75.75 0 00-1.152-.082A9 9 0 1015.68 4.534a7.46 7.46 0 01-2.717-2.248zM15.75 14.25a3.75 3.75 0 11-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 011.925-3.545 3.75 3.75 0 013.255 3.717z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                <p>Remek hangulat</p>
+              </div>
+            </div>
+            <div className={styles.interiors}>
+              <PicSlide text="Dream House">
+                <div className={styles.pic} />
+                <div className={styles.pic} />
+                <div className={styles.pic} />
+                <div className={styles.pic} />
+                <div className={styles.pic} />
+              </PicSlide>
+            </div>
+          </div>
+          <div className={styles.sep} />
+        </div>) : (<></>)}
+        {onlyApartman || (!onlyHouse && !onlyApartman && !onlyTopart) ? (<div className={styles.apartmanDetailed} id={styles.dreamhouse}>
+          <div className={styles.intro}>
+            <PicSlide text="Dream Apartman">
+              <div className={styles.pic} />
+              <div className={styles.pic} />
+              <div className={styles.pic} />
+              <div className={styles.pic} />
+              <div className={styles.pic} />
+            </PicSlide>
+            <div className={styles.description}>
+              <h1>Dream Apartman</h1>
+              <div className={styles.sep} />
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam,
+                quisquam est dolorum maiores aperiam pariatur. Id ratione
+                nesciunt soluta magnam, sunt ipsa commodi possimus? Neque
+                deserunt rerum fuga dolorum eligendi!
+              </p>
+              <button
+                onClick={() => {
+                  router.push("/reservation/dreamapartman");
+                }}
+              >
+                Foglalás
+              </button>
+            </div>
+          </div>
+          <div className={styles.details}>
+            <div className={styles.services}>
+              <div className={styles.service}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path d="M19.006 3.705a.75.75 0 00-.512-1.41L6 6.838V3a.75.75 0 00-.75-.75h-1.5A.75.75 0 003 3v4.93l-1.006.365a.75.75 0 00.512 1.41l16.5-6z" />
+                  <path
+                    fillRule="evenodd"
+                    d="M3.019 11.115L18 5.667V9.09l4.006 1.456a.75.75 0 11-.512 1.41l-.494-.18v8.475h.75a.75.75 0 010 1.5H2.25a.75.75 0 010-1.5H3v-9.129l.019-.006zM18 20.25v-9.565l1.5.545v9.02H18zm-9-6a.75.75 0 00-.75.75v4.5c0 .414.336.75.75.75h3a.75.75 0 00.75-.75V15a.75.75 0 00-.75-.75H9z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                <p>Esztétikus modern szobák</p>
+              </div>
+              <div className={styles.service}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M2.25 5.25a3 3 0 013-3h13.5a3 3 0 013 3V15a3 3 0 01-3 3h-3v.257c0 .597.237 1.17.659 1.591l.621.622a.75.75 0 01-.53 1.28h-9a.75.75 0 01-.53-1.28l.621-.622a2.25 2.25 0 00.659-1.59V18h-3a3 3 0 01-3-3V5.25zm1.5 0v7.5a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5v-7.5a1.5 1.5 0 00-1.5-1.5H5.25a1.5 1.5 0 00-1.5 1.5z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                <p>Tv, wifi minden szobához</p>
+              </div>
+              <div className={styles.service}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M7.5 5.25a3 3 0 013-3h3a3 3 0 013 3v.205c.933.085 1.857.197 2.774.334 1.454.218 2.476 1.483 2.476 2.917v3.033c0 1.211-.734 2.352-1.936 2.752A24.726 24.726 0 0112 15.75c-2.73 0-5.357-.442-7.814-1.259-1.202-.4-1.936-1.541-1.936-2.752V8.706c0-1.434 1.022-2.7 2.476-2.917A48.814 48.814 0 017.5 5.455V5.25zm7.5 0v.09a49.488 49.488 0 00-6 0v-.09a1.5 1.5 0 011.5-1.5h3a1.5 1.5 0 011.5 1.5zm-3 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z"
+                    clipRule="evenodd"
+                  />
+                  <path d="M3 18.4v-2.796a4.3 4.3 0 00.713.31A26.226 26.226 0 0012 17.25c2.892 0 5.68-.468 8.287-1.335.252-.084.49-.189.713-.311V18.4c0 1.452-1.047 2.728-2.523 2.923-2.12.282-4.282.427-6.477.427a49.19 49.19 0 01-6.477-.427C4.047 21.128 3 19.852 3 18.4z" />
+                </svg>
+                <p>Egyszerű foglalás</p>
+              </div>
+              <div className={styles.service}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M12.963 2.286a.75.75 0 00-1.071-.136 9.742 9.742 0 00-3.539 6.177A7.547 7.547 0 016.648 6.61a.75.75 0 00-1.152-.082A9 9 0 1015.68 4.534a7.46 7.46 0 01-2.717-2.248zM15.75 14.25a3.75 3.75 0 11-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 011.925-3.545 3.75 3.75 0 013.255 3.717z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                <p>Remek hangulat</p>
+              </div>
+            </div>
+            <div className={styles.interiors}>
+              <PicSlide text="Dream Apartman">
+                <div className={styles.pic} />
+                <div className={styles.pic} />
+                <div className={styles.pic} />
+                <div className={styles.pic} />
+                <div className={styles.pic} />
+              </PicSlide>
+            </div>
+          </div>
+          <div className={styles.sep} />
+        </div>) : (<></>)}
+        <div className={styles.apartmanDetailed} id={styles.dreamhouse}>
+          <div className={styles.intro}>
+            <PicSlide text="Dream Tópart">
+              <div className={styles.pic} />
+              <div className={styles.pic} />
+              <div className={styles.pic} />
+              <div className={styles.pic} />
+              <div className={styles.pic} />
+            </PicSlide>
+            <div className={styles.description}>
+              <h1>Dream Tópart</h1>
+              <div className={styles.sep} />
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam,
+                quisquam est dolorum maiores aperiam pariatur. Id ratione
+                nesciunt soluta magnam, sunt ipsa commodi possimus? Neque
+                deserunt rerum fuga dolorum eligendi!
+              </p>
+              <button
+                onClick={() => {
+                  router.push("/reservation/dreamtopart");
+                }}
+              >
+                Foglalás
+              </button>
+            </div>
+          </div>
+          <div className={styles.details}>
+            <div className={styles.services}>
+              <div className={styles.service}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path d="M19.006 3.705a.75.75 0 00-.512-1.41L6 6.838V3a.75.75 0 00-.75-.75h-1.5A.75.75 0 003 3v4.93l-1.006.365a.75.75 0 00.512 1.41l16.5-6z" />
+                  <path
+                    fillRule="evenodd"
+                    d="M3.019 11.115L18 5.667V9.09l4.006 1.456a.75.75 0 11-.512 1.41l-.494-.18v8.475h.75a.75.75 0 010 1.5H2.25a.75.75 0 010-1.5H3v-9.129l.019-.006zM18 20.25v-9.565l1.5.545v9.02H18zm-9-6a.75.75 0 00-.75.75v4.5c0 .414.336.75.75.75h3a.75.75 0 00.75-.75V15a.75.75 0 00-.75-.75H9z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                <p>Esztétikus modern szobák</p>
+              </div>
+              <div className={styles.service}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M2.25 5.25a3 3 0 013-3h13.5a3 3 0 013 3V15a3 3 0 01-3 3h-3v.257c0 .597.237 1.17.659 1.591l.621.622a.75.75 0 01-.53 1.28h-9a.75.75 0 01-.53-1.28l.621-.622a2.25 2.25 0 00.659-1.59V18h-3a3 3 0 01-3-3V5.25zm1.5 0v7.5a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5v-7.5a1.5 1.5 0 00-1.5-1.5H5.25a1.5 1.5 0 00-1.5 1.5z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                <p>Tv, wifi minden szobához</p>
+              </div>
+              <div className={styles.service}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M7.5 5.25a3 3 0 013-3h3a3 3 0 013 3v.205c.933.085 1.857.197 2.774.334 1.454.218 2.476 1.483 2.476 2.917v3.033c0 1.211-.734 2.352-1.936 2.752A24.726 24.726 0 0112 15.75c-2.73 0-5.357-.442-7.814-1.259-1.202-.4-1.936-1.541-1.936-2.752V8.706c0-1.434 1.022-2.7 2.476-2.917A48.814 48.814 0 017.5 5.455V5.25zm7.5 0v.09a49.488 49.488 0 00-6 0v-.09a1.5 1.5 0 011.5-1.5h3a1.5 1.5 0 011.5 1.5zm-3 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z"
+                    clipRule="evenodd"
+                  />
+                  <path d="M3 18.4v-2.796a4.3 4.3 0 00.713.31A26.226 26.226 0 0012 17.25c2.892 0 5.68-.468 8.287-1.335.252-.084.49-.189.713-.311V18.4c0 1.452-1.047 2.728-2.523 2.923-2.12.282-4.282.427-6.477.427a49.19 49.19 0 01-6.477-.427C4.047 21.128 3 19.852 3 18.4z" />
+                </svg>
+                <p>Egyszerű foglalás</p>
+              </div>
+              <div className={styles.service}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M12.963 2.286a.75.75 0 00-1.071-.136 9.742 9.742 0 00-3.539 6.177A7.547 7.547 0 016.648 6.61a.75.75 0 00-1.152-.082A9 9 0 1015.68 4.534a7.46 7.46 0 01-2.717-2.248zM15.75 14.25a3.75 3.75 0 11-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 011.925-3.545 3.75 3.75 0 013.255 3.717z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                <p>Remek hangulat</p>
+              </div>
+            </div>
+            <div className={styles.interiors}>
+              <PicSlide text="Dream Tópart">
+                <div className={styles.pic} />
+                <div className={styles.pic} />
+                <div className={styles.pic} />
+                <div className={styles.pic} />
+                <div className={styles.pic} />
+              </PicSlide>
             </div>
           </div>
         </div>
