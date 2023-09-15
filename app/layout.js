@@ -1,6 +1,11 @@
+import { useState } from "react";
 import "./globals.css";
 
 export default function RootLayout({ children }) {
+  let [isDreamHouseOpen, setIsDreamHouseOpen] = useState(false);
+  let [isDreamApartman, setIsDreamApartman] = useState(false);
+  let [isDreamTopartOpen, setIsDreamTopartOpen] = useState(false);
+
   return (
     <html lang="hu">
       <head>
