@@ -7,9 +7,20 @@ import Footer from "@/components/footer/page";
 import { usePathname, useRouter } from "next/navigation";
 import PicSlide from "./../../components/picSlide/page";
 import { useState } from "react";
+import { useApartman } from "@/context/contexthook";
 
 export default function OptionsPage() {
   let router = useRouter();
+
+  let {
+    isDreamHouseOpen,
+    isDreamApartmanOpen,
+    isDreamTopartOpen,
+    setIsDreamHouseOpen,
+    setIsDreamApartmanOpen,
+    setIsDreamTopartOpen
+  } = useApartman();
+
   return (
     <div className={styles.container}>
       <Topnav />
@@ -22,7 +33,7 @@ export default function OptionsPage() {
         </div>
       </div>
       <div className={styles.apartmansDetailed}>
-        <div className={styles.apartmanDetailed} id={styles.dreamhouse}>
+        <div className={styles.apartmanDetailed} id="dreamHouse">
           <div className={styles.intro}>
             <PicSlide text="Dream House">
               <div className={styles.pic} />
@@ -42,7 +53,10 @@ export default function OptionsPage() {
               </p>
               <button
                 onClick={() => {
-                  router.push("/reservation");
+                  setIsDreamTopartOpen(false);
+                  setIsDreamHouseOpen(true);
+                  setIsDreamApartmanOpen(false);
+                  router.push("/reservation#reserveInterface");
                 }}
               >
                 Foglalás
@@ -126,7 +140,7 @@ export default function OptionsPage() {
           </div>
           <div className={styles.sep} />
         </div>
-        <div className={styles.apartmanDetailed} id={styles.dreamhouse}>
+        <div className={styles.apartmanDetailed} id="dreamApartman">
           <div className={styles.intro}>
             <PicSlide text="Dream Apartman">
               <div className={styles.pic} />
@@ -146,7 +160,10 @@ export default function OptionsPage() {
               </p>
               <button
                 onClick={() => {
-                  router.push("/reservation");
+                  setIsDreamTopartOpen(false);
+                  setIsDreamHouseOpen(false);
+                  setIsDreamApartmanOpen(true);
+                  router.push("/reservation#reserveInterface");
                 }}
               >
                 Foglalás
@@ -230,7 +247,7 @@ export default function OptionsPage() {
           </div>
           <div className={styles.sep} />
         </div>
-        <div className={styles.apartmanDetailed} id={styles.dreamhouse}>
+        <div className={styles.apartmanDetailed} id="dreamTopart">
           <div className={styles.intro}>
             <PicSlide text="Dream Tópart">
               <div className={styles.pic} />
@@ -250,7 +267,10 @@ export default function OptionsPage() {
               </p>
               <button
                 onClick={() => {
-                  router.push("/reservation");
+                  setIsDreamTopartOpen(true);
+                  setIsDreamHouseOpen(false);
+                  setIsDreamApartmanOpen(false);
+                  router.push("/reservation#reserveInterface");
                 }}
               >
                 Foglalás

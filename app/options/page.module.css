@@ -139,6 +139,7 @@
 }
 .container .apartmansDetailed .apartmanDetailed .intro .description button:hover {
   color: white;
+  cursor: pointer;
 }
 .container .apartmansDetailed .apartmanDetailed .intro .description button:hover::after {
   background-color: #daa06d;

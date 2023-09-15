@@ -187,7 +187,7 @@ export default function Page() {
             </div>
             <button
               onClick={() => {
-                router.push("/options#dreamLelle");
+                router.push("/options#dreamTopart");
               }}
             >
               Részletek

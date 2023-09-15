@@ -1,14 +1,26 @@
 import { useRouter } from "next/navigation";
 import styles from "./page.module.css";
+import { useApartman } from "@/context/contexthook";
 
 export default function Topnav() {
   let router = useRouter();
+  let {
+    isDreamHouseOpen,
+    isDreamApartmanOpen,
+    isDreamTopartOpen,
+    setIsDreamHouseOpen,
+    setIsDreamApartmanOpen,
+    setIsDreamTopartOpen
+  } = useApartman();
 
   return (
     <div className={styles.container}>
       <button
         className={styles.nav}
         onClick={() => {
+          setIsDreamTopartOpen(false);
+          setIsDreamHouseOpen(false);
+          setIsDreamApartmanOpen(false);
           router.push("/");
         }}
       >
@@ -26,6 +38,9 @@ export default function Topnav() {
       <button
         className={styles.nav}
         onClick={() => {
+          setIsDreamTopartOpen(false);
+          setIsDreamHouseOpen(false);
+          setIsDreamApartmanOpen(false);
           router.push("/options");
         }}
       >
@@ -47,6 +62,9 @@ export default function Topnav() {
       <button
         className={styles.nav}
         onClick={() => {
+          setIsDreamTopartOpen(false);
+          setIsDreamHouseOpen(false);
+          setIsDreamApartmanOpen(false);
           router.push("/reservation");
         }}
       >

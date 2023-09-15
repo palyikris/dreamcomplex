@@ -92,6 +92,7 @@
   font-size: 10px;
   width: 100%;
   text-align: center;
+  color: white;
 }
 .container .detailElement {
   display: flex;
@@ -231,6 +232,7 @@
 }
 .container .detailElement .details button:hover {
   color: white;
+  cursor: pointer;
 }
 .container .detailElement .details button:hover::after {
   background-color: #daa06d;
@@ -419,6 +421,7 @@
 }
 .container .cards .card .description button:hover {
   color: white;
+  cursor: pointer;
 }
 .container .cards .card .description button:hover::after {
   background-color: #daa06d;

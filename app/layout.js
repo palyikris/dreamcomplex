@@ -1,34 +1,37 @@
-import { useState } from "react";
+"use client";
+
+import GlobalContextProvider from "@/context/globalcontext";
 import "./globals.css";
 
 export default function RootLayout({ children }) {
-  let [isDreamHouseOpen, setIsDreamHouseOpen] = useState(false);
-  let [isDreamApartman, setIsDreamApartman] = useState(false);
-  let [isDreamTopartOpen, setIsDreamTopartOpen] = useState(false);
-
   return (
-    <html lang="hu">
-      <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Dream Apartman Komplexumok</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Island+Moments&display=swap"
-          rel="stylesheet"
-        />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body>
-        {children}
-      </body>
-    </html>
+    <GlobalContextProvider>
+      <html lang="hu">
+        <head>
+          <meta charset="UTF-8" />
+          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+          <title>Dream Apartman Komplexumok</title>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Island+Moments&display=swap"
+            rel="stylesheet"
+          />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap"
+            rel="stylesheet"
+          />
+        </head>
+        <body>
+          {children}
+        </body>
+      </html>
+    </GlobalContextProvider>
   );
 }

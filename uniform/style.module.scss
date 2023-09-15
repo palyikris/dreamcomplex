@@ -38,6 +38,7 @@ $accent1: #ffeace;
 
   &:hover {
     color: white;
+    cursor: pointer;
 
     &::after {
       background-color: $main;
