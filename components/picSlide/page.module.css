@@ -16,7 +16,7 @@
   content: "";
   position: absolute;
   z-index: -1;
-  border: 2px solid #daa06d;
+  border: 1.5px solid #daa06d;
   width: 100%;
   height: 100%;
 }

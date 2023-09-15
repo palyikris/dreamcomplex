@@ -42,6 +42,7 @@ $accent1: #ffeace;
     &::after {
       background-color: $main;
       transform: skewX(-10deg);
+      box-shadow: none;
     }
   }
 }

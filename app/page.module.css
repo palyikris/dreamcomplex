@@ -50,7 +50,7 @@
   background-color: #daa06d;
 }
 .container .heroSections .heroElements h1,
-.container .heroSections .heroElements p {
+.container .heroSections .heroElements a {
   color: white;
   width: 100%;
   text-align: left;
@@ -62,8 +62,10 @@
 .container .heroSections .heroElements h1 span {
   color: #daa06d;
 }
-.container .heroSections .heroElements p {
+.container .heroSections .heroElements a {
   font-style: italic;
+  background-color: none;
+  border: none;
 }
 .container .heroSections .heroElements .icons {
   display: flex;
@@ -98,6 +100,7 @@
   width: 100%;
   flex-direction: row;
   padding: 8rem 2rem;
+  padding-bottom: 5rem;
   align-items: flex-start;
 }
 .container .detailElement .picContainer {
@@ -232,6 +235,7 @@
 .container .detailElement .details button:hover::after {
   background-color: #daa06d;
   transform: skewX(-10deg);
+  box-shadow: none;
 }
 .container .bigTitle {
   display: flex;
@@ -242,11 +246,34 @@
   justify-content: flex-start;
   padding-left: 5rem;
   margin: 5rem;
+  margin-top: 0;
 }
 .container .bigTitle h1 {
-  font-size: 50px;
+  font-size: 60px;
   color: #2f4858;
-  width: 100%;
+  position: relative;
+  margin-right: 5rem;
+  padding: 0.5rem 1rem;
+}
+.container .bigTitle h1::before {
+  content: "";
+  position: absolute;
+  z-index: 10;
+  width: 55%;
+  right: 0;
+  top: 0;
+  background-color: #daa06d;
+  height: 1px;
+}
+.container .bigTitle h1::after {
+  content: "";
+  position: absolute;
+  z-index: 10;
+  width: 55%;
+  left: 0;
+  bottom: 0;
+  background-color: #daa06d;
+  height: 1px;
 }
 .container .bigTitle .picContainer {
   display: flex;
@@ -365,7 +392,7 @@
   padding: 0 5rem;
 }
 .container .cards .card .description .cardDetails svg {
-  width: 3rem;
+  width: 2rem;
   color: #daa06d;
   margin-right: 1rem;
 }
@@ -396,11 +423,12 @@
 .container .cards .card .description button:hover::after {
   background-color: #daa06d;
   transform: skewX(-10deg);
+  box-shadow: none;
 }
 
 @media only screen and (max-width: 1500px) {
   .container .cards .card .description .cardDetails svg {
-    width: 5rem;
+    width: 3rem;
   }
 }
 @media only screen and (max-width: 1400px) {

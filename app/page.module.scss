@@ -40,7 +40,7 @@
       }
 
       h1,
-      p {
+      a {
         color: white;
         width: 100%;
         text-align: left;
@@ -55,8 +55,10 @@
         }
       }
 
-      p {
+      a {
         font-style: italic;
+        background-color: none;
+        border: none;
       }
 
       .icons {
@@ -86,6 +88,7 @@
   .detailElement {
     @include centerDiv(row);
     padding: 8rem 2rem;
+    padding-bottom: 5rem;
     align-items: flex-start;
 
     .picContainer {
@@ -206,11 +209,36 @@
     justify-content: flex-start;
     padding-left: 5rem;
     margin: 5rem;
+    margin-top: 0;
 
     h1 {
-      font-size: 50px;
+      font-size: 60px;
       color: $bg;
-      width: 100%;
+      position: relative;
+      margin-right: 5rem;
+      padding: .5rem 1rem;
+
+      &::before {
+        content: "";
+        position: absolute;
+        z-index: 10;
+        width: 55%;
+        right: 0;
+        top: 0;
+        background-color: $main;
+        height: 1px;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        z-index: 10;
+        width: 55%;
+        left: 0;
+        bottom: 0;
+        background-color: $main;
+        height: 1px;
+      }
     }
 
     .picContainer {
@@ -312,7 +340,7 @@
           padding: 0 5rem;
 
           svg {
-            width: 3rem;
+            width: 2rem;
             color: $main;
             margin-right: 1rem;
           }
@@ -330,7 +358,7 @@
 
 @media only screen and (max-width: 1500px) {
   .container .cards .card .description .cardDetails svg {
-    width: 5rem;
+    width: 3rem;
   }
 }
 

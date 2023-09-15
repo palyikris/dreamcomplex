@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import Topnav from "./../components/topnav/page";
 import { SocialIcon } from "react-social-icons";
 import Footer from "@/components/footer/page";
+import Link from "next/link";
 
 export default function Page() {
   let router = useRouter();
@@ -17,7 +18,7 @@ export default function Page() {
           <h1>
             <span>Dream</span> komplexum a Balatonnál
           </h1>
-          <p>Foglald le most a nyárra!</p>
+          <Link href="/reservation">Foglald le most a nyárra!</Link>
           <div className={styles.icons}>
             <div className={styles.icon}>
               <svg
@@ -126,10 +127,7 @@ export default function Page() {
                   clipRule="evenodd"
                 />
               </svg>
-              <p>
-                Kéne valami leírás, de lusta vagyok kitalálni bármit, és a lorem
-                ipsum meg túl hosszú
-              </p>
+              <p>Egy gyönyörű és hatalmas ház Balatonőszöd partján.</p>
             </div>
             <button
               onClick={() => {
@@ -157,10 +155,7 @@ export default function Page() {
                   clipRule="evenodd"
                 />
               </svg>
-              <p>
-                Kéne valami leírás, de lusta vagyok kitalálni bármit, és a lorem
-                ipsum meg túl hosszú
-              </p>
+              <p>Balatonlellén 4 apartmannal is tudunk szolgálni.</p>
             </div>
             <button
               onClick={() => {
@@ -188,10 +183,7 @@ export default function Page() {
                   clipRule="evenodd"
                 />
               </svg>
-              <p>
-                Kéne valami leírás, de lusta vagyok kitalálni bármit, és a lorem
-                ipsum meg túl hosszú
-              </p>
+              <p>Balatonlellén, a kertből kilépve már a part vár.</p>
             </div>
             <button
               onClick={() => {
@@ -203,7 +195,7 @@ export default function Page() {
           </div>
         </div>
       </div>
-      <Footer></Footer>
+      <Footer />
     </div>
   );
 }

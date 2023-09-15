@@ -10,9 +10,6 @@ import { useState } from "react";
 
 export default function OptionsPage() {
   let router = useRouter();
-  let [onlyHouse, setOnlyHouse] = useState(false);
-  let [onlyApartman, setOnlyApartman] = useState(false);
-  let [onlyTopart, setOnlyTopart] = useState(false);
   return (
     <div className={styles.container}>
       <Topnav />
@@ -23,44 +20,9 @@ export default function OptionsPage() {
           </h1>
           <Link href={"/reservation"}>Foglalj nálunk már most!</Link>
         </div>
-        <div className={styles.apartmans}>
-          <button
-            className={styles.apartman}
-            onClick={() => {
-              setOnlyHouse(true);
-              setOnlyApartman(false);
-              setOnlyTopart(false);
-            }}
-          >
-            <h1>Dream House</h1>
-            <p>Egy gyönyörű és hatalmas ház Balatonőszöd partján.</p>
-          </button>
-          <button
-            className={styles.apartman}
-            onClick={() => {
-              setOnlyHouse(false);
-              setOnlyApartman(true);
-              setOnlyTopart(false);
-            }}
-          >
-            <h1>Dream Apartman</h1>
-            <p>Balatonlellén 4 apartmannal is tudunk szolgálni.</p>
-          </button>
-          <button
-            className={styles.apartman}
-            onClick={() => {
-              setOnlyHouse(false);
-              setOnlyApartman(false);
-              setOnlyTopart(true);
-            }}
-          >
-            <h1>Dream Tópart</h1>
-            <p>Balatonlellén, a kertből kilépve már a part vár.</p>
-          </button>
-        </div>
       </div>
       <div className={styles.apartmansDetailed}>
-        {onlyHouse || (!onlyHouse && !onlyApartman && !onlyTopart) ? (<div className={styles.apartmanDetailed} id={styles.dreamhouse}>
+        <div className={styles.apartmanDetailed} id={styles.dreamhouse}>
           <div className={styles.intro}>
             <PicSlide text="Dream House">
               <div className={styles.pic} />
@@ -80,7 +42,7 @@ export default function OptionsPage() {
               </p>
               <button
                 onClick={() => {
-                  router.push("/reservation/dreamhouse");
+                  router.push("/reservation");
                 }}
               >
                 Foglalás
@@ -163,8 +125,8 @@ export default function OptionsPage() {
             </div>
           </div>
           <div className={styles.sep} />
-        </div>) : (<></>)}
-        {onlyApartman || (!onlyHouse && !onlyApartman && !onlyTopart) ? (<div className={styles.apartmanDetailed} id={styles.dreamhouse}>
+        </div>
+        <div className={styles.apartmanDetailed} id={styles.dreamhouse}>
           <div className={styles.intro}>
             <PicSlide text="Dream Apartman">
               <div className={styles.pic} />
@@ -184,7 +146,7 @@ export default function OptionsPage() {
               </p>
               <button
                 onClick={() => {
-                  router.push("/reservation/dreamapartman");
+                  router.push("/reservation");
                 }}
               >
                 Foglalás
@@ -267,7 +229,7 @@ export default function OptionsPage() {
             </div>
           </div>
           <div className={styles.sep} />
-        </div>) : (<></>)}
+        </div>
         <div className={styles.apartmanDetailed} id={styles.dreamhouse}>
           <div className={styles.intro}>
             <PicSlide text="Dream Tópart">
@@ -288,7 +250,7 @@ export default function OptionsPage() {
               </p>
               <button
                 onClick={() => {
-                  router.push("/reservation/dreamtopart");
+                  router.push("/reservation");
                 }}
               >
                 Foglalás

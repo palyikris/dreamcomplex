@@ -17,7 +17,6 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  justify-content: flex-end;
   padding-bottom: 1rem;
 }
 .container .heroSections .heroElements {
@@ -70,58 +69,6 @@
   color: white;
   text-decoration: underline;
   font-style: italic;
-}
-.container .heroSections .apartmans {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  flex-direction: row;
-  padding: 1rem;
-  margin-top: 3rem;
-}
-.container .heroSections .apartmans .apartman {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  flex-direction: column;
-  background-color: #daa06d;
-  color: white;
-  width: 60%;
-  padding: 1.5rem 1rem;
-  margin: 2rem 1rem;
-  position: relative;
-  z-index: 10;
-  border: none;
-}
-.container .heroSections .apartmans .apartman::after {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  top: 1rem;
-  left: 1rem;
-  border-bottom: 2px solid white;
-  border-right: 2px solid white;
-  transition: all 0.6s;
-}
-.container .heroSections .apartmans .apartman:hover {
-  cursor: pointer;
-}
-.container .heroSections .apartmans .apartman:hover::after {
-  top: 0rem;
-  left: 0rem;
-}
-.container .heroSections .apartmans .apartman h1 {
-  font-size: 25px;
-}
-.container .heroSections .apartmans .apartman p {
-  font-style: italic;
-  width: 80%;
-  text-align: center;
-  margin-top: 1rem;
 }
 .container .apartmansDetailed {
   display: flex;
@@ -196,6 +143,7 @@
 .container .apartmansDetailed .apartmanDetailed .intro .description button:hover::after {
   background-color: #daa06d;
   transform: skewX(-10deg);
+  box-shadow: none;
 }
 .container .apartmansDetailed .apartmanDetailed .details {
   display: flex;
