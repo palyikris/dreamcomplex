@@ -1,7 +1,7 @@
 export default function ReserveTopartComponent() {
   return (
     <div>
-      <h1>hihi</h1>
+      <h2>hihi</h2>
     </div>
   );
 }

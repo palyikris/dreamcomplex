@@ -4,6 +4,7 @@ import Topnav from "@/components/topnav/page";
 import styles from "./page.module.css";
 import { useApartman } from "@/context/contexthook";
 import ReserveInterfaceComponent from "@/components/reserveInterface/page";
+import { useRouter } from "next/navigation";
 
 export default function ReservationPage() {
   let {
@@ -14,6 +15,8 @@ export default function ReservationPage() {
     setIsDreamApartmanOpen,
     setIsDreamTopartOpen
   } = useApartman();
+
+  let router = useRouter();
 
   return (
     <div className={styles.container}>
@@ -32,6 +35,7 @@ export default function ReservationPage() {
               setIsDreamHouseOpen(true);
               setIsDreamApartmanOpen(false);
               setIsDreamTopartOpen(false);
+              router.push("/reservation#reserveInterface");
             }}
           >
             <h1>Dream House</h1>
@@ -43,6 +47,7 @@ export default function ReservationPage() {
               setIsDreamApartmanOpen(true);
               setIsDreamHouseOpen(false);
               setIsDreamTopartOpen(false);
+              router.push("/reservation#reserveInterface");
             }}
           >
             <h1>Dream Apartman</h1>
@@ -54,6 +59,7 @@ export default function ReservationPage() {
               setIsDreamTopartOpen(true);
               setIsDreamHouseOpen(false);
               setIsDreamApartmanOpen(false);
+              router.push("/reservation#reserveInterface");
             }}
           >
             <h1>Dream Tópart</h1>
