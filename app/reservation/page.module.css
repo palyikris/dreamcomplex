@@ -13,6 +13,7 @@
   flex-direction: column;
   align-items: flex-start;
   height: auto;
+  min-height: 100vh;
   background-image: url("../../public/narancslemente.jpg");
   background-position: center;
   background-repeat: no-repeat;

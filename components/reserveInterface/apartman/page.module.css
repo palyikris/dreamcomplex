@@ -1,1 +1,265 @@
-/*# sourceMappingURL=page.module.css.map */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  margin-top: 5rem;
+}
+.container .apartman {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  transition: all 0.5s;
+  border: 1px solid #daa06d;
+  padding: 1rem 1rem 1rem 0;
+  margin: 1rem 0;
+}
+.container .apartman .radioItem [type=radio] {
+  display: none;
+}
+.container .apartman .radioItem + .radioItem {
+  margin-top: 15px;
+}
+.container .apartman .radioItem label {
+  display: block;
+  padding: 20px 60px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 400;
+  min-width: 250px;
+  white-space: nowrap;
+  position: relative;
+  transition: 0.4s ease-in-out 0s;
+}
+.container .apartman .radioItem label::after,
+.container .apartman .radioItem label::before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  left: 19px;
+  top: calc(50% - 12px);
+  border: 2px solid #daa06d;
+  transition: all 0.6s;
+}
+.container .apartman .radioItem label::before {
+  background: #daa06d;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(5);
+}
+.container .apartman .radioItem [type=radio]:checked ~ label {
+  border-color: #daa06d;
+}
+.container .apartman .radioItem [type=radio]:checked ~ label::before {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+.container .apartman .details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+}
+.container .apartman .details .text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+}
+.container .apartman .details .text h3 {
+  font-size: 30px;
+  width: 100%;
+  text-align: center;
+}
+.container .apartman .details .text .sep {
+  width: 40%;
+  height: 1px;
+  position: relative;
+  background-color: #daa06d;
+  margin: 1rem 0;
+}
+.container .apartman .details .text .sep::after {
+  content: "";
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 100%;
+  z-index: 10;
+  top: calc(50% - 0.55rem);
+  left: calc(50% - 0.55rem);
+  border: 1px solid #daa06d;
+}
+.container .apartman .details .text p {
+  width: 70%;
+  text-align: center;
+}
+.container .apartman .details .text .services {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  width: 70%;
+  background-color: #daa06d;
+  padding: 0.5rem;
+}
+.container .apartman .details .text .services .service {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+}
+.container .apartman .details .text .services .service svg {
+  width: 1.5rem;
+  margin-right: 0.5rem;
+  color: white;
+  font-weight: bold;
+}
+.container .apartman .details .text .services .service p {
+  margin-top: 0;
+  color: white;
+  font-weight: 500;
+}
+.container .apartman .details .pic {
+  width: 10rem;
+  height: 10rem;
+  background-image: url("../../../public/lellehazdark.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 0.3s;
+}
+.container .reserveForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  width: 60%;
+  border: 1px solid #daa06d;
+  margin-top: 5rem;
+}
+.container .reserveForm .intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  position: relative;
+  height: 30rem;
+  justify-content: flex-start;
+  color: white;
+}
+.container .reserveForm .intro::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../../public/hullam.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.container .reserveForm .intro svg {
+  width: 5rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+.container .reserveForm .intro h2 {
+  font-size: 45px;
+}
+.container .reserveForm h3 {
+  font-size: 35px;
+}
+.container .reserveForm .sep {
+  width: 50%;
+  height: 1px;
+  position: relative;
+  background-color: #daa06d;
+  margin: 3rem 0;
+}
+.container .reserveForm .sep::after {
+  content: "";
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 100%;
+  z-index: 10;
+  top: calc(50% - 0.55rem);
+  left: calc(50% - 0.55rem);
+  border: 1px solid #daa06d;
+}
+.container .reserveForm .data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  margin: 0.5rem 0;
+}
+.container .reserveForm .data svg {
+  width: 2rem;
+  margin-right: 1rem;
+  color: #daa06d;
+}
+.container .reserveForm .data .input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  width: 60%;
+}
+.container .reserveForm .data .input p {
+  width: 100%;
+  text-align: left;
+  color: rgba(218, 160, 109, 0.5);
+  font-size: small;
+  font-style: italic;
+}
+.container .reserveForm .data .input input {
+  width: 100%;
+  padding: 1rem 0.5rem 0.5rem 0.5rem;
+  border: none;
+  border-bottom: 1.5px solid #daa06d;
+}
+.container .reserveForm button {
+  background-color: transparent;
+  border: none;
+  position: relative;
+  padding: 1rem 4rem;
+  color: #daa06d;
+  transition: all 0.6s;
+  margin: 5rem 0 3rem 0;
+}
+.container .reserveForm button::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 0px 19px 3px rgba(218, 160, 109, 0.75);
+  transition: all 0.6s;
+}
+.container .reserveForm button:hover {
+  color: white;
+  cursor: pointer;
+}
+.container .reserveForm button:hover::after {
+  background-color: #daa06d;
+  transform: skewX(-10deg);
+  box-shadow: none;
+}/*# sourceMappingURL=page.module.css.map */
