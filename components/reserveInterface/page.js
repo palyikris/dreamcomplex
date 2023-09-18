@@ -11,9 +11,9 @@ export default function ReserveInterfaceComponent(props) {
       <h1>
         {title}
       </h1>
-      {title === "Dream House" ? (<ReserveHouseComponent></ReserveHouseComponent>) : (<></>)}
-      {title === "Dream Apartman" ? (<ReserveApartmanComponent></ReserveApartmanComponent>) : (<></>)}
-      {title === "Dream Tópart" ? (<ReserveTopartComponent></ReserveTopartComponent>) : (<></>)}
+      {title === "Dream House" ? (<ReserveHouseComponent type="dreamhouse"></ReserveHouseComponent>) : (<></>)}
+      {title === "Dream Apartman" ? (<ReserveApartmanComponent type="dreamapartman"></ReserveApartmanComponent>) : (<></>)}
+      {title === "Dream Tópart" ? (<ReserveTopartComponent type="dreamtopart"></ReserveTopartComponent>) : (<></>)}
     </div>
   );
 }

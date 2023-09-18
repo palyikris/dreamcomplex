@@ -182,4 +182,189 @@
   width: 100%;
   text-align: left;
   padding-left: 0.5rem;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  margin-top: 5rem;
+}
+.container .apartman {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  transition: all 0.5s;
+  border: 1px solid #daa06d;
+  padding: 1rem 1rem 1rem 0;
+  margin: 1rem 0;
+}
+.container .apartman .radioItem [type=radio] {
+  display: none;
+}
+.container .apartman .radioItem + .radioItem {
+  margin-top: 15px;
+}
+.container .apartman .radioItem label {
+  display: block;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 400;
+  min-width: 50px;
+  white-space: nowrap;
+  position: relative;
+  transition: 0.4s ease-in-out 0s;
+}
+.container .apartman .radioItem label::after,
+.container .apartman .radioItem label::before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  left: 19px;
+  top: calc(50% - 12px);
+  border: 2px solid #daa06d;
+  transition: all 0.6s;
+}
+.container .apartman .radioItem label::before {
+  background: #daa06d;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(5);
+}
+.container .apartman .radioItem [type=radio]:checked ~ label {
+  border-color: #daa06d;
+}
+.container .apartman .radioItem [type=radio]:checked ~ label::before {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+.container .apartman .details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+}
+.container .apartman .details .pic {
+  background-image: url("../../../public/lellehazdark.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  align-items: flex-end;
+  width: 10rem;
+  height: 10rem;
+  transition: all 0.5s;
+  position: relative;
+}
+.container .apartman .details .pic::after {
+  content: "Képek";
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  color: white;
+  background-color: rgba(47, 72, 88, 0.5);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  font-size: 12px;
+  opacity: 0;
+  transition: all 0.5s;
+}
+.container .apartman .details .pic p {
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem;
+  background-color: #daa06d;
+  color: white;
+  font-size: 12px;
+}
+.container .apartman .details .pic:hover {
+  cursor: pointer;
+}
+.container .apartman .details .pic:hover::after {
+  opacity: 1;
+}
+.container .apartman .details .text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+}
+.container .apartman .details .text h3 {
+  font-size: 30px;
+  width: 100%;
+  text-align: center;
+}
+.container .apartman .details .text .sep {
+  width: 40%;
+  height: 1px;
+  position: relative;
+  background-color: #daa06d;
+  margin: 1rem 0;
+}
+.container .apartman .details .text .sep::after {
+  content: "";
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 100%;
+  z-index: 10;
+  top: calc(50% - 0.55rem);
+  left: calc(50% - 0.55rem);
+  border: 1px solid #daa06d;
+}
+.container .apartman .details .text p {
+  width: 90%;
+  text-align: center;
+}
+.container .apartman .details .text .services {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  width: 90%;
+  background-color: #daa06d;
+  padding: 0.5rem;
+}
+.container .apartman .details .text .services .service {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  width: 25%;
+  margin: 0 0.5rem;
+}
+.container .apartman .details .text .services .service svg {
+  width: 1.5rem;
+  color: white;
+  font-weight: bold;
+}
+.container .apartman .details .text .services .service p {
+  margin-top: 0;
+  color: white;
+  font-weight: 400;
+  font-size: 10px;
+  width: 100%;
+  text-align: left;
+  padding-left: 0.5rem;
 }/*# sourceMappingURL=page.module.css.map */

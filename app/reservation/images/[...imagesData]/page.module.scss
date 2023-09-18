@@ -1,0 +1,18 @@
+@import "../../../../uniform/style.module";
+
+.img {
+    width: 100%;
+    height: 100vh;
+    display: block;
+    float: left;
+    @include pic();
+    background-image: url("../../../../public/lellehazdark.jpeg");
+
+    &:nth-child(1) {
+        background-image: url("../../../../public/balcsipartdark.jpeg");
+    }
+
+    &:nth-child(2) {
+        background-image: url("../../../../public/naplemente.jpeg");
+    }
+}
