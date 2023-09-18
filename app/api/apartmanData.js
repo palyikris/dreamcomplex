@@ -1,5 +1,3 @@
-import { fetchApartmanData } from "@/lib/ApartmanOperations";
-
 export default function Handler(req, res) {
   if (!req.body.apiKey) {
     res.status(502).json({ message: "Unsuccesful request" });
@@ -14,6 +12,4 @@ export default function Handler(req, res) {
     res.status(502).json({ message: "Unsuccesful request" });
     return;
   }
-
-  let data = fetchApartmanData();
 }

@@ -1,10 +1,82 @@
+import { useState } from "react";
 import styles from "./page.module.css";
 
 export default function ReserveForm(props) {
   let { apartmanNumber } = props;
 
+  let [email, setEmail] = useState("példanév@példa.com");
+  let [name, setName] = useState("Példa János");
+  let [phoneNumber, setPhoneNumber] = useState("06 30 111 1222");
+  let [parents, setParents] = useState(0);
+  let [children, setChildren] = useState(0);
+  let [note, setNote] = useState("Az lenne a kérésem, hogy...");
+
+  function checkData() {
+    let isInputValid = true;
+
+    if (apartmanNumber === 0) {
+      isInputValid = false;
+      return isInputValid;
+    }
+
+    if (email === "példanév@példa.com") {
+      isInputValid = false;
+      return isInputValid;
+    }
+
+    if (name === "Példa János") {
+      isInputValid = false;
+      return isInputValid;
+    }
+
+    if (phoneNumber === "06 30 111 1222") {
+      isInputValid = false;
+      return isInputValid;
+    }
+
+    if (parents === 0 && children == 0) {
+      isInputValid = false;
+      return isInputValid;
+    }
+
+    if (note === "Az lenne a kérésem, hogy...") {
+      note = "";
+    }
+
+    return isInputValid;
+  }
+
+  async function submitData(e) {
+    e.preventDefault();
+    let isInputValid = checkData();
+
+    if (isInputValid === false) {
+      alert("Töltse ki az összes mezőt!");
+      return;
+    }
+
+    let response = await fetch("/api/apartmanData", {
+      method: "POST",
+
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        email: email,
+        name: name,
+        phoneNumber: phoneNumber,
+        parents: parents,
+        children: children,
+        note: note,
+        apiKey: process.env.MY_API_KEY
+      })
+    });
+
+    return response;
+  }
+
   return (
-    <div className={styles.reserveForm}>
+    <form className={styles.reserveForm} onSubmit={submitData}>
       <div className={styles.intro}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -21,11 +93,11 @@ export default function ReserveForm(props) {
         </svg>
         <h2>Foglalási Form</h2>
       </div>
-      {apartmanNumber === 0
-        ? <h3>Választott apartman száma: Nincs kiválasztva</h3>
-        : <h3>
-            Választott apartman száma: {apartmanNumber}
-          </h3>}
+      {apartmanNumber === 0 ? (
+        <h3>Választott apartman száma: Nincs kiválasztva</h3>
+      ) : (
+        <h3>Választott apartman száma: {apartmanNumber}</h3>
+      )}
       <div className={styles.sep} />
       <div className={styles.data}>
         <svg
@@ -42,7 +114,15 @@ export default function ReserveForm(props) {
         </svg>
         <div className={styles.input}>
           <p>Email</p>
-          <input type="text" placeholder="Ide írja az emailt..." />
+          <input
+            type="email"
+            placeholder="Ide írja az emailt..."
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+            value={email}
+            required
+          />
         </div>
       </div>
       <div className={styles.data}>
@@ -60,7 +140,15 @@ export default function ReserveForm(props) {
         </svg>
         <div className={styles.input}>
           <p>Név</p>
-          <input type="text" placeholder="Ide írja a nevét..." />
+          <input
+            type="text"
+            placeholder="Ide írja a nevét..."
+            onChange={(e) => {
+              setName(e.target.value);
+            }}
+            value={name}
+            required
+          />
         </div>
       </div>
       <div className={styles.data}>
@@ -79,10 +167,84 @@ export default function ReserveForm(props) {
         </svg>
         <div className={styles.input}>
           <p>Telefon</p>
-          <input type="text" placeholder="Ide írja a telefonszámát..." />
+          <input
+            type="text"
+            placeholder="Ide írja a telefonszámát..."
+            onChange={(e) => {
+              setPhoneNumber(e.target.value);
+            }}
+            value={phoneNumber}
+            required
+          />
+        </div>
+      </div>
+      <div className={styles.data}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="w-6 h-6"
+        >
+          <path
+            fillRule="evenodd"
+            d="M8.25 6.75a3.75 3.75 0 117.5 0 3.75 3.75 0 01-7.5 0zM15.75 9.75a3 3 0 116 0 3 3 0 01-6 0zM2.25 9.75a3 3 0 116 0 3 3 0 01-6 0zM6.31 15.117A6.745 6.745 0 0112 12a6.745 6.745 0 016.709 7.498.75.75 0 01-.372.568A12.696 12.696 0 0112 21.75c-2.305 0-4.47-.612-6.337-1.684a.75.75 0 01-.372-.568 6.787 6.787 0 011.019-4.38z"
+            clipRule="evenodd"
+          />
+          <path d="M5.082 14.254a8.287 8.287 0 00-1.308 5.135 9.687 9.687 0 01-1.764-.44l-.115-.04a.563.563 0 01-.373-.487l-.01-.121a3.75 3.75 0 013.57-4.047zM20.226 19.389a8.287 8.287 0 00-1.308-5.135 3.75 3.75 0 013.57 4.047l-.01.121a.563.563 0 01-.373.486l-.115.04c-.567.2-1.156.349-1.764.441z" />
+        </svg>
+
+        <div className={styles.input}>
+          <p>Felnőttek száma</p>
+          <input
+            type="text"
+            placeholder="Ide írja a felnőttek számát..."
+            onChange={(e) => {
+              setParents(e.target.value);
+            }}
+            value={parents}
+            required
+          />
+        </div>
+        <div className={styles.input}>
+          <p>Gyerekek száma</p>
+          <input
+            type="text"
+            placeholder="Ide írja a gyerekek számát..."
+            onChange={(e) => {
+              setChildren(e.target.value);
+            }}
+            value={children}
+            required
+          />
+        </div>
+      </div>
+      <div className={styles.data}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="w-6 h-6"
+        >
+          <path d="M12 .75a8.25 8.25 0 00-4.135 15.39c.686.398 1.115 1.008 1.134 1.623a.75.75 0 00.577.706c.352.083.71.148 1.074.195.323.041.6-.218.6-.544v-4.661a6.714 6.714 0 01-.937-.171.75.75 0 11.374-1.453 5.261 5.261 0 002.626 0 .75.75 0 11.374 1.452 6.712 6.712 0 01-.937.172v4.66c0 .327.277.586.6.545.364-.047.722-.112 1.074-.195a.75.75 0 00.577-.706c.02-.615.448-1.225 1.134-1.623A8.25 8.25 0 0012 .75z" />
+          <path
+            fillRule="evenodd"
+            d="M9.013 19.9a.75.75 0 01.877-.597 11.319 11.319 0 004.22 0 .75.75 0 11.28 1.473 12.819 12.819 0 01-4.78 0 .75.75 0 01-.597-.876zM9.754 22.344a.75.75 0 01.824-.668 13.682 13.682 0 002.844 0 .75.75 0 11.156 1.492 15.156 15.156 0 01-3.156 0 .75.75 0 01-.668-.824z"
+            clipRule="evenodd"
+          />
+        </svg>
+        <div className={styles.input}>
+          <p>Egyéb</p>
+          <input
+            type="text"
+            placeholder="Ide íjra megjegyzését..."
+            onChange={(e) => {
+              setNote(e.target.value);
+            }}
+            value={note}
+          />
         </div>
       </div>
       <button type="submit">Foglalás</button>
-    </div>
+    </form>
   );
 }

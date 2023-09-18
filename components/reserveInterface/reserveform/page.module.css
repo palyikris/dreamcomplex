@@ -15,7 +15,7 @@
   width: 100%;
   flex-direction: column;
   position: relative;
-  height: 30rem;
+  height: 40rem;
   justify-content: flex-start;
   color: white;
 }
@@ -95,6 +95,10 @@
   border: none;
   border-bottom: 1.5px solid #daa06d;
   color: #daa06d;
+}
+.reserveForm .data:nth-child(7) .input {
+  width: 30%;
+  padding: 0 1rem;
 }
 .reserveForm button {
   background-color: transparent;

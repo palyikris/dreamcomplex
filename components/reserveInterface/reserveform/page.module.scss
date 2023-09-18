@@ -1,100 +1,106 @@
 @import "../../../uniform/style.module";
 
 .reserveForm {
+  @include centerDiv(column);
+  width: 90%;
+  border: 1px solid $main;
+  margin-top: 5rem;
+
+  .intro {
     @include centerDiv(column);
-    width: 90%;
-    border: 1px solid $main;
-    margin-top: 5rem;
+    position: relative;
+    height: 40rem;
+    justify-content: flex-start;
+    color: white;
 
-    .intro {
-        @include centerDiv(column);
-        position: relative;
-        height: 30rem;
-        justify-content: flex-start;
-        color: white;
-
-        &::after {
-            content: "";
-            position: absolute;
-            z-index: -1;
-            width: 100%;
-            height: 100%;
-            background-image: url("../../../public/hullam.svg");
-            @include pic();
-        }
-
-        svg {
-            width: 5rem;
-            margin-top: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        h2 {
-            font-size: 45px;
-        }
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background-image: url("../../../public/hullam.svg");
+      @include pic();
     }
 
-    h3 {
-        font-size: 35px;
-        width: 80%;
-        text-align: center;
+    svg {
+      width: 5rem;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
     }
 
-    .sep {
-        width: 50%;
-        height: 1px;
-        position: relative;
-        background-color: $main;
-        margin: 3rem 0;
+    h2 {
+      font-size: 45px;
+    }
+  }
 
-        &::after {
-            content: "";
-            position: absolute;
-            width: 1rem;
-            height: 1rem;
-            border-radius: 100%;
-            z-index: 10;
-            top: calc(50% - 0.55rem);
-            left: calc(50% - 0.55rem);
-            border: 1px solid $main;
-        }
+  h3 {
+    font-size: 35px;
+    width: 80%;
+    text-align: center;
+  }
+
+  .sep {
+    width: 50%;
+    height: 1px;
+    position: relative;
+    background-color: $main;
+    margin: 3rem 0;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 100%;
+      z-index: 10;
+      top: calc(50% - 0.55rem);
+      left: calc(50% - 0.55rem);
+      border: 1px solid $main;
+    }
+  }
+
+  .data {
+    @include centerDiv(row);
+    margin: 1rem 0;
+
+    svg {
+      width: 2rem;
+      margin-right: 1rem;
+      color: $main;
     }
 
-    .data {
-        @include centerDiv(row);
-        margin: 1rem 0;
+    .input {
+      @include centerDiv(column);
+      width: 60%;
 
-        svg {
-            width: 2rem;
-            margin-right: 1rem;
-            color: $main;
-        }
+      p {
+        width: 100%;
+        text-align: left;
+        color: rgba($main, 0.5);
+        font-size: small;
+        font-style: italic;
+      }
 
-        .input {
-            @include centerDiv(column);
-            width: 60%;
-
-            p {
-                width: 100%;
-                text-align: left;
-                color: rgba($main, 0.5);
-                font-size: small;
-                font-style: italic;
-            }
-
-            input {
-                width: 100%;
-                padding: .5rem;
-                border: none;
-                border-bottom: 1.5px solid $main;
-                color: $main;
-
-            }
-        }
+      input {
+        width: 100%;
+        padding: 0.5rem;
+        border: none;
+        border-bottom: 1.5px solid $main;
+        color: $main;
+      }
     }
 
-    button {
-        @include MyButton();
-        margin: 5rem 0 3rem 0;
+    &:nth-child(7) {
+      .input {
+        width: 30%;
+        padding: 0 1rem;
+      }
     }
+  }
+
+  button {
+    @include MyButton();
+    margin: 5rem 0 3rem 0;
+  }
 }
