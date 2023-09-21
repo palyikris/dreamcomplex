@@ -355,6 +355,52 @@
       }
     }
   }
+
+  .myReservationRoute {
+    @include centerDiv(row);
+    justify-content: flex-end;
+    position: absolute;
+    z-index: 1000;
+    left: 0;
+    top: 90vh;
+    padding-right: 3rem;
+
+    button {
+      @include MyButton();
+    }
+  }
+
+  .myReservation {
+    @include centerDiv(column);
+
+    h1 {
+      @include MyTitle(50px);
+      margin-right: 0;
+    }
+
+    div {
+      @include centerDiv(row);
+      margin-top: 5rem;
+
+      label {
+        color: $main;
+        margin-right: 1rem;
+      }
+
+      input {
+        width: 30%;
+        padding: .5rem;
+        border: none;
+        border-bottom: 1.5px solid $main;
+        color: $main;
+      }
+    }
+
+    button {
+      @include MyButton();
+      margin-top: 5rem
+    }
+  }
 }
 
 @media only screen and (max-width: 1500px) {

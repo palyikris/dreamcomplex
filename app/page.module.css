@@ -428,6 +428,130 @@
   transform: skewX(-10deg);
   box-shadow: none;
 }
+.container .myReservationRoute {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  justify-content: flex-end;
+  position: absolute;
+  z-index: 1000;
+  left: 0;
+  top: 90vh;
+  padding-right: 3rem;
+}
+.container .myReservationRoute button {
+  background-color: transparent;
+  border: none;
+  position: relative;
+  padding: 1rem 4rem;
+  color: #daa06d;
+  transition: all 0.6s;
+}
+.container .myReservationRoute button::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 0px 19px 3px rgba(218, 160, 109, 0.75);
+  transition: all 0.6s;
+}
+.container .myReservationRoute button:hover {
+  color: white;
+  cursor: pointer;
+}
+.container .myReservationRoute button:hover::after {
+  background-color: #daa06d;
+  transform: skewX(-10deg);
+  box-shadow: none;
+}
+.container .myReservation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+}
+.container .myReservation h1 {
+  font-size: 50px;
+  color: #2f4858;
+  position: relative;
+  margin-right: 5rem;
+  padding: 0.5rem 1rem;
+  margin-right: 0;
+}
+.container .myReservation h1::before {
+  content: "";
+  position: absolute;
+  z-index: 10;
+  width: 55%;
+  right: 0;
+  top: 0;
+  background-color: #daa06d;
+  height: 1px;
+}
+.container .myReservation h1::after {
+  content: "";
+  position: absolute;
+  z-index: 10;
+  width: 55%;
+  left: 0;
+  bottom: 0;
+  background-color: #daa06d;
+  height: 1px;
+}
+.container .myReservation div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  margin-top: 5rem;
+}
+.container .myReservation div label {
+  color: #daa06d;
+  margin-right: 1rem;
+}
+.container .myReservation div input {
+  width: 30%;
+  padding: 0.5rem;
+  border: none;
+  border-bottom: 1.5px solid #daa06d;
+  color: #daa06d;
+}
+.container .myReservation button {
+  background-color: transparent;
+  border: none;
+  position: relative;
+  padding: 1rem 4rem;
+  color: #daa06d;
+  transition: all 0.6s;
+  margin-top: 5rem;
+}
+.container .myReservation button::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 0px 19px 3px rgba(218, 160, 109, 0.75);
+  transition: all 0.6s;
+}
+.container .myReservation button:hover {
+  color: white;
+  cursor: pointer;
+}
+.container .myReservation button:hover::after {
+  background-color: #daa06d;
+  transform: skewX(-10deg);
+  box-shadow: none;
+}
 
 @media only screen and (max-width: 1500px) {
   .container .cards .card .description .cardDetails svg {

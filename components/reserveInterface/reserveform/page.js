@@ -1,8 +1,9 @@
 import { useState } from "react";
 import styles from "./page.module.css";
+import { FetchApartmanReservation, MakeNewReservation } from "@/lib/firebase";
 
 export default function ReserveForm(props) {
-  let { apartmanNumber } = props;
+  let { apartmanNumber, type } = props;
 
   let [email, setEmail] = useState("példanév@példa.com");
   let [name, setName] = useState("Példa János");
@@ -55,24 +56,23 @@ export default function ReserveForm(props) {
       return;
     }
 
-    let response = await fetch("/api/apartmanData", {
-      method: "POST",
+    let dataObject = {
+      email: email,
+      name: name,
+      phoneNumber: phoneNumber,
+      parents: parents,
+      children: children,
+      note: note,
+      apartmanType: type,
+      apartmanNumber: apartmanNumber
+    };
 
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        email: email,
-        name: name,
-        phoneNumber: phoneNumber,
-        parents: parents,
-        children: children,
-        note: note,
-        apiKey: process.env.MY_API_KEY
-      })
+    MakeNewReservation(dataObject).then(result => {
+      if (result === false) {
+        alert("Valami hiba történt!");
+      }
     });
 
-    return response;
   }
 
   return (
@@ -93,11 +93,11 @@ export default function ReserveForm(props) {
         </svg>
         <h2>Foglalási Form</h2>
       </div>
-      {apartmanNumber === 0 ? (
-        <h3>Választott apartman száma: Nincs kiválasztva</h3>
-      ) : (
-        <h3>Választott apartman száma: {apartmanNumber}</h3>
-      )}
+      {apartmanNumber === 0
+        ? <h3>Választott apartman száma: Nincs kiválasztva</h3>
+        : <h3>
+            Választott apartman száma: {apartmanNumber}
+          </h3>}
       <div className={styles.sep} />
       <div className={styles.data}>
         <svg
@@ -117,7 +117,7 @@ export default function ReserveForm(props) {
           <input
             type="email"
             placeholder="Ide írja az emailt..."
-            onChange={(e) => {
+            onChange={e => {
               setEmail(e.target.value);
             }}
             value={email}
@@ -143,7 +143,7 @@ export default function ReserveForm(props) {
           <input
             type="text"
             placeholder="Ide írja a nevét..."
-            onChange={(e) => {
+            onChange={e => {
               setName(e.target.value);
             }}
             value={name}
@@ -170,7 +170,7 @@ export default function ReserveForm(props) {
           <input
             type="text"
             placeholder="Ide írja a telefonszámát..."
-            onChange={(e) => {
+            onChange={e => {
               setPhoneNumber(e.target.value);
             }}
             value={phoneNumber}
@@ -198,7 +198,7 @@ export default function ReserveForm(props) {
           <input
             type="text"
             placeholder="Ide írja a felnőttek számát..."
-            onChange={(e) => {
+            onChange={e => {
               setParents(e.target.value);
             }}
             value={parents}
@@ -210,7 +210,7 @@ export default function ReserveForm(props) {
           <input
             type="text"
             placeholder="Ide írja a gyerekek számát..."
-            onChange={(e) => {
+            onChange={e => {
               setChildren(e.target.value);
             }}
             value={children}
@@ -237,7 +237,7 @@ export default function ReserveForm(props) {
           <input
             type="text"
             placeholder="Ide íjra megjegyzését..."
-            onChange={(e) => {
+            onChange={e => {
               setNote(e.target.value);
             }}
             value={note}

@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  width: 40%;
+  background-color: #daa06d;
+  padding: 1rem 2rem;
+}
+.container .data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  margin: 0.1rem 0;
+}
+.container .data svg {
+  width: 2rem;
+  color: white;
+  margin-right: 1rem;
+}
+.container .data div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+}
+.container .data div label {
+  color: white;
+  font-size: 12px;
+  width: 100%;
+  text-align: left;
+}
+.container .data div p {
+  padding: 0.5rem;
+  border-bottom: 1.5px solid white;
+  color: white;
+  width: 100%;
+  text-align: left;
+}/*# sourceMappingURL=page.module.css.map */

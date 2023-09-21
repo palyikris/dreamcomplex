@@ -9,7 +9,6 @@ export default function ReserveApartmanComponent(props) {
   let [apartmanNumber, setApartmanNumber] = useState(0);
   let router = useRouter();
   let { type } = props;
-  console.log(apartmanNumber);
 
   return (
     <div className={styles.container}>
@@ -369,7 +368,7 @@ export default function ReserveApartmanComponent(props) {
           </div>
         </div>
       </div>
-      <ReserveForm apartmanNumber={apartmanNumber} />
+      <ReserveForm apartmanNumber={apartmanNumber} type={type} />
     </div>
   );
 }

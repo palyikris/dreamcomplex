@@ -6,9 +6,12 @@ import Topnav from "./../components/topnav/page";
 import { SocialIcon } from "react-social-icons";
 import Footer from "@/components/footer/page";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Page() {
   let router = useRouter();
+
+  let [trackId, setTrackId] = useState("");
 
   return (
     <div className={styles.container}>
@@ -194,6 +197,36 @@ export default function Page() {
             </button>
           </div>
         </div>
+      </div>
+      <div className={styles.myReservationRoute}>
+        <button
+          onClick={() => {
+            router.push("/#myreservation");
+          }}
+        >
+          Kíváncsi foglalására?
+        </button>
+      </div>
+      <div className={styles.myReservation} id="myreservation">
+        <h1>Kíváncsi foglalására?</h1>
+        <div>
+          <label htmlFor="">Ide írja a kapott kódot:</label>
+          <input
+            type="text"
+            placeholder="A kód..."
+            onChange={e => {
+              setTrackId(e.target.value);
+            }}
+            value={trackId}
+          />
+        </div>
+        <button
+          onClick={() => {
+            router.push(`/restracker/${trackId}`);
+          }}
+        >
+          Megnézem
+        </button>
       </div>
       <Footer />
     </div>

@@ -139,3 +139,65 @@ $accent1: #ffeace;
     transform: scale(1);
   }
 }
+
+@mixin MyTitle($fontSize) {
+  font-size: $fontSize;
+  color: $bg;
+  position: relative;
+  margin-right: 5rem;
+  padding: .5rem 1rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 10;
+    width: 55%;
+    right: 0;
+    top: 0;
+    background-color: $main;
+    height: 1px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 10;
+    width: 55%;
+    left: 0;
+    bottom: 0;
+    background-color: $main;
+    height: 1px;
+  }
+}
+
+@mixin DataSection() {
+  @include centerDiv(row);
+  margin: 1rem 0;
+
+  svg {
+    width: 2rem;
+    margin-right: 1rem;
+    color: $main;
+  }
+
+  .input {
+    @include centerDiv(column);
+    width: 60%;
+
+    p {
+      width: 100%;
+      text-align: left;
+      color: rgba($main, 0.5);
+      font-size: small;
+      font-style: italic;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.5rem;
+      border: none;
+      border-bottom: 1.5px solid $main;
+      color: $main;
+    }
+  }
+}
