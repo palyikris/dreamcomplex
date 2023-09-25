@@ -8,35 +8,54 @@
   border: 1px solid #daa06d;
   margin-top: 5rem;
 }
-.reserveForm .intro {
+.reserveForm .details {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   flex-direction: column;
-  position: relative;
-  height: 40rem;
-  justify-content: flex-start;
-  color: white;
+  padding-bottom: 5rem;
 }
-.reserveForm .intro::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
+.reserveForm .details p {
+  width: 50%;
+  color: #C35355;
+  text-align: center;
+  margin: 3rem 0;
+}
+.reserveForm .details div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  height: 100%;
-  background-image: url("../../../public/hullam.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  flex-direction: row;
+  width: auto;
+  justify-content: flex-end;
+  border: 1px solid #daa06d;
 }
-.reserveForm .intro svg {
-  width: 5rem;
-  margin-top: 3rem;
-  margin-bottom: 1rem;
+.reserveForm .details div label {
+  width: 100%;
+  text-align: center;
+  padding: 0 2rem;
 }
-.reserveForm .intro h2 {
-  font-size: 45px;
+.reserveForm .details div .copyButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  padding: 0.5rem;
+  border: none;
+  border-left: 1px solid #daa06d;
+  background-color: transparent;
+  transition: all 0.5s;
+}
+.reserveForm .details div .copyButton:hover {
+  cursor: pointer;
+  background-color: rgba(218, 160, 109, 0.1);
+}
+.reserveForm .details div .copyButton svg {
+  width: 1.5rem;
+  color: #daa06d;
 }
 .reserveForm h3 {
   font-size: 35px;
@@ -100,7 +119,7 @@
   width: 30%;
   padding: 0 1rem;
 }
-.reserveForm button {
+.reserveForm .submitButton {
   background-color: transparent;
   border: none;
   position: relative;
@@ -109,7 +128,7 @@
   transition: all 0.6s;
   margin: 5rem 0 3rem 0;
 }
-.reserveForm button::after {
+.reserveForm .submitButton::after {
   content: "";
   position: absolute;
   z-index: -1;
@@ -120,11 +139,11 @@
   box-shadow: 0px 0px 19px 3px rgba(218, 160, 109, 0.75);
   transition: all 0.6s;
 }
-.reserveForm button:hover {
+.reserveForm .submitButton:hover {
   color: white;
   cursor: pointer;
 }
-.reserveForm button:hover::after {
+.reserveForm .submitButton:hover::after {
   background-color: #daa06d;
   transform: skewX(-10deg);
   box-shadow: none;

@@ -6,33 +6,52 @@
   border: 1px solid $main;
   margin-top: 5rem;
 
-  .intro {
+
+  .details {
     @include centerDiv(column);
-    position: relative;
-    height: 40rem;
-    justify-content: flex-start;
-    color: white;
+    padding-bottom: 5rem;
 
-    &::after {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      width: 100%;
-      height: 100%;
-      background-image: url("../../../public/hullam.svg");
-      @include pic();
+    p {
+      width: 50%;
+      color: $red;
+      text-align: center;
+      margin: 3rem 0;
     }
 
-    svg {
-      width: 5rem;
-      margin-top: 3rem;
-      margin-bottom: 1rem;
-    }
+    div {
+      @include centerDiv(row);
+      width: auto;
+      justify-content: flex-end;
+      border: 1px solid $main;
 
-    h2 {
-      font-size: 45px;
+      label {
+        width: 100%;
+        text-align: center;
+        padding: 0 2rem;
+      }
+
+      .copyButton {
+
+        @include centerDiv(row);
+        padding: .5rem;
+        border: none;
+        border-left: 1px solid $main;
+        background-color: transparent;
+        transition: all .5s;
+
+        &:hover {
+          cursor: pointer;
+          background-color: rgba($main, .1)
+        }
+
+        svg {
+          width: 1.5rem;
+          color: $main;
+        }
+      }
     }
   }
+
 
   h3 {
     font-size: 35px;
@@ -99,7 +118,7 @@
     }
   }
 
-  button {
+  .submitButton {
     @include MyButton();
     margin: 5rem 0 3rem 0;
   }

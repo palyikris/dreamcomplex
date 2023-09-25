@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "./page.module.css";
-import { FetchApartmanReservation, MakeNewReservation } from "@/lib/firebase";
+import { MakeNewReservation } from "@/lib/firebase";
+import ReserveFormIntro from "./intro/page";
 
 export default function ReserveForm(props) {
   let { apartmanNumber, type } = props;
@@ -11,6 +12,11 @@ export default function ReserveForm(props) {
   let [parents, setParents] = useState(0);
   let [children, setChildren] = useState(0);
   let [note, setNote] = useState("Az lenne a kérésem, hogy...");
+  let [isAfterReservation, setIsAfterReservation] = useState(false);
+  let [reservationId, setReservationId] = useState("jfdklfja");
+  let [isSuccess, setIsSuccess] = useState(false);
+  let [loading, setLoading] = useState(false);
+  let [copied, setCopied] = useState(false);
 
   function checkData() {
     let isInputValid = true;
@@ -48,6 +54,7 @@ export default function ReserveForm(props) {
   }
 
   async function submitData(e) {
+    setLoading(true);
     e.preventDefault();
     let isInputValid = checkData();
 
@@ -70,29 +77,119 @@ export default function ReserveForm(props) {
     MakeNewReservation(dataObject).then(result => {
       if (result === false) {
         alert("Valami hiba történt!");
+      } else {
+        setReservationId(result);
+        setIsAfterReservation(true);
+        setLoading(false);
       }
     });
+  }
 
+  if (loading) {
+    return (
+      <div className={styles.reserveForm}>
+        <div className={styles.intro}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              fillRule="evenodd"
+              d="M7.5 5.25a3 3 0 013-3h3a3 3 0 013 3v.205c.933.085 1.857.197 2.774.334 1.454.218 2.476 1.483 2.476 2.917v3.033c0 1.211-.734 2.352-1.936 2.752A24.726 24.726 0 0112 15.75c-2.73 0-5.357-.442-7.814-1.259-1.202-.4-1.936-1.541-1.936-2.752V8.706c0-1.434 1.022-2.7 2.476-2.917A48.814 48.814 0 017.5 5.455V5.25zm7.5 0v.09a49.488 49.488 0 00-6 0v-.09a1.5 1.5 0 011.5-1.5h3a1.5 1.5 0 011.5 1.5zm-3 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z"
+              clipRule="evenodd"
+            />
+            <path d="M3 18.4v-2.796a4.3 4.3 0 00.713.31A26.226 26.226 0 0012 17.25c2.892 0 5.68-.468 8.287-1.335.252-.084.49-.189.713-.311V18.4c0 1.452-1.047 2.728-2.523 2.923-2.12.282-4.282.427-6.477.427a49.19 49.19 0 01-6.477-.427C4.047 21.128 3 19.852 3 18.4z" />
+          </svg>
+          <h2>Foglalási Form</h2>
+        </div>
+        <p>loading...</p>
+      </div>
+    );
+  }
+
+  if (isSuccess) {
+    <div className={styles.reserveForm}>
+      <ReserveFormIntro />
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        className="w-6 h-6"
+      >
+        <path
+          fillRule="evenodd"
+          d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+          clipRule="evenodd"
+        />
+      </svg>
+    </div>;
+  }
+
+  if (isAfterReservation) {
+    return (
+      <div className={styles.reserveForm}>
+        <ReserveFormIntro />
+        <div className={styles.details}>
+          <h1>Foglalási kód</h1>
+          <p>
+            Ezt a kódot érdemes felírni mert a főoldalról ezzel a kóddal lehet
+            ellenőrizni a foglalás részleteit!
+          </p>
+          <div>
+            <label htmlFor="">
+              {reservationId}
+            </label>
+            {copied === false
+              ? <button
+                  className={styles.copyButton}
+                  onClick={() => {
+                    setCopied(true);
+                    navigator.clipboard.writeText(reservationId);
+                  }}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="w-6 h-6"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10.5 3A1.501 1.501 0 009 4.5h6A1.5 1.5 0 0013.5 3h-3zm-2.693.178A3 3 0 0110.5 1.5h3a3 3 0 012.694 1.678c.497.042.992.092 1.486.15 1.497.173 2.57 1.46 2.57 2.929V19.5a3 3 0 01-3 3H6.75a3 3 0 01-3-3V6.257c0-1.47 1.073-2.756 2.57-2.93.493-.057.989-.107 1.487-.15z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </button>
+              : <button className={styles.copyButton}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="w-6 h-6"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M7.502 6h7.128A3.375 3.375 0 0118 9.375v9.375a3 3 0 003-3V6.108c0-1.505-1.125-2.811-2.664-2.94a48.972 48.972 0 00-.673-.05A3 3 0 0015 1.5h-1.5a3 3 0 00-2.663 1.618c-.225.015-.45.032-.673.05C8.662 3.295 7.554 4.542 7.502 6zM13.5 3A1.5 1.5 0 0012 4.5h4.5A1.5 1.5 0 0015 3h-1.5z"
+                      clipRule="evenodd"
+                    />
+                    <path
+                      fillRule="evenodd"
+                      d="M3 9.375C3 8.339 3.84 7.5 4.875 7.5h9.75c1.036 0 1.875.84 1.875 1.875v11.25c0 1.035-.84 1.875-1.875 1.875h-9.75A1.875 1.875 0 013 20.625V9.375zm9.586 4.594a.75.75 0 00-1.172-.938l-2.476 3.096-.908-.907a.75.75 0 00-1.06 1.06l1.5 1.5a.75.75 0 001.116-.062l3-3.75z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </button>}
+          </div>
+        </div>
+      </div>
+    );
   }
 
   return (
     <form className={styles.reserveForm} onSubmit={submitData}>
-      <div className={styles.intro}>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          className="w-6 h-6"
-        >
-          <path
-            fillRule="evenodd"
-            d="M7.5 5.25a3 3 0 013-3h3a3 3 0 013 3v.205c.933.085 1.857.197 2.774.334 1.454.218 2.476 1.483 2.476 2.917v3.033c0 1.211-.734 2.352-1.936 2.752A24.726 24.726 0 0112 15.75c-2.73 0-5.357-.442-7.814-1.259-1.202-.4-1.936-1.541-1.936-2.752V8.706c0-1.434 1.022-2.7 2.476-2.917A48.814 48.814 0 017.5 5.455V5.25zm7.5 0v.09a49.488 49.488 0 00-6 0v-.09a1.5 1.5 0 011.5-1.5h3a1.5 1.5 0 011.5 1.5zm-3 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z"
-            clipRule="evenodd"
-          />
-          <path d="M3 18.4v-2.796a4.3 4.3 0 00.713.31A26.226 26.226 0 0012 17.25c2.892 0 5.68-.468 8.287-1.335.252-.084.49-.189.713-.311V18.4c0 1.452-1.047 2.728-2.523 2.923-2.12.282-4.282.427-6.477.427a49.19 49.19 0 01-6.477-.427C4.047 21.128 3 19.852 3 18.4z" />
-        </svg>
-        <h2>Foglalási Form</h2>
-      </div>
+      <ReserveFormIntro />
       {apartmanNumber === 0
         ? <h3>Választott apartman száma: Nincs kiválasztva</h3>
         : <h3>
@@ -244,7 +341,9 @@ export default function ReserveForm(props) {
           />
         </div>
       </div>
-      <button type="submit">Foglalás</button>
+      <button type="submit" className={styles.submitButton}>
+        Foglalás
+      </button>
     </form>
   );
 }

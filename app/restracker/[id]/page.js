@@ -15,7 +15,6 @@ export default function ReservationTrackerPage() {
 
   useEffect(() => {
     FetchReservationById(id).then(reservation => {
-      console.log(reservation);
       setData(reservation);
       setLoading(false);
     });
@@ -35,8 +34,8 @@ export default function ReservationTrackerPage() {
         console.log(reservation);
 
         return (
-          <div>
-            <h1>Foglalás részletei</h1>
+          <div className={styles.container}>
+            <ReservationData data={reservation} />
           </div>
         );
       })}

@@ -278,7 +278,7 @@ export default function ReserveTopartComponent(props) {
           </div>
         </div>
       </div>
-      <ReserveForm apartmanNumber={apartmanNumber} />
+      <ReserveForm apartmanNumber={apartmanNumber} type={type} />
     </div>
   );
 }

@@ -104,7 +104,7 @@ export default function ReserveHouseComponent(props) {
           </div>{" "}
         </div>
       </div>
-      <ReserveForm apartmanNumber={apartmanNumber} />
+      <ReserveForm apartmanNumber={apartmanNumber} type={type} />
     </div>
   );
 }

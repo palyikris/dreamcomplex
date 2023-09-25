@@ -207,7 +207,14 @@ export default function Page() {
           Kíváncsi foglalására?
         </button>
       </div>
-      <div className={styles.myReservation} id="myreservation">
+      <form
+        className={styles.myReservation}
+        id="myreservation"
+        onSubmit={e => {
+          e.preventDefault();
+          router.push(`/restracker/${trackId}`);
+        }}
+      >
         <h1>Kíváncsi foglalására?</h1>
         <div>
           <label htmlFor="">Ide írja a kapott kódot:</label>
@@ -221,13 +228,14 @@ export default function Page() {
           />
         </div>
         <button
+          type="submit"
           onClick={() => {
             router.push(`/restracker/${trackId}`);
           }}
         >
           Megnézem
         </button>
-      </div>
+      </form>
       <Footer />
     </div>
   );
