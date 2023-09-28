@@ -40,11 +40,11 @@
   content: "";
   position: absolute;
   border-radius: 50%;
-  height: 20px;
-  width: 20px;
+  height: 40px;
+  width: 40px;
   left: 19px;
   top: calc(50% - 12px);
-  border: 2px solid #daa06d;
+  border: 3px solid #daa06d;
   transition: all 0.6s;
 }
 .container .apartman .radioItem label::before {
@@ -184,6 +184,40 @@
   padding-left: 0.5rem;
 }
 
+@media only screen and (max-width: 715px) {
+  .container .apartman {
+    flex-direction: column;
+    padding: 1rem;
+    padding-top: 2rem;
+    position: relative;
+  }
+  .container .apartman .radioItem label::after,
+  .container .apartman .radioItem label::before {
+    left: 0;
+  }
+  .container .apartman .details {
+    margin-top: 5rem;
+    flex-direction: column;
+  }
+  .container .apartman .details .pic {
+    margin-top: 3rem;
+  }
+  .container .apartman::after, .container .apartman::before {
+    content: "";
+    position: absolute;
+    z-index: 10;
+    width: 10%;
+    height: 10%;
+    background-color: #daa06d;
+    top: 0;
+  }
+  .container .apartman::before {
+    left: 0;
+  }
+  .container .apartman::after {
+    right: 0;
+  }
+}
 .container {
   display: flex;
   justify-content: center;
@@ -225,11 +259,11 @@
   content: "";
   position: absolute;
   border-radius: 50%;
-  height: 20px;
-  width: 20px;
+  height: 40px;
+  width: 40px;
   left: 19px;
   top: calc(50% - 12px);
-  border: 2px solid #daa06d;
+  border: 3px solid #daa06d;
   transition: all 0.6s;
 }
 .container .apartman .radioItem label::before {
@@ -367,4 +401,39 @@
   width: 100%;
   text-align: left;
   padding-left: 0.5rem;
+}
+
+@media only screen and (max-width: 715px) {
+  .container .apartman {
+    flex-direction: column;
+    padding: 1rem;
+    padding-top: 2rem;
+    position: relative;
+  }
+  .container .apartman .radioItem label::after,
+  .container .apartman .radioItem label::before {
+    left: 0;
+  }
+  .container .apartman .details {
+    margin-top: 5rem;
+    flex-direction: column;
+  }
+  .container .apartman .details .pic {
+    margin-top: 3rem;
+  }
+  .container .apartman::after, .container .apartman::before {
+    content: "";
+    position: absolute;
+    z-index: 10;
+    width: 10%;
+    height: 10%;
+    background-color: #daa06d;
+    top: 0;
+  }
+  .container .apartman::before {
+    left: 0;
+  }
+  .container .apartman::after {
+    right: 0;
+  }
 }/*# sourceMappingURL=page.module.css.map */

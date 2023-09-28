@@ -27,4 +27,23 @@
 }
 .intro h2 {
   font-size: 45px;
+}
+
+@media only screen and (max-width: 715px) {
+  .intro {
+    height: auto;
+    background-color: #daa06d;
+    padding: 4rem 0;
+    margin-bottom: 3rem;
+  }
+  .intro::after {
+    background: none;
+  }
+  .intro svg {
+    color: white;
+    margin: 0;
+  }
+  .intro h2 {
+    color: white;
+  }
 }/*# sourceMappingURL=page.module.css.map */

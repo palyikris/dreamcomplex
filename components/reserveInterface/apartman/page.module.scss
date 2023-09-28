@@ -1,176 +1,236 @@
 @import "../../../uniform/style.module";
 
 @mixin ApartmanStyle() {
-    .container {
-        @include centerDiv(column);
-        margin-top: 5rem;
+  .container {
+    @include centerDiv(column);
+    margin-top: 5rem;
 
-        .apartman {
+    .apartman {
+      @include centerDiv(row);
+      @include radioItemOnReservation();
+      transition: all 0.5s;
+      border: 1px solid $main;
+      padding: 1rem 1rem 1rem 0;
+      margin: 1rem 0;
+
+      .details {
+        @include centerDiv(row);
+
+        .pic {
+          background-image: url("../../../public/lellehazdark.jpeg");
+          @include pic();
+          @include centerDiv(row);
+          align-items: flex-end;
+          width: 10rem;
+          height: 10rem;
+          transition: all 0.5s;
+          position: relative;
+
+          &::after {
+            content: "Képek";
+            position: absolute;
+            z-index: 10;
+            width: 100%;
+            height: 100%;
+            color: white;
+            background-color: rgba($bg, 0.5);
+            text-align: center;
             @include centerDiv(row);
-            @include radioItemOnReservation();
+            font-size: 12px;
+            opacity: 0;
             transition: all 0.5s;
-            border: 1px solid $main;
-            padding: 1rem 1rem 1rem 0;
+          }
+
+          p {
+            width: 100%;
+            text-align: center;
+            padding: 0.5rem;
+            background-color: $main;
+            color: white;
+            font-size: 12px;
+          }
+
+          &:hover {
+            cursor: pointer;
+
+            &::after {
+              opacity: 1;
+            }
+          }
+        }
+
+        .text {
+          @include centerDiv(column);
+
+          h3 {
+            font-size: 30px;
+            width: 100%;
+            text-align: center;
+          }
+
+          .sep {
+            width: 40%;
+            height: 1px;
+            position: relative;
+            background-color: $main;
             margin: 1rem 0;
 
-            .details {
-                @include centerDiv(row);
-
-                .pic {
-                    background-image: url("../../../public/lellehazdark.jpeg");
-                    @include pic();
-                    @include centerDiv(row);
-                    align-items: flex-end;
-                    width: 10rem;
-                    height: 10rem;
-                    transition: all .5s;
-                    position: relative;
-
-                    &::after {
-                        content: "Képek";
-                        position: absolute;
-                        z-index: 10;
-                        width: 100%;
-                        height: 100%;
-                        color: white;
-                        background-color: rgba($bg, .5);
-                        text-align: center;
-                        @include centerDiv(row);
-                        font-size: 12px;
-                        opacity: 0;
-                        transition: all .5s;
-                    }
-
-                    p {
-                        width: 100%;
-                        text-align: center;
-                        padding: .5rem;
-                        background-color: $main;
-                        color: white;
-                        font-size: 12px;
-                    }
-
-                    &:hover {
-                        cursor: pointer;
-
-                        &::after {
-                            opacity: 1;
-                        }
-                    }
-
-                }
-
-                .text {
-                    @include centerDiv(column);
-
-                    h3 {
-                        font-size: 30px;
-                        width: 100%;
-                        text-align: center;
-                    }
-
-                    .sep {
-                        width: 40%;
-                        height: 1px;
-                        position: relative;
-                        background-color: $main;
-                        margin: 1rem 0;
-
-                        &::after {
-                            content: "";
-                            position: absolute;
-                            width: 1rem;
-                            height: 1rem;
-                            border-radius: 100%;
-                            z-index: 10;
-                            top: calc(50% - 0.55rem);
-                            left: calc(50% - 0.55rem);
-                            border: 1px solid $main;
-                        }
-                    }
-
-                    p {
-                        width: 90%;
-                        text-align: center;
-                    }
-
-                    .services {
-                        @include centerDiv(row);
-                        width: 90%;
-                        background-color: $main;
-                        padding: 0.5rem;
-
-                        .service {
-                            @include centerDiv(row);
-                            width: 25%;
-                            margin: 0 .5rem;
-
-                            svg {
-                                width: 1.5rem;
-                                color: white;
-                                font-weight: bold;
-                            }
-
-                            p {
-                                margin-top: 0;
-                                color: white;
-                                font-weight: 400;
-                                font-size: 10px;
-                                width: 100%;
-                                text-align: left;
-                                padding-left: .5rem;
-                            }
-                        }
-                    }
-                }
+            &::after {
+              content: "";
+              position: absolute;
+              width: 1rem;
+              height: 1rem;
+              border-radius: 100%;
+              z-index: 10;
+              top: calc(50% - 0.55rem);
+              left: calc(50% - 0.55rem);
+              border: 1px solid $main;
             }
-        }
-    }
+          }
 
-    @media only screen and (max-width: 715px) {
-        .container {
-            .apartman {
-                flex-direction: column;
-                padding: 1rem;
-                padding-top: 2rem;
-                position: relative;
+          p {
+            width: 90%;
+            text-align: center;
+          }
 
-                .radioItem label::after,
-                .radioItem label::before {
-                    left: 0;
-                }
+          .services {
+            @include centerDiv(row);
+            width: 90%;
+            background-color: $main;
+            padding: 0.5rem;
 
-                .details {
-                    margin-top: 5rem;
-                    flex-direction: column;
+            .service {
+              @include centerDiv(row);
+              width: 25%;
+              margin: 0 0.5rem;
 
-                    .pagePic {
-                        margin-top: 3rem;
-                    }
-                }
+              svg {
+                width: 1.5rem;
+                color: white;
+                font-weight: bold;
+              }
 
-                &::after,
-                &::before {
-                    content: "";
-                    position: absolute;
-                    z-index: 10;
-                    width: 10%;
-                    height: 10%;
-                    background-color: $main;
-                    top: 0;
-                }
-
-                &::before {
-                    left: 0;
-
-                }
-
-                &::after {
-                    right: 0;
-                }
+              p {
+                margin-top: 0;
+                color: white;
+                font-weight: 400;
+                font-size: 10px;
+                width: 100%;
+                text-align: left;
+                padding-left: 0.5rem;
+              }
             }
+          }
         }
+      }
     }
+  }
+
+  @media only screen and (max-width: 715px) {
+    .container {
+      .apartman {
+        flex-direction: column;
+        padding: 1rem;
+        padding-top: 2rem;
+        position: relative;
+
+        .radioItem label::after,
+        .radioItem label::before {
+          left: 0;
+        }
+
+        .details {
+          margin-top: 5rem;
+          flex-direction: column;
+
+          .text {
+            .services {
+              margin: 3rem 0;
+            }
+          }
+        }
+
+        &::after,
+        &::before {
+          content: "";
+          position: absolute;
+          z-index: 10;
+          width: 10%;
+          height: 10%;
+          background-color: $main;
+          top: 0;
+        }
+
+        &::before {
+          left: 0;
+        }
+
+        &::after {
+          right: 0;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 430px) {
+    .container {
+      .apartman {
+        flex-direction: column;
+        padding: 1rem;
+        padding-top: 2rem;
+        position: relative;
+        width: 80%;
+
+        .radioItem label::after,
+        .radioItem label::before {
+          left: 0;
+        }
+
+        .details {
+          margin-top: 5rem;
+          flex-direction: column;
+
+          .text {
+            .services {
+              margin: 3rem 0;
+              width: auto;
+              flex-wrap: wrap;
+
+              .service {
+                margin: 1rem 2rem;
+                svg {
+                  width: 10rem;
+                  color: white;
+                }
+                p {
+                  text-align: center;
+                }
+              }
+            }
+          }
+        }
+
+        &::after,
+        &::before {
+          content: "";
+          position: absolute;
+          z-index: 10;
+          width: 10%;
+          height: 10%;
+          background-color: $main;
+          top: 0;
+        }
+
+        &::before {
+          left: 0;
+        }
+
+        &::after {
+          right: 0;
+        }
+      }
+    }
+  }
 }
 
 @include ApartmanStyle();

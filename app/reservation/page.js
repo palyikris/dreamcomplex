@@ -24,7 +24,7 @@ export default function ReservationPage() {
       <div className={styles.heroSections}>
         <div className={styles.heroElements}>
           <h1>
-            Foglaljon valamelyik <span>Dream</span> helyszínen!
+            Foglaljon egy <span>Dream</span> helyszínen!
           </h1>
           <p>Köszönjük, hogy nálunk száll meg!</p>
         </div>
@@ -68,15 +68,21 @@ export default function ReservationPage() {
         </div>
       </div>
       <div id="reserveInterface">
-        {isDreamHouseOpen
-          ? <ReserveInterfaceComponent title="Dream House" />
-          : <div />}
-        {isDreamApartmanOpen
-          ? <ReserveInterfaceComponent title="Dream Apartman" />
-          : <div />}
-        {isDreamTopartOpen
-          ? <ReserveInterfaceComponent title="Dream Tópart" />
-          : <div />}
+        {isDreamHouseOpen ? (
+          <ReserveInterfaceComponent title="Dream House" />
+        ) : (
+          <div />
+        )}
+        {isDreamApartmanOpen ? (
+          <ReserveInterfaceComponent title="Dream Apartman" />
+        ) : (
+          <div />
+        )}
+        {isDreamTopartOpen ? (
+          <ReserveInterfaceComponent title="Dream Tópart" />
+        ) : (
+          <div />
+        )}
       </div>
     </div>
   );

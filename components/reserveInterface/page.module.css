@@ -38,4 +38,15 @@
   .container {
     padding: 5rem 2rem;
   }
+  .container h1 {
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 530px) {
+  .container {
+    padding: 5rem 0;
+  }
+  .container h1 {
+    width: 80%;
+  }
 }/*# sourceMappingURL=page.module.css.map */
