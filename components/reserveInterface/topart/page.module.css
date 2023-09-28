@@ -199,15 +199,15 @@
     margin-top: 5rem;
     flex-direction: column;
   }
-  .container .apartman .details .pic {
-    margin-top: 3rem;
+  .container .apartman .details .text .services {
+    margin: 3rem 0;
   }
   .container .apartman::after, .container .apartman::before {
     content: "";
     position: absolute;
     z-index: 10;
-    width: 10%;
-    height: 10%;
+    width: 3rem;
+    height: 3rem;
     background-color: #daa06d;
     top: 0;
   }
@@ -216,6 +216,72 @@
   }
   .container .apartman::after {
     right: 0;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .container .apartman {
+    flex-direction: column;
+    padding: 1rem;
+    padding-top: 2rem;
+    position: relative;
+    width: 80%;
+  }
+  .container .apartman .radioItem label::after,
+  .container .apartman .radioItem label::before {
+    left: 0;
+  }
+  .container .apartman .details {
+    margin-top: 5rem;
+    flex-direction: column;
+  }
+  .container .apartman .details .text .services {
+    margin: 3rem 0;
+    flex-direction: column;
+    width: 100%;
+  }
+  .container .apartman .details .text .services .service {
+    margin: 1rem 0;
+    width: 100%;
+  }
+  .container .apartman .details .text .services .service svg {
+    width: 2rem;
+    color: white;
+  }
+  .container .apartman .details .text .services .service p {
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 430px) {
+  .container .apartman {
+    flex-direction: column;
+    padding: 1rem;
+    padding-top: 2rem;
+    position: relative;
+    width: 80%;
+  }
+  .container .apartman .radioItem label::after,
+  .container .apartman .radioItem label::before {
+    left: 0;
+  }
+  .container .apartman .details {
+    margin-top: 5rem;
+    flex-direction: column;
+  }
+  .container .apartman .details .text .services {
+    margin: 3rem 0;
+    flex-direction: column;
+    width: 100%;
+  }
+  .container .apartman .details .text .services .service {
+    margin: 1rem 0;
+    width: 100%;
+  }
+  .container .apartman .details .text .services .service svg {
+    width: 2rem;
+    color: white;
+  }
+  .container .apartman .details .text .services .service p {
+    text-align: center;
   }
 }
 .container {
@@ -418,15 +484,15 @@
     margin-top: 5rem;
     flex-direction: column;
   }
-  .container .apartman .details .pic {
-    margin-top: 3rem;
+  .container .apartman .details .text .services {
+    margin: 3rem 0;
   }
   .container .apartman::after, .container .apartman::before {
     content: "";
     position: absolute;
     z-index: 10;
-    width: 10%;
-    height: 10%;
+    width: 3rem;
+    height: 3rem;
     background-color: #daa06d;
     top: 0;
   }
@@ -435,5 +501,71 @@
   }
   .container .apartman::after {
     right: 0;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .container .apartman {
+    flex-direction: column;
+    padding: 1rem;
+    padding-top: 2rem;
+    position: relative;
+    width: 80%;
+  }
+  .container .apartman .radioItem label::after,
+  .container .apartman .radioItem label::before {
+    left: 0;
+  }
+  .container .apartman .details {
+    margin-top: 5rem;
+    flex-direction: column;
+  }
+  .container .apartman .details .text .services {
+    margin: 3rem 0;
+    flex-direction: column;
+    width: 100%;
+  }
+  .container .apartman .details .text .services .service {
+    margin: 1rem 0;
+    width: 100%;
+  }
+  .container .apartman .details .text .services .service svg {
+    width: 2rem;
+    color: white;
+  }
+  .container .apartman .details .text .services .service p {
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 430px) {
+  .container .apartman {
+    flex-direction: column;
+    padding: 1rem;
+    padding-top: 2rem;
+    position: relative;
+    width: 80%;
+  }
+  .container .apartman .radioItem label::after,
+  .container .apartman .radioItem label::before {
+    left: 0;
+  }
+  .container .apartman .details {
+    margin-top: 5rem;
+    flex-direction: column;
+  }
+  .container .apartman .details .text .services {
+    margin: 3rem 0;
+    flex-direction: column;
+    width: 100%;
+  }
+  .container .apartman .details .text .services .service {
+    margin: 1rem 0;
+    width: 100%;
+  }
+  .container .apartman .details .text .services .service svg {
+    width: 2rem;
+    color: white;
+  }
+  .container .apartman .details .text .services .service p {
+    text-align: center;
   }
 }/*# sourceMappingURL=page.module.css.map */
