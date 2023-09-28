@@ -5,6 +5,7 @@ import styles from "./page.module.css";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import ReservationData from "@/components/resdata/page";
+import Loader from "../../../components/loader/page";
 
 export default function ReservationTrackerPage() {
   let path = usePathname();
@@ -21,18 +22,26 @@ export default function ReservationTrackerPage() {
   }, []);
 
   if (loading) {
-    return <div>loading...</div>;
+    return (
+      <div className={styles.container}>
+        <Loader main={true} />
+      </div>
+    );
   }
 
   if (!data || data === undefined) {
-    return <div>vmi hiba történt</div>;
+    alert("Valami hiba történt!");
+
+    return (
+      <div className={styles.container}>
+        <Loader />
+      </div>
+    );
   }
 
   return (
     <div className={styles.container}>
       {data.map(reservation => {
-        console.log(reservation);
-
         return (
           <div className={styles.container}>
             <ReservationData data={reservation} />

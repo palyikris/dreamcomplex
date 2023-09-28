@@ -124,4 +124,44 @@
   width: 80%;
   text-align: center;
   margin-top: 1rem;
+}
+
+@media only screen and (max-width: 920px) {
+  .container .heroSections {
+    height: auto;
+    padding-bottom: 3rem;
+  }
+  .container .heroSections .heroElements h1 {
+    font-size: 30px;
+  }
+  .container .heroSections .apartmans .apartman {
+    width: 50%;
+  }
+  .container .heroSections .apartmans .apartman h1 {
+    font-size: 20px;
+  }
+  .container .heroSections .apartmans .apartman p {
+    font-size: 10px;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .container .heroSections {
+    height: auto;
+    padding-bottom: 3rem;
+  }
+  .container .heroSections .heroElements h1 {
+    font-size: 30px;
+  }
+  .container .heroSections .apartmans {
+    flex-direction: column;
+  }
+  .container .heroSections .apartmans .apartman {
+    width: 50%;
+  }
+  .container .heroSections .apartmans .apartman h1 {
+    font-size: 20px;
+  }
+  .container .heroSections .apartmans .apartman p {
+    font-size: 10px;
+  }
 }/*# sourceMappingURL=page.module.css.map */

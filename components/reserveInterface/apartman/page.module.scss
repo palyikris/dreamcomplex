@@ -126,6 +126,51 @@
             }
         }
     }
+
+    @media only screen and (max-width: 715px) {
+        .container {
+            .apartman {
+                flex-direction: column;
+                padding: 1rem;
+                padding-top: 2rem;
+                position: relative;
+
+                .radioItem label::after,
+                .radioItem label::before {
+                    left: 0;
+                }
+
+                .details {
+                    margin-top: 5rem;
+                    flex-direction: column;
+
+                    .pagePic {
+                        margin-top: 3rem;
+                    }
+                }
+
+                &::after,
+                &::before {
+                    content: "";
+                    position: absolute;
+                    z-index: 10;
+                    width: 10%;
+                    height: 10%;
+                    background-color: $main;
+                    top: 0;
+                }
+
+                &::before {
+                    left: 0;
+
+                }
+
+                &::after {
+                    right: 0;
+                }
+            }
+        }
+    }
 }
 
 @include ApartmanStyle();

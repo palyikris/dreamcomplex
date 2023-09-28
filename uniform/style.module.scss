@@ -115,11 +115,11 @@ $red: #C35355;
     content: "";
     position: absolute;
     border-radius: 50%;
-    height: 20px;
-    width: 20px;
+    height: 40px;
+    width: 40px;
     left: 19px;
     top: calc(50% - 12px);
-    border: 2px solid $main;
+    border: 3px solid $main;
     transition: all 0.6s;
   }
 
@@ -200,5 +200,62 @@ $red: #C35355;
       border-bottom: 1.5px solid $main;
       color: $main;
     }
+  }
+}
+
+@mixin Loader($color) {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  align-content: center;
+  padding: 2rem 0;
+
+  .flex {
+    min-height: 60pt;
+  }
+
+  @keyframes loading {
+    0% {
+      width: 50pt;
+      height: 50pt;
+      margin-top: 0;
+    }
+
+    25% {
+      height: 4pt;
+      margin-top: 23pt;
+    }
+
+    50% {
+      width: 4pt;
+    }
+
+    75% {
+      width: 50pt;
+    }
+
+    100% {
+      width: 50pt;
+      height: 50pt;
+      margin-top: 0;
+    }
+  }
+
+  .loader {
+    width: 50pt;
+    height: 50pt;
+    border-radius: 100%;
+    border: $color 4pt solid;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: transparent;
+    animation: loading 1s infinite;
+  }
+
+  .loadText {
+    padding-top: 15px;
+    text-align: center;
+    color: lighten($color, 75%);
   }
 }

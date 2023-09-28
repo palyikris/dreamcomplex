@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./page.module.css";
 import { MakeNewReservation } from "@/lib/firebase";
 import ReserveFormIntro from "./intro/page";
+import Loader from "./../../loader/page";
 
 export default function ReserveForm(props) {
   let { apartmanNumber, type } = props;
@@ -104,7 +105,7 @@ export default function ReserveForm(props) {
           </svg>
           <h2>Foglalási Form</h2>
         </div>
-        <p>loading...</p>
+        <Loader main={true} />
       </div>
     );
   }
