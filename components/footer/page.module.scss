@@ -59,7 +59,7 @@
 }
 
 @media only screen and (max-width: 770px) {
-  .container .footer .else {
+  .footer .else {
     flex-direction: column;
 
     .social {
@@ -71,7 +71,7 @@
 }
 
 @media only screen and (max-width: 560px) {
-  .container .footer {
+  .footer {
     flex-direction: column;
 
     .else {

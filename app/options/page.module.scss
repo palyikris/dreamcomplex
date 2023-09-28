@@ -115,8 +115,6 @@
         .services {
           @include centerDiv(column);
 
-
-
           .service {
             @include centerDiv(row);
             padding: 1rem;
@@ -135,7 +133,7 @@
             svg {
               width: 1.5rem;
               color: white;
-              margin-right: .5rem;
+              margin-right: 0.5rem;
             }
 
             p {
@@ -154,7 +152,7 @@
 
     .sep {
       width: 60%;
-      height: .1rem;
+      height: 0.1rem;
       position: relative;
       background-color: $main;
       margin: 10rem 0;
@@ -166,9 +164,9 @@
         height: 1rem;
         border-radius: 100%;
         z-index: 10;
-        top: calc(50% - .55rem);
-        left: calc(50% - .55rem);
-        border: .1rem solid $main;
+        top: calc(50% - 0.55rem);
+        left: calc(50% - 0.55rem);
+        border: 0.1rem solid $main;
       }
     }
   }
@@ -181,13 +179,12 @@
   height: 15rem;
   position: relative;
   float: left;
-  transition: all .6s;
+  transition: all 0.6s;
 
   &:nth-child(1) {
-    background-image: url("../../public/naplemente.jpeg")
+    background-image: url("../../public/naplemente.jpeg");
   }
 }
-
 
 @media only screen and (max-width: 1000px) {
   .container .heroSections {
@@ -199,10 +196,9 @@
       display: none;
     }
   }
-
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 850px) {
   .container .apartmansDetailed .apartmanDetailed .intro {
     padding-left: 3rem;
   }
@@ -216,7 +212,7 @@
   }
 }
 
-@media only screen and (max-width: 710px) {
+@media only screen and (max-width: 850px) {
   .container .heroSections .heroElements h1 {
     font-size: 35px;
   }
@@ -224,11 +220,14 @@
   .container {
     .apartmansDetailed {
       .apartmanDetailed {
-
         .intro,
         .details {
           flex-direction: column;
           padding: 0;
+
+          .services {
+            margin: 7rem 0;
+          }
         }
 
         .intro {
@@ -240,5 +239,16 @@
         }
       }
     }
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  .container .heroSections .heroElements {
+    width: 70%;
+    margin-left: 2rem;
+  }
+
+  .container .apartmansDetailed .apartmanDetailed .details .interiors {
+    padding: 1rem;
   }
 }

@@ -5,6 +5,7 @@ import styles from "./page.module.css";
 import { useApartman } from "@/context/contexthook";
 import ReserveInterfaceComponent from "@/components/reserveInterface/page";
 import { useRouter } from "next/navigation";
+import Footer from "@/components/footer/page";
 
 export default function ReservationPage() {
   let {
@@ -84,6 +85,7 @@ export default function ReservationPage() {
           <div />
         )}
       </div>
+      <Footer></Footer>
     </div>
   );
 }
