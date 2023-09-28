@@ -648,6 +648,10 @@
   .container .bigTitle h1 {
     font-size: 35px;
   }
+  .container .myReservation h1 {
+    width: 80%;
+    font-size: 40px;
+  }
   .container .heroSections .heroElements {
     width: 80%;
     padding: 1rem;

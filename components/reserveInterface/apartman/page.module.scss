@@ -172,6 +172,48 @@
     }
   }
 
+  @media only screen and (max-width: 550px) {
+    .container {
+      .apartman {
+        flex-direction: column;
+        padding: 1rem;
+        padding-top: 2rem;
+        position: relative;
+        width: 80%;
+
+        .radioItem label::after,
+        .radioItem label::before {
+          left: 0;
+        }
+
+        .details {
+          margin-top: 5rem;
+          flex-direction: column;
+
+          .text {
+            .services {
+              margin: 3rem 0;
+              flex-direction: column;
+              width: 100%;
+
+              .service {
+                margin: 1rem 0;
+                width: 100%;
+                svg {
+                  width: 2rem;
+                  color: white;
+                }
+                p {
+                  text-align: center;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
   @media only screen and (max-width: 430px) {
     .container {
       .apartman {
