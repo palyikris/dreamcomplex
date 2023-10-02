@@ -244,7 +244,7 @@
     display: none;
   }
 }
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 850px) {
   .container .apartmansDetailed .apartmanDetailed .intro {
     padding-left: 3rem;
   }
@@ -255,7 +255,7 @@
     width: 75%;
   }
 }
-@media only screen and (max-width: 710px) {
+@media only screen and (max-width: 850px) {
   .container .heroSections .heroElements h1 {
     font-size: 35px;
   }
@@ -264,9 +264,22 @@
     flex-direction: column;
     padding: 0;
   }
+  .container .apartmansDetailed .apartmanDetailed .intro .services,
+  .container .apartmansDetailed .apartmanDetailed .details .services {
+    margin: 7rem 0;
+  }
   .container .apartmansDetailed .apartmanDetailed .intro .description {
     padding: 0;
     margin: 0;
     margin-top: 8rem;
+  }
+}
+@media only screen and (max-width: 460px) {
+  .container .heroSections .heroElements {
+    width: 70%;
+    margin-left: 2rem;
+  }
+  .container .apartmansDetailed .apartmanDetailed .details .interiors {
+    padding: 1rem;
   }
 }/*# sourceMappingURL=page.module.css.map */

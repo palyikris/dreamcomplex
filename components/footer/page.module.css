@@ -74,20 +74,20 @@
 }
 
 @media only screen and (max-width: 770px) {
-  .container .footer .else {
+  .footer .else {
     flex-direction: column;
   }
-  .container .footer .else .social {
+  .footer .else .social {
     border: none;
     border-top: 1px solid white;
     padding-top: 2rem;
   }
 }
 @media only screen and (max-width: 560px) {
-  .container .footer {
+  .footer {
     flex-direction: column;
   }
-  .container .footer .else {
+  .footer .else {
     margin-top: 6rem;
   }
 }/*# sourceMappingURL=page.module.css.map */

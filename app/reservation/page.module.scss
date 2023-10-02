@@ -128,7 +128,6 @@
       padding-bottom: 3rem;
 
       .heroElements {
-
         h1 {
           font-size: 30px;
         }
@@ -158,7 +157,6 @@
       padding-bottom: 3rem;
 
       .heroElements {
-
         h1 {
           font-size: 30px;
         }
@@ -169,6 +167,40 @@
 
         .apartman {
           width: 50%;
+
+          h1 {
+            font-size: 20px;
+          }
+
+          p {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .container {
+    .heroSections {
+      height: auto;
+      padding-bottom: 3rem;
+
+      .heroElements {
+        width: 70%;
+        margin-left: 2rem;
+
+        h1 {
+          font-size: 30px;
+        }
+      }
+
+      .apartmans {
+        flex-direction: column;
+
+        .apartman {
+          width: 80%;
 
           h1 {
             font-size: 20px;
