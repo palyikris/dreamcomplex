@@ -7,12 +7,12 @@ import Loader from "./../../loader/page";
 export default function ReserveForm(props) {
   let { apartmanNumber, type } = props;
 
-  let [email, setEmail] = useState("példanév@példa.com");
-  let [name, setName] = useState("Példa János");
-  let [phoneNumber, setPhoneNumber] = useState("06 30 111 1222");
+  let [email, setEmail] = useState("");
+  let [name, setName] = useState("");
+  let [phoneNumber, setPhoneNumber] = useState("");
   let [parents, setParents] = useState(0);
   let [children, setChildren] = useState(0);
-  let [note, setNote] = useState("Az lenne a kérésem, hogy...");
+  let [note, setNote] = useState("");
   let [isAfterReservation, setIsAfterReservation] = useState(false);
   let [reservationId, setReservationId] = useState("jfdklfja");
   let [isSuccess, setIsSuccess] = useState(false);
