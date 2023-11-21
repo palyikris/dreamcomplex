@@ -3,6 +3,9 @@ import styles from "./page.module.css";
 import { MakeNewReservation } from "@/lib/firebase";
 import ReserveFormIntro from "./intro/page";
 import Loader from "./../../loader/page";
+import { DateCalendarComponent } from "@/components/calendar/page";
+import { useGlobalDate } from "@/context/datecontexthook";
+import { GenerateDate } from "@/lib/generatedate";
 
 export default function ReserveForm(props) {
   let { apartmanNumber, type } = props;
@@ -10,45 +13,21 @@ export default function ReserveForm(props) {
   let [email, setEmail] = useState("");
   let [name, setName] = useState("");
   let [phoneNumber, setPhoneNumber] = useState("");
-  let [parents, setParents] = useState(0);
-  let [children, setChildren] = useState(0);
+  let [parents, setParents] = useState();
+  let [children, setChildren] = useState();
   let [note, setNote] = useState("");
   let [isAfterReservation, setIsAfterReservation] = useState(false);
   let [reservationId, setReservationId] = useState("jfdklfja");
   let [isSuccess, setIsSuccess] = useState(false);
   let [loading, setLoading] = useState(false);
   let [copied, setCopied] = useState(false);
-
+  let { arrDate, depDate } = useGlobalDate();
   function checkData() {
     let isInputValid = true;
 
     if (apartmanNumber === 0) {
       isInputValid = false;
       return isInputValid;
-    }
-
-    if (email === "példanév@példa.com") {
-      isInputValid = false;
-      return isInputValid;
-    }
-
-    if (name === "Példa János") {
-      isInputValid = false;
-      return isInputValid;
-    }
-
-    if (phoneNumber === "06 30 111 1222") {
-      isInputValid = false;
-      return isInputValid;
-    }
-
-    if (parents === 0 && children == 0) {
-      isInputValid = false;
-      return isInputValid;
-    }
-
-    if (note === "Az lenne a kérésem, hogy...") {
-      note = "";
     }
 
     return isInputValid;
@@ -60,9 +39,19 @@ export default function ReserveForm(props) {
     let isInputValid = checkData();
 
     if (isInputValid === false) {
-      alert("Töltse ki az összes mezőt!");
-      return;
+      alert("Töltse ki az összes mezőt, és jelöljön meg egy apartmant!");
+      setIsAfterReservation(false);
+      setEmail("");
+      setName("");
+      setChildren("");
+      setName("");
+      setPhoneNumber("");
+      setNote("");
+      setLoading(false);
+      setLoading(false);
     }
+    let dataArrDate = GenerateDate(arrDate);
+    let dataDepDate = GenerateDate(depDate);
 
     let dataObject = {
       email: email,
@@ -72,7 +61,9 @@ export default function ReserveForm(props) {
       children: children,
       note: note,
       apartmanType: type,
-      apartmanNumber: apartmanNumber
+      apartmanNumber: apartmanNumber,
+      arrDate: dataArrDate,
+      depDate: dataDepDate
     };
 
     MakeNewReservation(dataObject).then(result => {
@@ -340,6 +331,16 @@ export default function ReserveForm(props) {
             }}
             value={note}
           />
+        </div>
+      </div>
+      <div className={styles.calendarData}>
+        <div className={styles.calendar}>
+          <label>Érkezés dátuma</label>
+          <DateCalendarComponent reservation={true} />
+        </div>
+        <div className={styles.calendar}>
+          <label htmlFor="">Távozás dátuma</label>
+          <DateCalendarComponent reservation={false} />
         </div>
       </div>
       <button type="submit" className={styles.submitButton}>

@@ -1,5 +1,7 @@
 "use client"; // Error components must be Client Components
 
+// pagefor: Error page for the whole Application
+
 import { useEffect } from "react";
 
 export default function Error({ error, reset }) {

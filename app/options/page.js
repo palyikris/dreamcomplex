@@ -1,5 +1,7 @@
 "use client";
 
+// pagefor: Options of Apartmans page of the Application
+
 import Topnav from "@/components/topnav/page";
 import styles from "./page.module.css";
 import Link from "next/link";
@@ -19,7 +21,8 @@ export default function OptionsPage() {
     setIsDreamHouseOpen,
     setIsDreamApartmanOpen,
     setIsDreamTopartOpen
-  } = useApartman();
+  } = useApartman(); // prompt: hook for accessing the global context
+  // prompt: context needed so that if clicked on option it can navigate to the reservation and open the clicked option
 
   return (
     <div className={styles.container}>
@@ -57,6 +60,7 @@ export default function OptionsPage() {
                   setIsDreamHouseOpen(true);
                   setIsDreamApartmanOpen(false);
                   router.push("/reservation#reserveInterface");
+                  // prompt: navigating to reservation page and opening the right apartman section
                 }}
               >
                 Foglalás

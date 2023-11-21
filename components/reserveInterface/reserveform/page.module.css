@@ -119,6 +119,19 @@
   width: 30%;
   padding: 0 1rem;
 }
+.reserveForm .calendarData {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+}
+.reserveForm .calendarData .calendar {
+  padding: 1rem 0;
+}
+.reserveForm .calendarData .calendar label {
+  margin-top: 1rem;
+}
 .reserveForm .submitButton {
   background-color: transparent;
   border: none;

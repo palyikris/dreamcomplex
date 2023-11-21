@@ -115,6 +115,19 @@
     }
   }
 
+  .calendarData {
+    @include centerDiv(column);
+
+    .calendar {
+
+      padding: 1rem 0;
+
+      label {
+        margin-top: 1rem;
+      }
+    }
+  }
+
   .submitButton {
     @include MyButton();
     margin: 5rem 0 3rem 0;

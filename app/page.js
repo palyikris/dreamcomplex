@@ -1,5 +1,7 @@
 "use client";
 
+// pagefor: Main page of the Application
+
 import styles from "./page.module.css";
 import { useRouter } from "next/navigation";
 import Topnav from "./../components/topnav/page";
@@ -163,6 +165,7 @@ export default function Page() {
             <button
               onClick={() => {
                 router.push("/options#dreamApartman");
+                // prompt: navigating to the dreamApartman section of the Options page
               }}
             >
               Részletek
