@@ -10,7 +10,7 @@ import { AddZero } from "@/lib/addzero";
 import { useGlobalDate } from "@/context/datecontexthook";
 import styles from "./page.module.css";
 
-export function DateCalendarComponent(props) {
+export default function DateCalendarComponent(props) {
   let { reservation } = props;
   let { arrDate, depDate, setArrDate, setDepDate } = useGlobalDate();
 
