@@ -3,7 +3,7 @@ import styles from "./page.module.css";
 import { MakeNewReservation } from "@/lib/firebase";
 import ReserveFormIntro from "./intro/page";
 import Loader from "./../../loader/page";
-import { DateCalendarComponent } from "@/components/calendar/page";
+import DateCalendarComponent from "@/components/calendar/page";
 import { useGlobalDate } from "@/context/datecontexthook";
 import { GenerateDate } from "@/lib/generatedate";
 
@@ -336,11 +336,11 @@ export default function ReserveForm(props) {
       <div className={styles.calendarData}>
         <div className={styles.calendar}>
           <label>Érkezés dátuma</label>
-          <DateCalendarComponent reservation={true} />
+          <DateCalendarComponent reservation={true} isDisabled={false} />
         </div>
         <div className={styles.calendar}>
           <label htmlFor="">Távozás dátuma</label>
-          <DateCalendarComponent reservation={false} />
+          <DateCalendarComponent reservation={false} isDisabled={false} />
         </div>
       </div>
       <button type="submit" className={styles.submitButton}>

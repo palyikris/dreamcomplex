@@ -2,54 +2,67 @@
 
 .container {
     @include centerDiv(column);
-    width: 40%;
-    background-color: $main;
-    padding: 1rem 2rem;
-    padding-bottom: 2rem;
+
+
+
+    .dataContainer {
+        @include centerDiv(row);
+        justify-content: flex-start;
+
+        .dataWrapper {
+            @include centerDiv(column);
+            background-color: $main;
+            width: auto;
+            max-width: 50%;
+            height: 100vh;
+
+            .data {
+                @include centerDiv(row);
+                margin: .5rem 0;
+                align-items: flex-end;
+                padding: 0 1vmin;
+
+
+                svg {
+                    width: 2rem;
+                    color: white;
+                    margin-right: 1rem;
+                }
+
+                div {
+                    @include centerDiv(column);
+
+                    label {
+                        color: white;
+                        font-size: 12px;
+                        width: 100%;
+                        text-align: left;
+                    }
+
+                    p {
+                        padding: .5rem;
+                        padding-bottom: 0;
+                        border-bottom: 1.5px solid white;
+                        color: white;
+                        width: 100%;
+                        text-align: left;
+                    }
+
+                }
+            }
+        }
+
+        .calendarWrapper {
+            @include centerDiv(row);
+
+            .calendar {
+                margin: 1vmin;
+            }
+        }
+    }
 
     h1 {
         @include MyTitle(30px);
-        color: white;
         margin: 0;
-
-        &::after,
-        &::before {
-            display: none;
-        }
-
-    }
-
-    .data {
-        @include centerDiv(row);
-        margin: .5rem 0;
-        align-items: flex-end;
-
-
-        svg {
-            width: 2rem;
-            color: white;
-            margin-right: 1rem;
-        }
-
-        div {
-            @include centerDiv(column);
-
-            label {
-                color: white;
-                font-size: 12px;
-                width: 100%;
-                text-align: left;
-            }
-
-            p {
-                padding: .5rem;
-                padding-bottom: 0;
-                border-bottom: 1.5px solid white;
-                color: white;
-                width: 100%;
-                text-align: left;
-            }
-
-        }
     }
 }
