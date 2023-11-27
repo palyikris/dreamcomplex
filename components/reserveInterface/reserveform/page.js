@@ -25,13 +25,13 @@ export default function ReserveForm(props) {
 
   const postData = async () => {
     try {
-      let type = "";
-      if (apartmanType == "dreamhouse") {
-        type = "Dream House";
-      } else if (apartmanType == "dreamapartman") {
-        type = "Dream Apartman";
-      } else if (apartmanType == "dreamtopart") {
-        type = "Dream Tópart";
+      let apType = "";
+      if (type == "dreamhouse") {
+        apType = "Dream House";
+      } else if (type == "dreamapartman") {
+        apType = "Dream Apartman";
+      } else if (type == "dreamtopart") {
+        apType = "Dream Tópart";
       }
 
       const response = await axios.post(
@@ -44,7 +44,7 @@ export default function ReserveForm(props) {
           dep: GenerateDate(depDate),
           adult: parents,
           children: children,
-          type: type,
+          type: apType,
           number: apartmanNumber,
           note: note
         }
