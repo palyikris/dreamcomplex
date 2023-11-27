@@ -8,7 +8,9 @@ export async function sendMail(subject, toEmail, otpText) {
       pass: process.env.PWD
     },
     tls: {
-      rejectUnauthorized: false
+      secure: true,
+      requireTLS: true,
+      authMethod: "PLAIN"
     }
   });
 
