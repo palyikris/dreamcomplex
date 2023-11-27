@@ -21,7 +21,7 @@ export default function DisabledCalendar(props) {
         <DemoItem>
           <DateCalendar
             value={value}
-            disabled
+            readOnly
             views={["year", "month", "day"]}
             showDaysOutsideCurrentMonth
             disablePast

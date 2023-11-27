@@ -7,10 +7,11 @@ import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
 import { useState } from "react";
 import { AddZero } from "@/lib/addzero";
 import { useGlobalDate } from "@/context/datecontexthook";
+import Loader from "@/components/loader/page";
 
 export default function ArrivalCalendar(props) {
   let { setArrDate } = useGlobalDate();
-
+  let { apartmanNumber, type } = props;
   let date = new Date();
   let dateForCalendarDefaultValue = `${AddZero(date.getFullYear())}-${AddZero(
     date.getMonth() + 1
@@ -19,6 +20,12 @@ export default function ArrivalCalendar(props) {
     date.getMonth() + 1
   )}-${AddZero(date.getDate())}`;
   let [value, setValue] = useState(dayjs(dateForCalendarDefaultValue));
+  let [datesToDisable, setDatesToDisable] = useState([]);
+
+  // if (isLoading) {
+  //   return <Loader />;
+  // }
+
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <DemoContainer components={["DateCalendar", "DateCalendar"]}>

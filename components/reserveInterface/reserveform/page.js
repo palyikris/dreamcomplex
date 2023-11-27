@@ -6,6 +6,7 @@ import Loader from "./../../loader/page";
 import DateCalendarComponent from "@/components/calendar/page";
 import { useGlobalDate } from "@/context/datecontexthook";
 import { GenerateDate } from "@/lib/generatedate";
+import axios from "axios";
 
 export default function ReserveForm(props) {
   let { apartmanNumber, type } = props;
@@ -18,10 +19,39 @@ export default function ReserveForm(props) {
   let [note, setNote] = useState("");
   let [isAfterReservation, setIsAfterReservation] = useState(false);
   let [reservationId, setReservationId] = useState("jfdklfja");
-  let [isSuccess, setIsSuccess] = useState(false);
   let [loading, setLoading] = useState(false);
   let [copied, setCopied] = useState(false);
   let { arrDate, depDate } = useGlobalDate();
+
+  const postData = async () => {
+    try {
+      let type = "";
+      if (apartmanType == "dreamhouse") {
+        type = "Dream House";
+      } else if (apartmanType == "dreamapartman") {
+        type = "Dream Apartman";
+      } else if (apartmanType == "dreamtopart") {
+        type = "Dream Tópart";
+      }
+
+      const response = await axios.post("http://localhost:3000/api/api_four", {
+        email: email,
+        phone: phoneNumber,
+        name: name.split(" ")[1],
+        arr: GenerateDate(arrDate),
+        dep: GenerateDate(depDate),
+        adult: parents,
+        children: children,
+        type: type,
+        number: apartmanNumber,
+        note: note
+      });
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   function checkData() {
     let isInputValid = true;
 
@@ -101,25 +131,9 @@ export default function ReserveForm(props) {
     );
   }
 
-  if (isSuccess) {
-    <div className={styles.reserveForm}>
-      <ReserveFormIntro />
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        className="w-6 h-6"
-      >
-        <path
-          fillRule="evenodd"
-          d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
-          clipRule="evenodd"
-        />
-      </svg>
-    </div>;
-  }
-
   if (isAfterReservation) {
+    postData();
+
     return (
       <div className={styles.reserveForm}>
         <ReserveFormIntro />
@@ -177,6 +191,10 @@ export default function ReserveForm(props) {
         </div>
       </div>
     );
+  }
+
+  if (apartmanNumber === 0) {
+    return;
   }
 
   return (
@@ -335,12 +353,30 @@ export default function ReserveForm(props) {
       </div>
       <div className={styles.calendarData}>
         <div className={styles.calendar}>
-          <label>Érkezés dátuma</label>
-          <DateCalendarComponent reservation={true} isDisabled={false} />
+          {arrDate != undefined && arrDate != null
+            ? <label>
+                Érkezés dátuma: {GenerateDate(arrDate)}
+              </label>
+            : <label>Érkezés dátuma</label>}
+          <DateCalendarComponent
+            reservation={true}
+            isDisabled={false}
+            apartmanNumber={apartmanNumber}
+            type={type}
+          />
         </div>
         <div className={styles.calendar}>
-          <label htmlFor="">Távozás dátuma</label>
-          <DateCalendarComponent reservation={false} isDisabled={false} />
+          {depDate != undefined && depDate != null
+            ? <label>
+                Távozás dátuma: {GenerateDate(depDate)}
+              </label>
+            : <label>Távozás dátuma</label>}
+          <DateCalendarComponent
+            reservation={false}
+            isDisabled={false}
+            apartmanNumber={apartmanNumber}
+            type={type}
+          />
         </div>
       </div>
       <button type="submit" className={styles.submitButton}>
