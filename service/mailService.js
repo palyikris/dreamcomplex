@@ -8,10 +8,10 @@ export async function sendMail(subject, toEmail, otpText) {
       pass: process.env.PWD
     },
     tls: {
-      secure: true,
-      requireTLS: true,
-      authMethod: "PLAIN"
-    }
+      rejectUnauthorized: false
+    },
+    socketTimeout: 5 * 60 * 1000, // 5 minutes
+    connectionTimeout: 5 * 60 * 1000 // 5 minutes
   });
 
   var mailOptions = {

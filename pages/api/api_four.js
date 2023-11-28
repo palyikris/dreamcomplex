@@ -9,7 +9,7 @@ export default async function handler(req, res) {
           body.email,
           `Szia, ${body.name}!
 
-Köszönjük, hogy foglaltál nálunk! A foglalásodat a következő adatokkal rögzítettük:
+Köszönjük, hogy nálunk foglaltál! A foglalásodat a következő adatokkal rögzítettük:
 Telefonszám: ${body.phone}
 Érkezés: ${body.arr}
 Távozás: ${body.dep}
