@@ -25,27 +25,30 @@ export default function ReserveForm(props) {
 
   const postData = async () => {
     try {
-      let type = "";
-      if (apartmanType == "dreamhouse") {
-        type = "Dream House";
-      } else if (apartmanType == "dreamapartman") {
-        type = "Dream Apartman";
-      } else if (apartmanType == "dreamtopart") {
-        type = "Dream Tópart";
+      let apType = "";
+      if (type == "dreamhouse") {
+        apType = "Dream House";
+      } else if (type == "dreamapartman") {
+        apType = "Dream Apartman";
+      } else if (type == "dreamtopart") {
+        apType = "Dream Tópart";
       }
 
-      const response = await axios.post("http://localhost:3000/api/api_four", {
-        email: email,
-        phone: phoneNumber,
-        name: name.split(" ")[1],
-        arr: GenerateDate(arrDate),
-        dep: GenerateDate(depDate),
-        adult: parents,
-        children: children,
-        type: type,
-        number: apartmanNumber,
-        note: note
-      });
+      const response = await axios.post(
+        "https://dreamcomplex.vercel.app/api/email_api",
+        {
+          email: email,
+          phone: phoneNumber,
+          name: name,
+          arr: GenerateDate(arrDate),
+          dep: GenerateDate(depDate),
+          adult: parents,
+          children: children,
+          type: apType,
+          number: apartmanNumber,
+          note: note
+        }
+      );
       console.log(response.data);
     } catch (error) {
       console.error(error);
@@ -79,6 +82,7 @@ export default function ReserveForm(props) {
       setNote("");
       setLoading(false);
       setLoading(false);
+      return;
     }
     let dataArrDate = GenerateDate(arrDate);
     let dataDepDate = GenerateDate(depDate);
@@ -100,6 +104,7 @@ export default function ReserveForm(props) {
       if (result === false) {
         alert("Valami hiba történt!");
       } else {
+        postData();
         setReservationId(result);
         setIsAfterReservation(true);
         setLoading(false);
@@ -132,8 +137,6 @@ export default function ReserveForm(props) {
   }
 
   if (isAfterReservation) {
-    postData();
-
     return (
       <div className={styles.reserveForm}>
         <ReserveFormIntro />
