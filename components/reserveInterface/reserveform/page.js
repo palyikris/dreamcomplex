@@ -34,21 +34,18 @@ export default function ReserveForm(props) {
         apType = "Dream Tópart";
       }
 
-      const response = await axios.post(
-        "https://dreamcomplex.vercel.app/api/email_api",
-        {
-          email: email,
-          phone: phoneNumber,
-          name: name,
-          arr: GenerateDate(arrDate),
-          dep: GenerateDate(depDate),
-          adult: parents,
-          children: children,
-          type: apType,
-          number: apartmanNumber,
-          note: note
-        }
-      );
+      const response = await axios.post("http://localhost:3000/api/email_api", {
+        email: email,
+        phone: phoneNumber,
+        name: name,
+        arr: GenerateDate(arrDate),
+        dep: GenerateDate(depDate),
+        adult: parents,
+        children: children,
+        type: apType,
+        number: apartmanNumber,
+        note: note
+      });
       console.log(response.data);
     } catch (error) {
       console.error(error);
@@ -360,7 +357,9 @@ export default function ReserveForm(props) {
             ? <label>
                 Érkezés dátuma: {GenerateDate(arrDate)}
               </label>
-            : <label>Érkezés dátuma</label>}
+            : <label>
+                Érkezés dátuma: {"Nincs kiválasztva"}
+              </label>}
           <DateCalendarComponent
             reservation={true}
             isDisabled={false}
@@ -373,7 +372,9 @@ export default function ReserveForm(props) {
             ? <label>
                 Távozás dátuma: {GenerateDate(depDate)}
               </label>
-            : <label>Távozás dátuma</label>}
+            : <label>
+                Távozás dátuma: {"Nincs kiválasztva"}
+              </label>}
           <DateCalendarComponent
             reservation={false}
             isDisabled={false}

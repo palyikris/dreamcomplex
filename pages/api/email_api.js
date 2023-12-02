@@ -4,24 +4,24 @@ export default async function handler(req, res) {
     const { method, body } = req;
     switch (method) {
       case "POST": {
-        await sendMail(
+        sendMail(
           "Foglalás",
           body.email,
           `Helóka belóka!<br>
 
-Új foglalás történt a DreamComplex-ben. Csekkold le a felületen!
+Új foglalás történt a DreamComplex-ben. Csekkold le a felületen!<br>
 A foglaló adatai:
 
-Email: ${body.email}
-Név: ${body.name}
-Telefonszám: ${body.phone}
-Érkezés: ${body.arr}
-Távozás: ${body.dep}
-Felnőttek: ${body.adult}
-Gyerekek: ${body.children}
-Ház: ${body.type}
-Apartman: ${body.number}
-Megjegyzés: ${body.note}
+Email: ${body.email}<br>
+Név: ${body.name}<br>
+Telefonszám: ${body.phone}<br>
+Érkezés: ${body.arr}<br>
+Távozás: ${body.dep}<br>
+Felnőttek: ${body.adult}<br>
+Gyerekek: ${body.children}<br>
+Ház: ${body.type}<br>
+Apartman: ${body.number}<br>
+Megjegyzés: ${body.note}<br>
 Ne felejtsd el kipipálni a foglalást a felületen!
 `
         );

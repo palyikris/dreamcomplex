@@ -3,7 +3,9 @@
 const sgMail = require("@sendgrid/mail");
 
 export function sendMail(subject, to, text) {
-  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+  sgMail.setApiKey(
+    "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"
+  );
   const msg = {
     to: "palyi.kristof@gmail.com",
     from: "dreamcomplex.noreply@gmail.com",
