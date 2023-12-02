@@ -1,31 +1,22 @@
-var nodemailer = require("nodemailer");
-//-----------------------------------------------------------------------------
-export async function sendMail(subject, toEmail, text) {
-  var transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: process.env.EMAIL,
-      pass: process.env.PWD
-    },
-    tls: {
-      rejectUnauthorized: false
-    }
-  });
+// using Twilio SendGrid's v3 Node.js Library
+// https://github.com/sendgrid/sendgrid-nodejs
+const sgMail = require("@sendgrid/mail");
 
-  var mailOptions = {
-    from: process.env.NODEMAILER_EMAIL,
-    to: toEmail,
+export function sendMail(subject, to, text) {
+  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+  const msg = {
+    to: "palyi.kristof@gmail.com",
+    from: "dreamcomplex.noreply@gmail.com",
     subject: subject,
-    text: text
-  };
-
-  transporter.sendMail(mailOptions, function(error, info) {
-    if (error) {
-      console.log("hiba van geci");
-      console.error(error);
-    } else {
-      console.log("Email Sent");
-      return true;
-    }
-  });
+    text: text,
+    html: text
+  }; // Change to your recipient // Change to your verified sender
+  sgMail
+    .send(msg)
+    .then(() => {
+      console.log("Email sent");
+    })
+    .catch(error => {
+      console.log(error);
+    });
 }

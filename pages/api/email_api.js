@@ -7,7 +7,7 @@ export default async function handler(req, res) {
         await sendMail(
           "Foglalás",
           body.email,
-          `Szép jó napot!
+          `Helóka belóka!<br>
 
 Új foglalás történt a DreamComplex-ben. Csekkold le a felületen!
 A foglaló adatai:
@@ -23,9 +23,6 @@ Ház: ${body.type}
 Apartman: ${body.number}
 Megjegyzés: ${body.note}
 Ne felejtsd el kipipálni a foglalást a felületen!
-
-Üdvözlettel,
-DreamComplex
 `
         );
         res.status(200).send("Success");
