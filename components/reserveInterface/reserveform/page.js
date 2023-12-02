@@ -34,18 +34,21 @@ export default function ReserveForm(props) {
         apType = "Dream Tópart";
       }
 
-      const response = await axios.post("http://localhost:3000/api/email_api", {
-        email: email,
-        phone: phoneNumber,
-        name: name,
-        arr: GenerateDate(arrDate),
-        dep: GenerateDate(depDate),
-        adult: parents,
-        children: children,
-        type: apType,
-        number: apartmanNumber,
-        note: note
-      });
+      const response = await axios.post(
+        "https://dreamcomplex.vercel.app/api/email_api",
+        {
+          email: email,
+          phone: phoneNumber,
+          name: name,
+          arr: GenerateDate(arrDate),
+          dep: GenerateDate(depDate),
+          adult: parents,
+          children: children,
+          type: apType,
+          number: apartmanNumber,
+          note: note
+        }
+      );
       console.log(response.data);
     } catch (error) {
       console.error(error);
