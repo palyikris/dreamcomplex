@@ -1,9 +1,25 @@
+import { FetchReservedDatesOfApartman } from "@/lib/firebase";
 import ArrivalCalendar from "./arrcalendar/page";
 import DepartureCalendar from "./depcalendar/page";
 import DisabledCalendar from "./discalendar/page";
+import { useEffect, useState } from "react";
 
 export default function DateCalendarComponent(props) {
-  let { reservation, isDisabled } = props;
+  let { reservation, isDisabled, apartmanNumber, type } = props;
+  let [datesReserved, setDatesReserved] = useState([]);
+
+  useEffect(
+    () => {
+      FetchReservedDatesOfApartman(type, apartmanNumber).then(data => {
+        setDatesReserved(
+          [...new Set(data)].sort((a, b) => new Date(a) - new Date(b))
+        );
+      });
+    },
+    [apartmanNumber, type]
+  );
+
+  console.log(datesReserved);
 
   if (reservation) {
     if (isDisabled) {
