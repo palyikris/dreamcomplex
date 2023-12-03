@@ -30,6 +30,37 @@ export default function ReservationTable(props) {
     return <Loader main={true} />;
   }
 
+  if (reservations.length === 0) {
+    return (
+      <div className={styles.reservationTable}>
+        <div className={styles.reservation}>
+          <div className={styles.reservationData}>
+            <div className={styles.data}>Név</div>
+            <div className={styles.data}>Email</div>
+            <div className={styles.data}>Telefon</div>
+            <div className={styles.data}>Felnőttek</div>
+            <div className={styles.data}>Gyerekek</div>
+            <div className={styles.data}>Érkezés</div>
+            <div className={styles.data}>Távozás</div>
+            <div className={styles.data}>Apartman</div>
+            <div className={styles.data}>Comment</div>{" "}
+          </div>
+          <div className={styles.seen}>
+            <input
+              type="text"
+              value={nOfRows}
+              onChange={e => {
+                setNOfRows(e.target.value);
+              }}
+            />
+          </div>
+        </div>
+        <Loader main={false} />
+        <h1>Nincs foglalás</h1>
+      </div>
+    );
+  }
+
   return (
     <div className={styles.reservationTable}>
       <div className={styles.reservation}>
