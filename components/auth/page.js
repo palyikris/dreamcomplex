@@ -7,6 +7,7 @@ import {
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { auth } from "@/firebaseConfig";
+import styles from "./page.module.css";
 
 export default function AuthPage(props) {
   let router = useRouter();
@@ -47,20 +48,27 @@ export default function AuthPage(props) {
         onSubmit={e => {
           handleAuth(e, true);
         }}
+        className={styles.form}
       >
         <h1>Bejelentkezés</h1>
-        <input
-          type="text"
-          placeholder="Email"
-          value={email}
-          onChange={event => setEmail(event.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Jelszó"
-          value={password}
-          onChange={event => setPassword(event.target.value)}
-        />
+        <div className={styles.input}>
+          <p htmlFor="">Email</p>
+          <input
+            type="text"
+            placeholder="Email"
+            value={email}
+            onChange={event => setEmail(event.target.value)}
+          />
+        </div>
+        <div className={styles.input}>
+          <p htmlFor="">Jelszó</p>
+          <input
+            type="password"
+            placeholder="Jelszó"
+            value={password}
+            onChange={event => setPassword(event.target.value)}
+          />
+        </div>
         <button type="submit">Bejelentkezés</button>
         <p>
           {error}

@@ -40,7 +40,7 @@ export default function ReservationsPage() {
 
   return (
     <div className={styles.container}>
-      <button className={styles.logout}>
+      <button className={styles.logout} onClick={handleLogout}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
