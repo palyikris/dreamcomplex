@@ -1,0 +1,145 @@
+@import "../../uniform/style.module";
+
+.container {
+    @include centerDiv(row);
+    padding: 10vmin 0;
+
+    h1 {
+        @include MyTitle(40px);
+        margin: 0;
+    }
+}
+
+.reservationTable {
+    @include centerDiv(column);
+    margin-top: 10vmin;
+    border: 1.5px solid $main;
+    border-radius: 5px;
+    width: 90%;
+    background-color: $main;
+    overflow-y: scroll;
+    max-height: 240px;
+    justify-content: flex-start;
+    box-shadow: 0px 0px 10px 2px rgba($bg, 0.75);
+
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    .reservation {
+        @include centerDiv(row);
+        justify-content: flex-start;
+        padding: 2vmin 0;
+
+        .reservationData {
+            @include centerDiv(row);
+            justify-content: flex-start;
+
+            .data {
+                @include centerDiv(row);
+                margin: .5vmin 1vmin;
+                color: white;
+
+                &:nth-child(1) {
+                    width: 80%;
+                }
+
+                &:nth-child(2) {
+                    width: 120%;
+                }
+
+                &:nth-child(3) {
+                    width: 80%;
+                }
+
+                &:nth-child(4) {
+                    width: 40%;
+                }
+
+                &:nth-child(5) {
+                    width: 40%;
+                }
+
+                &:nth-child(6) {
+                    width: 50%;
+                }
+
+                &:nth-child(7) {
+                    width: 50%;
+                }
+
+                &:nth-child(8) {
+                    width: 40%;
+                }
+
+                &:nth-child(9) {
+                    width: 80%;
+                }
+            }
+        }
+
+        .seen,
+        .seenNot {
+            @include centerDiv(row);
+            width: 5%;
+
+            input {
+                width: 5vmin;
+                background-color: white;
+                color: $main;
+                padding: .5vmin;
+                border: none;
+                outline: none;
+                border-radius: 2px;
+            }
+
+            button {
+                @include centerDiv(row);
+                background-color: transparent;
+                border: none;
+                padding: 1vmin;
+
+                svg {
+                    color: white;
+                    transition: all .5s ease-in-out;
+                    width: 5vmin;
+
+                    &:hover {
+                        cursor: pointer;
+                        color: $main;
+                        background-color: white;
+                        border-radius: 2px;
+                    }
+                }
+            }
+
+            div {
+                @include centerDiv(row);
+                background-color: transparent;
+                border: none;
+                padding: 1vmin;
+
+                svg {
+                    color: white;
+                    transition: all .5s ease-in-out;
+                    width: 5vmin;
+
+
+                }
+            }
+        }
+
+        .seenNot {
+            opacity: 0;
+        }
+
+        &:first-child {
+            border-bottom: 1.5px solid $bg;
+
+            .data {
+                color: $bg;
+            }
+        }
+    }
+}
