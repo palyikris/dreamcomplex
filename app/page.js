@@ -21,7 +21,14 @@ export default function Page() {
       <div className={styles.heroSections}>
         <div className={styles.heroElements}>
           <h1>
-            <span>Dream</span> komplexum a Balatonnál
+            <button
+              onClick={() => {
+                router.push("/auth/login");
+              }}
+            >
+              Dream
+            </button>{" "}
+            komplexum a Balatonnál
           </h1>
           <Link href="/reservation">Foglald le most a nyárra!</Link>
           <div className={styles.icons}>
