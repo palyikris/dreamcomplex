@@ -3,6 +3,7 @@ import ArrivalCalendar from "./arrcalendar/page";
 import DepartureCalendar from "./depcalendar/page";
 import DisabledCalendar from "./discalendar/page";
 import { useEffect, useState } from "react";
+import { AddInBetweens } from "@/lib/addinbetweens";
 
 export default function DateCalendarComponent(props) {
   let { reservation, isDisabled, apartmanNumber, type } = props;
@@ -12,7 +13,9 @@ export default function DateCalendarComponent(props) {
     () => {
       FetchReservedDatesOfApartman(type, apartmanNumber).then(data => {
         setDatesReserved(
-          [...new Set(data)].sort((a, b) => new Date(a) - new Date(b))
+          AddInBetweens(
+            [...new Set(data)].sort((a, b) => new Date(a) - new Date(b))
+          )
         );
       });
     },

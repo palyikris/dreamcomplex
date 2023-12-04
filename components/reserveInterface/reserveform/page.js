@@ -209,7 +209,7 @@ export default function ReserveForm(props) {
             Választott apartman száma: {apartmanNumber}
           </h3>}
       <div className={styles.sep} />
-      <div className={styles.data}>
+      <div className={styles.data} id={styles.data}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
