@@ -11,7 +11,7 @@ import Loader from "@/components/loader/page";
 
 export default function ArrivalCalendar(props) {
   let { setArrDate } = useGlobalDate();
-  let { apartmanNumber, type } = props;
+  let { apartmanNumber, type, datesReserved } = props;
   let date = new Date();
   let dateForCalendarDefaultValue = `${AddZero(date.getFullYear())}-${AddZero(
     date.getMonth() + 1
@@ -25,6 +25,14 @@ export default function ArrivalCalendar(props) {
   // if (isLoading) {
   //   return <Loader />;
   // }
+
+  const disableDates = date => {
+    let year = date.$y;
+    let month = date.$M + 1;
+    let day = date.$D;
+    let dateString = `${year}-${AddZero(month)}-${AddZero(day)}`;
+    return datesReserved.includes(dateString);
+  };
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -44,6 +52,7 @@ export default function ArrivalCalendar(props) {
             //     bgcolor: "#e9c6a7",
             //     borderRadius: "10px"
             //   }}
+            shouldDisableDate={disableDates}
             className={styles.calendar}
           />
         </DemoItem>

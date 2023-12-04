@@ -11,7 +11,7 @@ import DisabledCalendar from "../discalendar/page";
 
 export default function DepartureCalendar(props) {
   let { setDepDate } = useGlobalDate();
-
+  let { apartmanNumber, type, datesReserved } = props;
   let date = new Date();
   let dateForCalendarDefaultValue = `${AddZero(date.getFullYear())}-${AddZero(
     date.getMonth() + 1
@@ -20,6 +20,14 @@ export default function DepartureCalendar(props) {
     date.getMonth() + 1
   )}-${AddZero(date.getDate())}`;
   let [value, setValue] = useState(dayjs(dateForCalendarDefaultValue));
+
+  const disableDates = date => {
+    let year = date.$y;
+    let month = date.$M + 1;
+    let day = date.$D;
+    let dateString = `${year}-${AddZero(month)}-${AddZero(day)}`;
+    return datesReserved.includes(dateString);
+  };
 
   if (props.isDisabled) {
     let { defValue } = props;
@@ -44,6 +52,7 @@ export default function DepartureCalendar(props) {
             //     borderRadius: "10px"
             //   }}
             className={styles.calendar}
+            shouldDisableDate={disableDates}
           />
         </DemoItem>
       </DemoContainer>

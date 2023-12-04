@@ -12,30 +12,39 @@ export default function DateCalendarComponent(props) {
   useEffect(
     () => {
       FetchReservedDatesOfApartman(type, apartmanNumber).then(data => {
-        setDatesReserved(
-          AddInBetweens(
-            [...new Set(data)].sort((a, b) => new Date(a) - new Date(b))
-          )
-        );
+        data = data.sort((a, b) => new Date(a) - new Date(b));
+        data = [...new Set(data)];
+        data = AddInBetweens(data);
+        console.log(data);
+        setDatesReserved(data);
       });
+      console.log("hay");
     },
     [apartmanNumber, type]
   );
-
-  console.log(datesReserved);
 
   if (reservation) {
     if (isDisabled) {
       let { defValue } = props;
       return <DisabledCalendar defValue={defValue} />;
     }
-    return <ArrivalCalendar reservation={reservation} />;
+    return (
+      <ArrivalCalendar
+        reservation={reservation}
+        datesReserved={datesReserved}
+      />
+    );
   } else {
     if (isDisabled) {
       let { defValue } = props;
       return <DisabledCalendar defValue={defValue} />;
     }
-    return <DepartureCalendar reservation={reservation} />;
+    return (
+      <DepartureCalendar
+        reservation={reservation}
+        datesReserved={datesReserved}
+      />
+    );
   }
   return <div />;
 }
