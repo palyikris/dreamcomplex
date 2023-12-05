@@ -24,7 +24,7 @@ export default function DisabledCalendar(props) {
             readOnly
             views={["year", "month", "day"]}
             showDaysOutsideCurrentMonth
-            disablePast
+            disabled
             fixedWeekNumber={6}
             maxDate={dayjs(dateForCalendarMaxValue)} //     borderRadius: "10px" //     bgcolor: "#e9c6a7", //   sx={{
             //   }}

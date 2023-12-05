@@ -4,14 +4,20 @@ import { DemoContainer, DemoItem } from "@mui/x-date-pickers/internals/demo";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AddZero } from "@/lib/addzero";
 import { useGlobalDate } from "@/context/datecontexthook";
 import DisabledCalendar from "../discalendar/page";
+import { CreateListOfDisabledDates } from "@/lib/createdislist";
+import { GeneratePastDates } from "@/lib/generatepast";
+import { GenerateFutureDates } from "@/lib/generatefut";
+import { GenerateDate } from "@/lib/generatedate";
 
 export default function DepartureCalendar(props) {
-  let { setDepDate } = useGlobalDate();
-  let { apartmanNumber, type, datesReserved } = props;
+  let { arrDate, setDepDate } = useGlobalDate();
+  let { datesReserved } = props;
+  let [datesReservedForReal, setDatesReservedForReal] = useState([]);
+  let [isNoArrDate, setIsNoArrDate] = useState(true);
   let date = new Date();
   let dateForCalendarDefaultValue = `${AddZero(date.getFullYear())}-${AddZero(
     date.getMonth() + 1
@@ -26,10 +32,32 @@ export default function DepartureCalendar(props) {
     let month = date.$M + 1;
     let day = date.$D;
     let dateString = `${year}-${AddZero(month)}-${AddZero(day)}`;
-    return datesReserved.includes(dateString);
+    return datesReservedForReal.includes(dateString);
   };
 
-  if (props.isDisabled) {
+  useEffect(
+    () => {
+      if (arrDate) {
+        setValue(dayjs(arrDate));
+        let temp = [...datesReserved, ...GeneratePastDates(arrDate)];
+        temp = CreateListOfDisabledDates(temp);
+        if (temp.indexOf(GenerateDate(arrDate)) != temp.length - 1) {
+          temp = [
+            ...temp,
+            ...GenerateFutureDates(
+              temp[temp.indexOf(GenerateDate(arrDate)) + 1]
+            )
+          ];
+        }
+        setIsNoArrDate(false);
+        console.log(temp);
+        setDatesReservedForReal(temp);
+      }
+    },
+    [arrDate]
+  );
+
+  if (props.isDisabled || isNoArrDate) {
     let { defValue } = props;
     return <DisabledCalendar defValue={defValue} />;
   }

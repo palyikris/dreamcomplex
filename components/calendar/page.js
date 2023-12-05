@@ -4,6 +4,7 @@ import DepartureCalendar from "./depcalendar/page";
 import DisabledCalendar from "./discalendar/page";
 import { useEffect, useState } from "react";
 import { AddInBetweens } from "@/lib/addinbetweens";
+import { CreateListOfDisabledDates } from "@/lib/createdislist";
 
 export default function DateCalendarComponent(props) {
   let { reservation, isDisabled, apartmanNumber, type } = props;
@@ -12,10 +13,7 @@ export default function DateCalendarComponent(props) {
   useEffect(
     () => {
       FetchReservedDatesOfApartman(type, apartmanNumber).then(data => {
-        data = data.sort((a, b) => new Date(a) - new Date(b));
-        data = [...new Set(data)];
-        data = AddInBetweens(data);
-        console.log(data);
+        data = CreateListOfDisabledDates(data);
         setDatesReserved(data);
       });
       console.log("hay");
