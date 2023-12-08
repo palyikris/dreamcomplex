@@ -378,7 +378,13 @@ export default function ReserveForm(props) {
                 Távozás dátuma: {GenerateDate(depDate)}
               </label>
             : <label>
-                Távozás dátuma: {"Nincs kiválasztva"}
+                {!arrDate
+                  ? <span>
+                      {"Távozás dátuma: Válassz érkezési dátumot!"}
+                    </span>
+                  : <span>
+                      {"Távozás dátuma: Nincs kiválasztva"}
+                    </span>}
               </label>}
           <DateCalendarComponent
             reservation={false}
