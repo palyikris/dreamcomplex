@@ -19,6 +19,7 @@ export default function ReserveHouseComponent(props) {
             type="radio"
             onChange={() => {
               setApartmanNumber(1);
+              router.push("/reservation#reserveFocus");
             }}
           />
           <label for="radio1" />

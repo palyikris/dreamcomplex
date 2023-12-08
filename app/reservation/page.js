@@ -6,6 +6,7 @@ import { useApartman } from "@/context/contexthook";
 import ReserveInterfaceComponent from "@/components/reserveInterface/page";
 import { useRouter } from "next/navigation";
 import Footer from "@/components/footer/page";
+import { useGlobalDate } from "@/context/datecontexthook";
 
 export default function ReservationPage() {
   let {
@@ -16,6 +17,7 @@ export default function ReservationPage() {
     setIsDreamApartmanOpen,
     setIsDreamTopartOpen
   } = useApartman();
+  let { setArrDate, setDepDate } = useGlobalDate();
 
   let router = useRouter();
 
@@ -36,6 +38,8 @@ export default function ReservationPage() {
               setIsDreamHouseOpen(true);
               setIsDreamApartmanOpen(false);
               setIsDreamTopartOpen(false);
+              setArrDate(null);
+              setDepDate(null);
               router.push("/reservation#reserveInterface");
             }}
           >
@@ -48,6 +52,8 @@ export default function ReservationPage() {
               setIsDreamApartmanOpen(true);
               setIsDreamHouseOpen(false);
               setIsDreamTopartOpen(false);
+              setArrDate(null);
+              setDepDate(null);
               router.push("/reservation#reserveInterface");
             }}
           >
@@ -60,6 +66,8 @@ export default function ReservationPage() {
               setIsDreamTopartOpen(true);
               setIsDreamHouseOpen(false);
               setIsDreamApartmanOpen(false);
+              setArrDate(null);
+              setDepDate(null);
               router.push("/reservation#reserveInterface");
             }}
           >

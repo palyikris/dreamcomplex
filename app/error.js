@@ -3,6 +3,7 @@
 // pagefor: Error page for the whole Application
 
 import { useEffect } from "react";
+import styles from "./error.module.css";
 
 export default function Error({ error, reset }) {
   useEffect(
@@ -14,14 +15,16 @@ export default function Error({ error, reset }) {
   );
 
   return (
-    <div>
-      <h2>Valami hiba tortent!</h2>
-      <button
-        onClick={// Attempt to recover by trying to re-render the segment
-        () => reset()}
-      >
-        Újrapróbálom
-      </button>
+    <div className={styles.container}>
+      <div className={styles.error}>
+        <h2>Valami hiba tortent!</h2>
+        <button
+          onClick={// Attempt to recover by trying to re-render the segment
+          () => reset()}
+        >
+          Újrapróbálom
+        </button>
+      </div>
     </div>
   );
 }

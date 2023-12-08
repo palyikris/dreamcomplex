@@ -20,9 +20,25 @@
         margin: 3vmin 0;
     }
 
-    button {
-        margin-top: 3vmin;
-        @include MyButton();
+    .buttons {
+        @include centerDiv(row);
+        justify-content: space-around;
+
+        button {
+            margin-top: 3vmin;
+            @include MyButton();
+
+            svg {
+                margin: 0;
+                transition: all .5s ease-in-out;
+            }
+
+            &:hover {
+                svg {
+                    color: white;
+                }
+            }
+        }
     }
 }
 

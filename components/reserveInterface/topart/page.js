@@ -19,6 +19,7 @@ export default function ReserveTopartComponent(props) {
             type="radio"
             onChange={() => {
               setApartmanNumber(1);
+              router.push("/reservation#reserveFocus");
             }}
           />
           <label for="radio1" />
@@ -108,6 +109,7 @@ export default function ReserveTopartComponent(props) {
             type="radio"
             onChange={() => {
               setApartmanNumber(2);
+              router.push("/reservation#reserveFocus");
             }}
           />
           <label for="radio2" />
@@ -197,6 +199,7 @@ export default function ReserveTopartComponent(props) {
             type="radio"
             onChange={() => {
               setApartmanNumber(3);
+              router.push("/reservation#reserveFocus");
             }}
           />
           <label for="radio3" />
