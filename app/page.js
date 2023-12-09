@@ -5,21 +5,23 @@
 import styles from "./page.module.css";
 import { useRouter } from "next/navigation";
 import Topnav from "./../components/topnav/page";
-import { SocialIcon } from "react-social-icons";
 import Footer from "@/components/footer/page";
 import Link from "next/link";
 import { useState } from "react";
+import MapsPage from "./../components/maps/page";
 
 export default function Page() {
   let router = useRouter();
-
   let [trackId, setTrackId] = useState("");
 
   return (
     <div className={styles.container}>
       <Topnav />
       <div className={styles.heroSections}>
-        <div className={styles.heroElements}>
+        <div
+          className={styles.heroElements}
+          style={{ backgroundImage: `url('../public/balcsipartdark.jpeg')` }}
+        >
           <h1>
             <button
               onClick={() => {

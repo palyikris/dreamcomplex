@@ -152,8 +152,7 @@
   align-items: center;
   width: 100%;
   flex-direction: row;
-  padding-top: 7rem;
-  padding-right: 5rem;
+  padding-top: 3rem;
 }
 .container .apartmansDetailed .apartmanDetailed .details .services {
   display: flex;

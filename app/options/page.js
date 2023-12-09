@@ -10,14 +10,12 @@ import { usePathname, useRouter } from "next/navigation";
 import PicSlide from "./../../components/picSlide/page";
 import { useState } from "react";
 import { useApartman } from "@/context/contexthook";
+import MapsPage from "./../../components/maps/page";
 
 export default function OptionsPage() {
   let router = useRouter();
 
   let {
-    isDreamHouseOpen,
-    isDreamApartmanOpen,
-    isDreamTopartOpen,
     setIsDreamHouseOpen,
     setIsDreamApartmanOpen,
     setIsDreamTopartOpen
@@ -133,13 +131,8 @@ export default function OptionsPage() {
               </div>
             </div>
             <div className={styles.interiors}>
-              <PicSlide text="Dream House">
-                <div className={styles.pic} />
-                <div className={styles.pic} />
-                <div className={styles.pic} />
-                <div className={styles.pic} />
-                <div className={styles.pic} />
-              </PicSlide>
+              <h3>Balatonőszöd, Középső u. 2, 8637</h3>
+              <MapsPage lat={46.82257225611348} long={17.80225545194757} />
             </div>
           </div>
           <div className={styles.sep} />
@@ -240,13 +233,8 @@ export default function OptionsPage() {
               </div>
             </div>
             <div className={styles.interiors}>
-              <PicSlide text="Dream Apartman">
-                <div className={styles.pic} />
-                <div className={styles.pic} />
-                <div className={styles.pic} />
-                <div className={styles.pic} />
-                <div className={styles.pic} />
-              </PicSlide>
+              <h3>Cím: Balatonlelle, Nádor u. 46, 8638</h3>
+              <MapsPage lat={46.78419645564559} long={17.679221109617156} />
             </div>
           </div>
           <div className={styles.sep} />
@@ -347,13 +335,8 @@ export default function OptionsPage() {
               </div>
             </div>
             <div className={styles.interiors}>
-              <PicSlide text="Dream Tópart">
-                <div className={styles.pic} />
-                <div className={styles.pic} />
-                <div className={styles.pic} />
-                <div className={styles.pic} />
-                <div className={styles.pic} />
-              </PicSlide>
+              <h3>Balatonlelle, Honvéd u. 92, 8638</h3>
+              <MapsPage lat={46.78487716798231} long={17.672140809600545} />
             </div>
           </div>
         </div>

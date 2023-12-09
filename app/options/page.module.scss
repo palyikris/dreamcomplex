@@ -109,8 +109,7 @@
 
       .details {
         @include centerDiv(row);
-        padding-top: 7rem;
-        padding-right: 5rem;
+        padding-top: 3rem;
 
         .services {
           @include centerDiv(column);
@@ -220,6 +219,7 @@
   .container {
     .apartmansDetailed {
       .apartmanDetailed {
+
         .intro,
         .details {
           flex-direction: column;
