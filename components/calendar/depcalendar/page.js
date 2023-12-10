@@ -32,7 +32,10 @@ export default function DepartureCalendar(props) {
     let month = date.$M + 1;
     let day = date.$D;
     let dateString = `${year}-${AddZero(month)}-${AddZero(day)}`;
-    return datesReservedForReal.includes(dateString);
+    return (
+      datesReservedForReal.includes(dateString) ||
+      date > dayjs(datesReservedForReal[datesReservedForReal.length - 1])
+    );
   };
 
   useEffect(
