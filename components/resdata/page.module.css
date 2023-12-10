@@ -21,8 +21,9 @@
   flex-direction: column;
   background-color: #daa06d;
   width: auto;
-  max-width: 50%;
+  max-width: 70%;
   height: 100vh;
+  box-shadow: 0 0 10px 2px rgba(218, 160, 109, 0.5);
 }
 .container .dataContainer .dataWrapper .data {
   display: flex;

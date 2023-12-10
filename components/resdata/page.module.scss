@@ -4,7 +4,6 @@
     @include centerDiv(column);
 
 
-
     .dataContainer {
         @include centerDiv(row);
         justify-content: flex-start;
@@ -13,8 +12,10 @@
             @include centerDiv(column);
             background-color: $main;
             width: auto;
-            max-width: 50%;
+            max-width: 70%;
             height: 100vh;
+            box-shadow: 0 0 10px 2px rgba($main, .5);
+
 
             .data {
                 @include centerDiv(row);

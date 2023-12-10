@@ -1,3 +1,5 @@
+"use state";
+
 import { useState } from "react";
 import styles from "./page.module.css";
 import { MakeNewReservation } from "@/lib/firebase";
@@ -7,6 +9,7 @@ import DateCalendarComponent from "@/components/calendar/page";
 import { useGlobalDate } from "@/context/datecontexthook";
 import { GenerateDate } from "@/lib/generatedate";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 export default function ReserveForm(props) {
   let { apartmanNumber, type } = props;
@@ -22,6 +25,8 @@ export default function ReserveForm(props) {
   let [loading, setLoading] = useState(false);
   let [copied, setCopied] = useState(false);
   let { arrDate, depDate } = useGlobalDate();
+
+  let router = useRouter();
 
   const postData = async () => {
     try {
@@ -137,10 +142,12 @@ export default function ReserveForm(props) {
   }
 
   if (isAfterReservation) {
+    router.push("/reservation#code");
+
     return (
       <div className={styles.reserveForm}>
         <ReserveFormIntro />
-        <div className={styles.details}>
+        <div className={styles.details} id="code">
           <h1>Foglalási kód</h1>
           <p>
             Ezt a kódot érdemes felírni mert a főoldalról ezzel a kóddal lehet
