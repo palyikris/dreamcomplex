@@ -32,6 +32,17 @@ export default function DepartureCalendar(props) {
     let month = date.$M + 1;
     let day = date.$D;
     let dateString = `${year}-${AddZero(month)}-${AddZero(day)}`;
+    if (dateString === GenerateDate(arrDate)) {
+      return false;
+    }
+    if (
+      dayjs(datesReservedForReal[datesReservedForReal.length - 1]).diff(
+        dayjs(arrDate),
+        "days"
+      ) === 0
+    ) {
+      return datesReservedForReal.includes(dateString);
+    }
     return (
       datesReservedForReal.includes(dateString) ||
       date > dayjs(datesReservedForReal[datesReservedForReal.length - 1])
@@ -53,7 +64,6 @@ export default function DepartureCalendar(props) {
           ];
         }
         setIsNoArrDate(false);
-        console.log(temp);
         setDatesReservedForReal(temp);
       }
     },
