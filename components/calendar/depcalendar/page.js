@@ -52,6 +52,8 @@ export default function DepartureCalendar(props) {
   useEffect(
     () => {
       if (arrDate) {
+        setDepDate(null);
+        setIsNoArrDate(true);
         setValue(dayjs(arrDate));
         let temp = [...datesReserved, ...GeneratePastDates(arrDate)];
         temp = CreateListOfDisabledDates(temp);
