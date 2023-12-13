@@ -41,7 +41,7 @@ export default function RootLayout({ children }) {
             />
           </head>
           <body>
-            {children}
+              {children}
           </body>
         </html>
       </GlobalDateContextProvider>

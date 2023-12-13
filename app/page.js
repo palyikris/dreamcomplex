@@ -9,6 +9,8 @@ import Footer from "@/components/footer/page";
 import Link from "next/link";
 import { useState } from "react";
 import MapsPage from "./../components/maps/page";
+import BasicAnimationWrapper from "./../components/appwrapper/page";
+import { motion } from "framer-motion";
 
 export default function Page() {
   let router = useRouter();
@@ -16,11 +18,16 @@ export default function Page() {
 
   return (
     <div className={styles.container}>
-      <Topnav />
+      <BasicAnimationWrapper>
+        <Topnav />
+      </BasicAnimationWrapper>
       <div className={styles.heroSections}>
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 15 }}
+          transition={{ duration: 0.5, delay: 0.25, ease: "easeInOut" }}
           className={styles.heroElements}
-          style={{ backgroundImage: `url('../public/balcsipartdark.jpeg')` }}
         >
           <h1>
             <button
@@ -82,16 +89,21 @@ export default function Page() {
               <p>Elégedett kosztumerek</p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
       <div className={styles.detailElement}>
-        <div className={styles.picContainer}>
+        <motion.div
+          className={styles.picContainer}
+          initial={{ opacity: 0, x: -25 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.25, ease: "easeInOut" }}
+        >
           <div className={styles.pic} />
           <div className={styles.helper} />
           <div className={styles.text}>
             <p>Dream Apartman</p>
           </div>
-        </div>
+        </motion.div>
         <div className={styles.details}>
           <h1>
             Üdv a <span>Dream</span> komplexumok oldalán!
@@ -115,13 +127,18 @@ export default function Page() {
       </div>
       <div className={styles.bigTitle}>
         <h1>Lehetőségeink:</h1>
-        <div className={styles.picContainer}>
+        <motion.div
+          className={styles.picContainer}
+          initial={{ opacity: 0, x: 25 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.25, ease: "easeInOut" }}
+        >
           <div className={styles.pic} />
           <div className={styles.helper} />
           <div className={styles.text}>
             <p>Dream House</p>
           </div>
-        </div>
+        </motion.div>
       </div>
       <div className={styles.cards}>
         <div className={styles.card}>
@@ -211,13 +228,17 @@ export default function Page() {
         </div>
       </div>
       <div className={styles.myReservationRoute}>
-        <button
+        <motion.button
+          initial={{ opacity: 0, x: 15 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: 25 }}
+          transition={{ duration: 0.2, delay: 0.2, ease: "easeInOut" }}
           onClick={() => {
             router.push("/#myreservation");
           }}
         >
           Kíváncsi foglalására?
-        </button>
+        </motion.button>
       </div>
       <form
         className={styles.myReservation}
