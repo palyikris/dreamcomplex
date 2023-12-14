@@ -4,6 +4,7 @@ import { usePathname, useRouter } from "next/navigation";
 import styles from "./page.module.css";
 import { useApartman } from "@/context/contexthook";
 import { motion } from "framer-motion";
+import BasicAnimationWrapper from "../appwrapper/page";
 
 export default function Topnav() {
   let router = useRouter();
@@ -75,12 +76,33 @@ export default function Topnav() {
   } = useApartman();
 
   return (
-    <div className={styles.container}>
-      {links.map((link, index) => {
-        if (links[index].href === path) {
+    <BasicAnimationWrapper>
+      <div className={styles.container}>
+        {links.map((link, index) => {
+          if (links[index].href === path) {
+            return (
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                className={styles.nav}
+                key={index}
+                onClick={() => {
+                  setIsDreamApartmanOpen(false);
+                  setIsDreamHouseOpen(false);
+                  setIsDreamTopartOpen(false);
+                  router.push(link.href);
+                }}
+              >
+                {link.svg}
+                <p style={{ color: "#daa06d" }}>
+                  {link.text}
+                </p>
+              </motion.button>
+            );
+          }
           return (
             <motion.button
               whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 1.05 }}
               className={styles.nav}
               key={index}
               onClick={() => {
@@ -91,32 +113,13 @@ export default function Topnav() {
               }}
             >
               {link.svg}
-              <p style={{ color: "#daa06d" }}>
+              <p>
                 {link.text}
               </p>
             </motion.button>
           );
-        }
-        return (
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 1.05 }}
-            className={styles.nav}
-            key={index}
-            onClick={() => {
-              setIsDreamApartmanOpen(false);
-              setIsDreamHouseOpen(false);
-              setIsDreamTopartOpen(false);
-              router.push(link.href);
-            }}
-          >
-            {link.svg}
-            <p>
-              {link.text}
-            </p>
-          </motion.button>
-        );
-      })}
-    </div>
+        })}
+      </div>
+    </BasicAnimationWrapper>
   );
 }

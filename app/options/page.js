@@ -6,11 +6,11 @@ import Topnav from "@/components/topnav/page";
 import styles from "./page.module.css";
 import Link from "next/link";
 import Footer from "@/components/footer/page";
-import { usePathname, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import PicSlide from "./../../components/picSlide/page";
-import { useState } from "react";
 import { useApartman } from "@/context/contexthook";
 import MapsPage from "./../../components/maps/page";
+import { motion } from "framer-motion";
 
 export default function OptionsPage() {
   let router = useRouter();
@@ -26,12 +26,18 @@ export default function OptionsPage() {
     <div className={styles.container}>
       <Topnav />
       <div className={styles.heroSections}>
-        <div className={styles.heroElements}>
+        <motion.div
+          className={styles.heroElements}
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 15 }}
+          transition={{ duration: 0.5, delay: 0.25, ease: "easeInOut" }}
+        >
           <h1>
             3 <span>Dream</span> szállás közül választhatsz
           </h1>
           <Link href={"/reservation"}>Foglalj nálunk már most!</Link>
-        </div>
+        </motion.div>
       </div>
       <div className={styles.apartmansDetailed}>
         <div className={styles.apartmanDetailed} id="dreamHouse">
@@ -52,7 +58,10 @@ export default function OptionsPage() {
                 nesciunt soluta magnam, sunt ipsa commodi possimus? Neque
                 deserunt rerum fuga dolorum eligendi!
               </p>
-              <button
+              <motion.button
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.2, delay: 0.2, ease: "easeInOut" }}
                 onClick={() => {
                   setIsDreamTopartOpen(false);
                   setIsDreamHouseOpen(true);
@@ -62,7 +71,7 @@ export default function OptionsPage() {
                 }}
               >
                 Foglalás
-              </button>
+              </motion.button>
             </div>
           </div>
           <div className={styles.details}>

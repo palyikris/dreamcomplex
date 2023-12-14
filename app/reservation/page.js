@@ -7,6 +7,7 @@ import ReserveInterfaceComponent from "@/components/reserveInterface/page";
 import { useRouter } from "next/navigation";
 import Footer from "@/components/footer/page";
 import { useGlobalDate } from "@/context/datecontexthook";
+import { motion } from "framer-motion";
 
 export default function ReservationPage() {
   let {
@@ -25,15 +26,25 @@ export default function ReservationPage() {
     <div className={styles.container}>
       <Topnav />
       <div className={styles.heroSections}>
-        <div className={styles.heroElements}>
+        <motion.div
+          className={styles.heroElements}
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 15 }}
+          transition={{ duration: 0.5, delay: 0.25, ease: "easeInOut" }}
+        >
           <h1>
             Foglaljon egy <span>Dream</span> helyszínen!
           </h1>
           <p>Köszönjük, hogy nálunk száll meg!</p>
-        </div>
+        </motion.div>
         <div className={styles.apartmans}>
-          <button
+          <motion.button
             className={styles.apartman}
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 15 }}
+            transition={{ duration: 0.5, delay: 0.25, ease: "easeInOut" }}
             onClick={() => {
               setIsDreamHouseOpen(true);
               setIsDreamApartmanOpen(false);
@@ -45,8 +56,12 @@ export default function ReservationPage() {
           >
             <h1>Dream House</h1>
             <p>Egy gyönyörű és hatalmas ház Balatonőszöd partján.</p>
-          </button>
-          <button
+          </motion.button>
+          <motion.button
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 15 }}
+            transition={{ duration: 0.5, delay: 0.5, ease: "easeInOut" }}
             className={styles.apartman}
             onClick={() => {
               setIsDreamApartmanOpen(true);
@@ -59,8 +74,12 @@ export default function ReservationPage() {
           >
             <h1>Dream Apartman</h1>
             <p>Balatonlellén 4 apartmannal is tudunk szolgálni.</p>
-          </button>
-          <button
+          </motion.button>
+          <motion.button
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 15 }}
+            transition={{ duration: 0.5, delay: 0.75, ease: "easeInOut" }}
             className={styles.apartman}
             onClick={() => {
               setIsDreamTopartOpen(true);
@@ -73,7 +92,7 @@ export default function ReservationPage() {
           >
             <h1>Dream Tópart</h1>
             <p>Balatonlellén, a kertből kilépve már a part vár.</p>
-          </button>
+          </motion.button>
         </div>
       </div>
       <div id="reserveInterface">

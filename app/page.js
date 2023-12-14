@@ -18,9 +18,7 @@ export default function Page() {
 
   return (
     <div className={styles.container}>
-      <BasicAnimationWrapper>
-        <Topnav />
-      </BasicAnimationWrapper>
+      <Topnav />
       <div className={styles.heroSections}>
         <motion.div
           initial={{ opacity: 0, y: 15 }}
@@ -92,7 +90,7 @@ export default function Page() {
         </motion.div>
       </div>
       <div className={styles.detailElement}>
-        <motion.div
+        <div
           className={styles.picContainer}
           initial={{ opacity: 0, x: -25 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -103,7 +101,7 @@ export default function Page() {
           <div className={styles.text}>
             <p>Dream Apartman</p>
           </div>
-        </motion.div>
+        </div>
         <div className={styles.details}>
           <h1>
             Üdv a <span>Dream</span> komplexumok oldalán!
@@ -116,18 +114,21 @@ export default function Page() {
             praesentium quibusdam sit possimus maiores.
           </p>
           <div className={styles.sep} />
-          <button
+          <motion.button
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.2, delay: 0.25, ease: "easeInOut" }}
             onClick={() => {
               router.push("/options");
             }}
           >
             Lehetőségek
-          </button>
+          </motion.button>
         </div>
       </div>
       <div className={styles.bigTitle}>
         <h1>Lehetőségeink:</h1>
-        <motion.div
+        <div
           className={styles.picContainer}
           initial={{ opacity: 0, x: 25 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -138,10 +139,15 @@ export default function Page() {
           <div className={styles.text}>
             <p>Dream House</p>
           </div>
-        </motion.div>
+        </div>
       </div>
       <div className={styles.cards}>
-        <div className={styles.card}>
+        <motion.div
+          className={styles.card}
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3, ease: "easeInOut" }}
+        >
           <div className={styles.cardPic} />
           <div className={styles.description}>
             <h1>Dream House</h1>
@@ -168,8 +174,13 @@ export default function Page() {
               Részletek
             </button>
           </div>
-        </div>
-        <div className={styles.card}>
+        </motion.div>
+        <motion.div
+          className={styles.card}
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.5, ease: "easeInOut" }}
+        >
           <div className={styles.cardPic} />
           <div className={styles.description}>
             <h1>Dream Apartman</h1>
@@ -197,8 +208,13 @@ export default function Page() {
               Részletek
             </button>
           </div>
-        </div>
-        <div className={styles.card}>
+        </motion.div>
+        <motion.div
+          className={styles.card}
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.7, ease: "easeInOut" }}
+        >
           <div className={styles.cardPic} />
           <div className={styles.description}>
             <h1>Dream Tópart</h1>
@@ -225,7 +241,7 @@ export default function Page() {
               Részletek
             </button>
           </div>
-        </div>
+        </motion.div>
       </div>
       <div className={styles.myReservationRoute}>
         <motion.button
