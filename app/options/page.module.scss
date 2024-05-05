@@ -172,7 +172,8 @@
   }
 }
 
-.pic {
+.pic,
+.pic1 {
   background-image: url("../../public/lellehazdark.jpeg");
   @include pic();
   width: 30rem;
@@ -191,6 +192,28 @@
 
   &:nth-child(3) {
     background-image: url("../../public/apartman/general/Balatonlelle_Nádor_Kert2.jpg");
+  }
+
+  &:nth-child(4) {
+    background-image: url("../../public/apartman/general/Balatonlelle_Nádor_Apartmanház.jpg");
+  }
+}
+
+.pic1 {
+  &:nth-child(1) {
+    background-image: url("../../public/topart/general/toparthaz1.jpg");
+  }
+
+  &:nth-child(2) {
+    background-image: url("../../public/topart/general/toparthaz2.jpg");
+  }
+
+  &:nth-child(3) {
+    background-image: url("../../public/topart/general/toparthaz1.jpg");
+  }
+
+  &:nth-child(4) {
+    background-image: url("../../public/topart/general/toparthaz2.jpg");
   }
 }
 

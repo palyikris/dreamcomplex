@@ -259,3 +259,12 @@ $red: #C35355;
     color: lighten($color, 75%);
   }
 }
+
+@mixin ApartmanImage() {
+  width: 100%;
+  height: 100vh;
+  display: block;
+  float: left;
+  @include pic();
+
+}

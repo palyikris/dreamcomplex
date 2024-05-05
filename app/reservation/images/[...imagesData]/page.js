@@ -26,33 +26,33 @@ export default function ImagesPage() {
     if (apartmanNumber === 1) {
       return (
         <ImagesComponentForApartmans startingNum={1} nOfChildren={3}>
-          <div className={styles.img} />
-          <div className={styles.img} />
-          <div className={styles.img} />
+          <div className={styles.ap1} />
+          <div className={styles.ap1} />
+          <div className={styles.ap1} />
         </ImagesComponentForApartmans>
       );
     } else if (apartmanNumber === 2) {
       return (
         <ImagesComponentForApartmans startingNum={1} nOfChildren={3}>
-          <div className={styles.img} />
-          <div className={styles.img} />
-          <div className={styles.img} />
+          <div className={styles.ap2} />
+          <div className={styles.ap2} />
+          <div className={styles.ap2} />
         </ImagesComponentForApartmans>
       );
     } else if (apartmanNumber === 3) {
       return (
         <ImagesComponentForApartmans startingNum={1} nOfChildren={3}>
-          <div className={styles.img} />
-          <div className={styles.img} />
-          <div className={styles.img} />
+          <div className={styles.ap3} />
+          <div className={styles.ap3} />
+          <div className={styles.ap3} />
         </ImagesComponentForApartmans>
       );
     } else {
       return (
         <ImagesComponentForApartmans startingNum={1} nOfChildren={3}>
-          <div className={styles.img} />
-          <div className={styles.img} />
-          <div className={styles.img} />
+          <div className={styles.ap4} />
+          <div className={styles.ap4} />
+          <div className={styles.ap4} />
         </ImagesComponentForApartmans>
       );
     }
@@ -60,25 +60,25 @@ export default function ImagesPage() {
     if (apartmanNumber === 1) {
       return (
         <ImagesComponentForApartmans startingNum={1} nOfChildren={3}>
-          <div className={styles.img} />
-          <div className={styles.img} />
-          <div className={styles.img} />
+          <div className={styles.to1} />
+          <div className={styles.to1} />
+          <div className={styles.to1} />
         </ImagesComponentForApartmans>
       );
     } else if (apartmanNumber === 2) {
       return (
         <ImagesComponentForApartmans startingNum={1} nOfChildren={3}>
-          <div className={styles.img} />
-          <div className={styles.img} />
-          <div className={styles.img} />
+          <div className={styles.to2} />
+          <div className={styles.to2} />
+          <div className={styles.to2} />
         </ImagesComponentForApartmans>
       );
     } else {
       return (
         <ImagesComponentForApartmans startingNum={1} nOfChildren={3}>
-          <div className={styles.img} />
-          <div className={styles.img} />
-          <div className={styles.img} />
+          <div className={styles.to3} />
+          <div className={styles.to3} />
+          <div className={styles.to3} />
         </ImagesComponentForApartmans>
       );
     }

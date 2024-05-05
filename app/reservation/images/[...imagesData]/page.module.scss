@@ -1,18 +1,65 @@
 @import "../../../../uniform/style.module";
 
-.img {
-    width: 100%;
-    height: 100vh;
-    display: block;
-    float: left;
-    @include pic();
-    background-image: url("../../../../public/lellehazdark.jpeg");
+.ap1 {
+    @include ApartmanImage();
 
     &:nth-child(1) {
-        background-image: url("../../../../public/balcsipartdark.jpeg");
+        background-image: url("../../../../public/apartman/1/Balatonlelle_Nádor_1-es_Fürdőszoba.jpg");
     }
 
     &:nth-child(2) {
-        background-image: url("../../../../public/naplemente.jpeg");
+        background-image: url("../../../../public/apartman/1/Balatonlelle_Nádor_1-es_Konyha.jpg");
+    }
+
+    &:nth-child(3) {
+        background-image: url("../../../../public/apartman/1/Balatonlelle_Nádor_1-es_Szoba2.jpg");
+    }
+}
+
+.ap2 {
+    @include ApartmanImage();
+
+    &:nth-child(1) {
+        background-image: url("../../../../public/apartman/2/Balatonlelle_Nádor_2-es_Fürdőszoba.jpg");
+    }
+
+    &:nth-child(2) {
+        background-image: url("../../../../public/apartman/2/Balatonlelle_Nádor_2-es_Konyha.jpg");
+    }
+
+    &:nth-child(3) {
+        background-image: url("../../../../public/apartman/2/Balatonlelle_Nádor_2-es_Szoba.jpg");
+    }
+}
+
+.ap3 {
+    @include ApartmanImage();
+
+    &:nth-child(1) {
+        background-image: url("../../../../public/apartman/3/Balatonlelle_Nádor_3-as_Fürdőszoba.jpg");
+    }
+
+    &:nth-child(2) {
+        background-image: url("../../../../public/apartman/3/Balatonlelle_Nádor_3-as_Konyha.jpg");
+    }
+
+    &:nth-child(3) {
+        background-image: url("../../../../public/apartman/3/Balatonlelle_Nádor_3-as_Nappali.jpg");
+    }
+}
+
+.ap4 {
+    @include ApartmanImage();
+
+    &:nth-child(1) {
+        background-image: url("../../../../public/apartman/4/Balatonlelle_Nádor_4-es_Fürdőszoba.jpg");
+    }
+
+    &:nth-child(2) {
+        background-image: url("../../../../public/apartman/4/Balatonlelle_Nádor_4-es_Konyha2.jpg");
+    }
+
+    &:nth-child(3) {
+        background-image: url("../../../../public/apartman/4/Balatonlelle_Nádor_4-es_Szoba2.jpg");
     }
 }

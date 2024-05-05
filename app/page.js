@@ -127,7 +127,9 @@ export default function Page() {
         </div>
       </div>
       <div className={styles.bigTitle}>
-        <h1>Lehetőségeink:</h1>
+        <div className={styles.titleWrapper}>
+          <h1>Lehetőségeink:</h1>
+        </div>
         <div
           className={styles.picContainer}
           initial={{ opacity: 0, x: 25 }}

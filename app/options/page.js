@@ -250,11 +250,10 @@ export default function OptionsPage() {
         <div className={styles.apartmanDetailed} id="dreamTopart">
           <div className={styles.intro}>
             <PicSlide text="Dream Tópart">
-              <div className={styles.pic} />
-              <div className={styles.pic} />
-              <div className={styles.pic} />
-              <div className={styles.pic} />
-              <div className={styles.pic} />
+              <div className={styles.pic1} />
+              <div className={styles.pic1} />
+              <div className={styles.pic1} />
+              <div className={styles.pic1} />
             </PicSlide>
             <div className={styles.description}>
               <h1>Dream Tópart</h1>

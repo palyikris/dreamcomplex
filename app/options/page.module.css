@@ -215,7 +215,8 @@
   border: 0.1rem solid #daa06d;
 }
 
-.pic {
+.pic,
+.pic1 {
   background-image: url("../../public/lellehazdark.jpeg");
   background-position: center;
   background-repeat: no-repeat;
@@ -226,14 +227,34 @@
   float: left;
   transition: all 0.6s;
 }
-.pic:nth-child(1) {
+.pic:nth-child(1),
+.pic1:nth-child(1) {
   background-image: url("../../public/apartman/general/Balatonlelle_Nádor_Apartmanház.jpg");
 }
-.pic:nth-child(2) {
+.pic:nth-child(2),
+.pic1:nth-child(2) {
   background-image: url("../../public/apartman/general/Balatonlelle_Nádor_Kert1.jpg");
 }
-.pic:nth-child(3) {
+.pic:nth-child(3),
+.pic1:nth-child(3) {
   background-image: url("../../public/apartman/general/Balatonlelle_Nádor_Kert2.jpg");
+}
+.pic:nth-child(4),
+.pic1:nth-child(4) {
+  background-image: url("../../public/apartman/general/Balatonlelle_Nádor_Apartmanház.jpg");
+}
+
+.pic1:nth-child(1) {
+  background-image: url("../../public/topart/general/toparthaz1.jpg");
+}
+.pic1:nth-child(2) {
+  background-image: url("../../public/topart/general/toparthaz2.jpg");
+}
+.pic1:nth-child(3) {
+  background-image: url("../../public/topart/general/toparthaz1.jpg");
+}
+.pic1:nth-child(4) {
+  background-image: url("../../public/topart/general/toparthaz2.jpg");
 }
 
 @media only screen and (max-width: 1000px) {
