@@ -11,17 +11,18 @@ export default function ImagesPage() {
   let apartmanType = path[path.length - 2];
   let apartmanNumber = parseInt(path[path.length - 1]);
 
-  if (apartmanType === "dreamhouse") {
-    if (apartmanNumber === 1) {
-      return (
-        <ImagesComponentForApartmans startingNum={1} nOfChildren={3}>
-          <div className={styles.img} />
-          <div className={styles.img} />
-          <div className={styles.img} />
-        </ImagesComponentForApartmans>
-      );
-    }
-  } else if (apartmanType === "dreamapartman") {
+  // if (apartmanType === "dreamhouse") {
+  //   if (apartmanNumber === 1) {
+  //     return (
+  //       <ImagesComponentForApartmans startingNum={1} nOfChildren={3}>
+  //         <div className={styles.img} />
+  //         <div className={styles.img} />
+  //         <div className={styles.img} />
+  //       </ImagesComponentForApartmans>
+  //     );
+  //   }
+  // }
+  if (apartmanType === "dreamapartman") {
     if (apartmanNumber === 1) {
       return (
         <ImagesComponentForApartmans startingNum={1} nOfChildren={3}>

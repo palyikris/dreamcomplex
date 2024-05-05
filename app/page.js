@@ -137,12 +137,12 @@ export default function Page() {
           <div className={styles.pic} />
           <div className={styles.helper} />
           <div className={styles.text}>
-            <p>Dream House</p>
+            <p>Dream Tópart</p>
           </div>
         </div>
       </div>
       <div className={styles.cards}>
-        <motion.div
+        {/* <motion.div
           className={styles.card}
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -174,7 +174,7 @@ export default function Page() {
               Részletek
             </button>
           </div>
-        </motion.div>
+        </motion.div> */}
         <motion.div
           className={styles.card}
           initial={{ opacity: 0, y: 25 }}

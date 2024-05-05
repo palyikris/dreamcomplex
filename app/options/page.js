@@ -34,13 +34,13 @@ export default function OptionsPage() {
           transition={{ duration: 0.5, delay: 0.25, ease: "easeInOut" }}
         >
           <h1>
-            3 <span>Dream</span> szállás közül választhatsz
+            2 <span>Dream</span> szállás közül választhatsz
           </h1>
           <Link href={"/reservation"}>Foglalj nálunk már most!</Link>
         </motion.div>
       </div>
       <div className={styles.apartmansDetailed}>
-        <div className={styles.apartmanDetailed} id="dreamHouse">
+        {/* <div className={styles.apartmanDetailed} id="dreamHouse">
           <div className={styles.intro}>
             <PicSlide text="Dream House">
               <div className={styles.pic} />
@@ -145,11 +145,10 @@ export default function OptionsPage() {
             </div>
           </div>
           <div className={styles.sep} />
-        </div>
+        </div> */}
         <div className={styles.apartmanDetailed} id="dreamApartman">
           <div className={styles.intro}>
             <PicSlide text="Dream Apartman">
-              <div className={styles.pic} />
               <div className={styles.pic} />
               <div className={styles.pic} />
               <div className={styles.pic} />

@@ -39,7 +39,7 @@ export default function ReservationPage() {
           <p>Köszönjük, hogy nálunk száll meg!</p>
         </motion.div>
         <div className={styles.apartmans}>
-          <motion.button
+          {/* <motion.button
             className={styles.apartman}
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -56,7 +56,7 @@ export default function ReservationPage() {
           >
             <h1>Dream House</h1>
             <p>Egy gyönyörű és hatalmas ház Balatonőszöd partján.</p>
-          </motion.button>
+          </motion.button> */}
           <motion.button
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -97,9 +97,9 @@ export default function ReservationPage() {
       </div>
       <div id="reserveInterface">
         {/* prompt: this opens the right section based on which section was chosen by the user */}
-        {isDreamHouseOpen
+        {/* {isDreamHouseOpen
           ? <ReserveInterfaceComponent title="Dream House" />
-          : <div />}
+          : <div />} */}
         {isDreamApartmanOpen
           ? <ReserveInterfaceComponent title="Dream Apartman" />
           : <div />}
