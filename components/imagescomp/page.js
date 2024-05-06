@@ -7,33 +7,31 @@ import { useRouter } from "next/navigation";
 export default function ImagesComponentForApartmans(props) {
   let { startingNum, nOfChildren } = props;
   let imagesRef = useRef();
-  let [currImageNumber, setCurrImageNumber] = useState(1);
   let [currImageNumberForDisplay, setCurrImageNumberForDisplay] = useState(1);
   let router = useRouter();
 
   function NextImage() {
     if (currImageNumberForDisplay === nOfChildren) {
-      setCurrImageNumber(startingNum);
       setCurrImageNumberForDisplay(startingNum);
+      imagesRef.current.style.marginLeft = "0%";
     } else {
-      setCurrImageNumber(num => num - 1);
       setCurrImageNumberForDisplay(num => num + 1);
+      imagesRef.current.style.marginLeft = `-${currImageNumberForDisplay *
+        100}%`;
     }
   }
 
   function PrevImage() {
     if (currImageNumberForDisplay === startingNum) {
-      setCurrImageNumber(startingNum - (nOfChildren - 1));
       setCurrImageNumberForDisplay(nOfChildren);
+      imagesRef.current.style.marginLeft = `-${(nOfChildren - 1) * 100}%`;
     } else {
-      setCurrImageNumber(num => num + 1);
       setCurrImageNumberForDisplay(num => num - 1);
+      imagesRef.current.style.marginLeft = `-${(currImageNumberForDisplay - 2) *
+        100}%`;
     }
   }
 
-  if (imagesRef.current != undefined) {
-    imagesRef.current.style.marginLeft = currImageNumber * 200 + "%";
-  }
   return (
     <div className={styles.container}>
       <div className={styles.backButton}>
@@ -81,7 +79,13 @@ export default function ImagesComponentForApartmans(props) {
         </button>
       </div>
       <div className={styles.window}>
-        <div className={styles.images} ref={imagesRef}>
+        <div
+          className={styles.images}
+          ref={imagesRef}
+          style={{
+            width: `${nOfChildren * 100}%`
+          }}
+        >
           {props.children}
         </div>
       </div>

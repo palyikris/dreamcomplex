@@ -107,6 +107,7 @@
   flex-direction: row;
   height: 100vh;
   overflow: hidden;
+  justify-content: flex-start;
 }
 .container .window .images {
   display: flex;
@@ -117,8 +118,6 @@
   flex-shrink: 0;
   flex-grow: 1;
   justify-content: flex-start;
-  margin-left: 200%;
-  width: 300%;
   height: 100vh;
   text-align: center;
 }/*# sourceMappingURL=page.module.css.map */

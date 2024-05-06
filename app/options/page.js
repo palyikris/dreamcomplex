@@ -342,8 +342,8 @@ export default function OptionsPage() {
               </div>
             </div>
             <div className={styles.interiors}>
-              <h3>Balatonlelle, Honvéd u. 92, 8638</h3>
-              <MapsPage lat={46.78487716798231} long={17.672140809600545} />
+              <h3>Balatonlelle, Honvéd u. 78, 8638</h3>
+              <MapsPage lat={46.78546658844447} long={17.675083668397434} />
             </div>
           </div>
         </div>

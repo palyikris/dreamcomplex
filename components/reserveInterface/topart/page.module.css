@@ -61,6 +61,18 @@
   visibility: visible;
   transform: scale(1);
 }
+.container .apartman:nth-child(1) .details .pic {
+  background-image: url("../../../public/apartman/1/Balatonlelle_Nádor_1-es_Szoba1.jpg");
+}
+.container .apartman:nth-child(2) .details .pic {
+  background-image: url("../../../public/apartman/2/Balatonlelle_Nádor_2-es_Szoba.jpg");
+}
+.container .apartman:nth-child(3) .details .pic {
+  background-image: url("../../../public/apartman/3/Balatonlelle_Nádor_3-as_Nappali.jpg");
+}
+.container .apartman:nth-child(4) .details .pic {
+  background-image: url("../../../public/apartman/4/Balatonlelle_Nádor_4-es_Szoba1.jpg");
+}
 .container .apartman .details {
   display: flex;
   justify-content: center;
@@ -345,6 +357,18 @@
   opacity: 1;
   visibility: visible;
   transform: scale(1);
+}
+.container .apartman:nth-child(1) .details .pic {
+  background-image: url("../../../public/apartman/1/Balatonlelle_Nádor_1-es_Szoba1.jpg");
+}
+.container .apartman:nth-child(2) .details .pic {
+  background-image: url("../../../public/apartman/2/Balatonlelle_Nádor_2-es_Szoba.jpg");
+}
+.container .apartman:nth-child(3) .details .pic {
+  background-image: url("../../../public/apartman/3/Balatonlelle_Nádor_3-as_Nappali.jpg");
+}
+.container .apartman:nth-child(4) .details .pic {
+  background-image: url("../../../public/apartman/4/Balatonlelle_Nádor_4-es_Szoba1.jpg");
 }
 .container .apartman .details {
   display: flex;
