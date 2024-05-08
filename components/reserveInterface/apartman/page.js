@@ -120,10 +120,9 @@ export default function ReserveApartmanComponent(props) {
             <h3>2-es Apartman</h3>
             <div className={styles.sep} />
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-              neque error earum quod quaerat? Nesciunt labore perspiciatis
-              suscipit enim facilis reiciendis aut maxime corrupti? Quibusdam
-              excepturi non numquam placeat eius.
+              Férőhely: 2 + 1 fő. Lakóterület: 45m<sup>2</sup>. Szobák száma: 1
+              nappali, 1 háló 2 főnek (egyben), 1 alhóhelyiség (1 főnek),
+              Konyha, Zuhanyzó, WC (egyben), Terasz: 8m<sup>2</sup>.
             </p>
             <div className={styles.sep} />
             <div className={styles.services}>
@@ -210,10 +209,9 @@ export default function ReserveApartmanComponent(props) {
             <h3>3-as Apartman</h3>
             <div className={styles.sep} />
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-              neque error earum quod quaerat? Nesciunt labore perspiciatis
-              suscipit enim facilis reiciendis aut maxime corrupti? Quibusdam
-              excepturi non numquam placeat eius.
+              Férőhely: 4 - 6 fő. Lakóterület: 65m<sup>2</sup>. Szobák száma: 2
+              szoba + 1 nappali, Konyha, Fürdőszoba zuhanyzóval, Külön WC,
+              Terasz: 8m<sup>2</sup>.
             </p>
             <div className={styles.sep} />
             <div className={styles.services}>
@@ -300,10 +298,9 @@ export default function ReserveApartmanComponent(props) {
             <h3>4-es Apartman</h3>
             <div className={styles.sep} />
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-              neque error earum quod quaerat? Nesciunt labore perspiciatis
-              suscipit enim facilis reiciendis aut maxime corrupti? Quibusdam
-              excepturi non numquam placeat eius.
+              Férőhely: 4 - 6 fő. Lakóterület: 65m<sup>2</sup>. Szobák száma: 2
+              szoba + 1 nappali, Konyha, Fürdőszoba zuhanyzóval, Külön WC,
+              Terasz: 4,5m<sup>2</sup>.
             </p>
             <div className={styles.sep} />
             <div className={styles.services}>

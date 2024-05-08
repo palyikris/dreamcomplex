@@ -73,6 +73,15 @@
 .container .apartman:nth-child(4) .details .pic {
   background-image: url("../../../public/apartman/4/Balatonlelle_Nádor_4-es_Szoba1.jpg");
 }
+.container .apartman:nth-child(1) .details .pic1 {
+  background-image: url("../../../public/topart/1/Dream Tópart_1 emelet_Jobb apartman_Konyha_1.jpg");
+}
+.container .apartman:nth-child(2) .details .pic1 {
+  background-image: url("../../../public/topart/2/Dream Tópart_1 emelet_Bal apartman_Szoba_1_2.jpg");
+}
+.container .apartman:nth-child(3) .details .pic1 {
+  background-image: url("../../../public/apartman/3/Balatonlelle_Nádor_3-as_Nappali.jpg");
+}
 .container .apartman .details {
   display: flex;
   justify-content: center;
@@ -80,7 +89,8 @@
   width: 100%;
   flex-direction: row;
 }
-.container .apartman .details .pic {
+.container .apartman .details .pic,
+.container .apartman .details .pic1 {
   background-image: url("../../../public/lellehazdark.jpeg");
   background-position: center;
   background-repeat: no-repeat;
@@ -96,7 +106,8 @@
   transition: all 0.5s;
   position: relative;
 }
-.container .apartman .details .pic::after {
+.container .apartman .details .pic::after,
+.container .apartman .details .pic1::after {
   content: "Képek";
   position: absolute;
   z-index: 10;
@@ -114,7 +125,8 @@
   opacity: 0;
   transition: all 0.5s;
 }
-.container .apartman .details .pic p {
+.container .apartman .details .pic p,
+.container .apartman .details .pic1 p {
   width: 100%;
   text-align: center;
   padding: 0.5rem;
@@ -122,10 +134,12 @@
   color: white;
   font-size: 12px;
 }
-.container .apartman .details .pic:hover {
+.container .apartman .details .pic:hover,
+.container .apartman .details .pic1:hover {
   cursor: pointer;
 }
-.container .apartman .details .pic:hover::after {
+.container .apartman .details .pic:hover::after,
+.container .apartman .details .pic1:hover::after {
   opacity: 1;
 }
 .container .apartman .details .text {

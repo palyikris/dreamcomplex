@@ -89,7 +89,7 @@ export default function ReserveTopartComponent(props) {
             </div>
           </div>
           <div
-            className={styles.pic}
+            className={styles.pic1}
             onClick={() => {
               setApartmanNumber(1);
               if (apartmanNumber != 0) {
@@ -179,7 +179,7 @@ export default function ReserveTopartComponent(props) {
             </div>
           </div>
           <div
-            className={styles.pic}
+            className={styles.pic1}
             onClick={() => {
               setApartmanNumber(2);
               if (apartmanNumber != 0) {
@@ -269,7 +269,7 @@ export default function ReserveTopartComponent(props) {
             </div>
           </div>
           <div
-            className={styles.pic}
+            className={styles.pic1}
             onClick={() => {
               setApartmanNumber(3);
               if (apartmanNumber != 0) {

@@ -45,10 +45,35 @@
         }
       }
 
+      &:nth-child(1) {
+        .details {
+          .pic1 {
+            background-image: url("../../../public/topart/1/Dream\ Tópart_1\ emelet_Jobb\ apartman_Konyha_1.jpg");
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        .details {
+          .pic1 {
+            background-image: url("../../../public/topart/2/Dream\ Tópart_1\ emelet_Bal\ apartman_Szoba_1_2.jpg");
+          }
+        }
+      }
+
+      &:nth-child(3) {
+        .details {
+          .pic1 {
+            background-image: url("../../../public/apartman/3/Balatonlelle_Nádor_3-as_Nappali.jpg");
+          }
+        }
+      }
+
       .details {
         @include centerDiv(row);
 
-        .pic {
+        .pic,
+        .pic1 {
           background-image: url("../../../public/lellehazdark.jpeg");
           @include pic();
           @include centerDiv(row);

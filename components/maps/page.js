@@ -30,7 +30,7 @@ export default function MapsPage(props) {
     <div>
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
-        zoom={13}
+        zoom={14}
         center={location}
       >
         <Marker position={location} />
