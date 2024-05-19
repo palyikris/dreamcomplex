@@ -212,7 +212,7 @@
     justify-content: flex-start;
     padding-left: 5rem;
     margin: 5rem;
-    margin-top: 10rem;
+    margin-top: 7rem;
 
     .titleWrapper {
       @include centerDiv(column);
@@ -323,11 +323,16 @@
       @include centerDiv(column);
       margin: 0 1rem;
 
-      .cardPic {
+      .cardPic,
+      .cardPic1 {
         background-image: url("../public/lellehazdark.jpeg");
         @include pic();
         width: 100%;
         height: 20rem;
+      }
+
+      .cardPic1 {
+        background-image: url("../public/topart/general/toparthaz1.jpg");
       }
 
       .description {

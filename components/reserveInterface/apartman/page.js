@@ -22,11 +22,18 @@ export default function ReserveApartmanComponent(props) {
               setApartmanNumber(1);
               router.push("/reservation#reserveFocus");
             }}
+            checked={apartmanNumber == 1}
           />
           <label for="radio1" />
         </div>
         <div className={styles.details}>
-          <div className={styles.text}>
+          <div
+            className={styles.text}
+            onClick={() => {
+              setApartmanNumber(1);
+              router.push("/reservation#reserveFocus");
+            }}
+          >
             <h3>1-es Apartman</h3>
             <div className={styles.sep} />
             <p>
@@ -110,11 +117,18 @@ export default function ReserveApartmanComponent(props) {
               setApartmanNumber(2);
               router.push("/reservation#reserveFocus");
             }}
+            checked={apartmanNumber == 2}
           />
           <label for="radio2" />
         </div>
         <div className={styles.details}>
-          <div className={styles.text}>
+          <div
+            className={styles.text}
+            onClick={() => {
+              setApartmanNumber(2);
+              router.push("/reservation#reserveFocus");
+            }}
+          >
             <h3>2-es Apartman</h3>
             <div className={styles.sep} />
             <p>
@@ -199,11 +213,18 @@ export default function ReserveApartmanComponent(props) {
               setApartmanNumber(3);
               router.push("/reservation#reserveFocus");
             }}
+            checked={apartmanNumber == 3}
           />
           <label for="radio3" />
         </div>
         <div className={styles.details}>
-          <div className={styles.text}>
+          <div
+            className={styles.text}
+            onClick={() => {
+              setApartmanNumber(3);
+              router.push("/reservation#reserveFocus");
+            }}
+          >
             <h3>3-as Apartman</h3>
             <div className={styles.sep} />
             <p>
@@ -288,11 +309,18 @@ export default function ReserveApartmanComponent(props) {
               setApartmanNumber(4);
               router.push("/reservation#reserveFocus");
             }}
+            checked={apartmanNumber == 4}
           />
           <label for="radio4" />
         </div>
         <div className={styles.details}>
-          <div className={styles.text}>
+          <div
+            className={styles.text}
+            onClick={() => {
+              setApartmanNumber(4);
+              router.push("/reservation#reserveFocus");
+            }}
+          >
             <h3>4-es Apartman</h3>
             <div className={styles.sep} />
             <p>

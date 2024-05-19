@@ -21,11 +21,18 @@ export default function ReserveTopartComponent(props) {
               setApartmanNumber(1);
               router.push("/reservation#reserveFocus");
             }}
+            checked={apartmanNumber === 1}
           />
           <label for="radio1" />
         </div>
         <div className={styles.details}>
-          <div className={styles.text}>
+          <div
+            className={styles.text}
+            onClick={() => {
+              setApartmanNumber(1);
+              router.push("/reservation#reserveFocus");
+            }}
+          >
             <h3>Nárcisz Apartman</h3>
             <div className={styles.sep} />
             <p>
@@ -109,11 +116,18 @@ export default function ReserveTopartComponent(props) {
               setApartmanNumber(2);
               router.push("/reservation#reserveFocus");
             }}
+            checked={apartmanNumber === 2}
           />
           <label for="radio2" />
         </div>
         <div className={styles.details}>
-          <div className={styles.text}>
+          <div
+            className={styles.text}
+            onClick={() => {
+              setApartmanNumber(2);
+              router.push("/reservation#reserveFocus");
+            }}
+          >
             <h3>Tulipán Apartman</h3>
             <div className={styles.sep} />
             <p>
@@ -197,11 +211,18 @@ export default function ReserveTopartComponent(props) {
               setApartmanNumber(3);
               router.push("/reservation#reserveFocus");
             }}
+            checked={apartmanNumber === 3}
           />
           <label for="radio3" />
         </div>
         <div className={styles.details}>
-          <div className={styles.text}>
+          <div
+            className={styles.text}
+            onClick={() => {
+              setApartmanNumber(3);
+              router.push("/reservation#reserveFocus");
+            }}
+          >
             <h3>Hóvirág Apartman</h3>
             <div className={styles.sep} />
             <p>

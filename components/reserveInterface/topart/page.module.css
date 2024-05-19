@@ -148,6 +148,7 @@
   align-items: center;
   width: 100%;
   flex-direction: column;
+  cursor: pointer;
 }
 .container .apartman .details .text h3 {
   font-size: 30px;
@@ -459,6 +460,7 @@
   align-items: center;
   width: 100%;
   flex-direction: column;
+  cursor: pointer;
 }
 .container .apartman .details .text h3 {
   font-size: 30px;

@@ -118,6 +118,7 @@
 
         .text {
           @include centerDiv(column);
+          cursor: pointer;
 
           h3 {
             font-size: 30px;

@@ -15,13 +15,13 @@
     margin-top: 10vmin;
     border: 1.5px solid $main;
     border-radius: 5px;
-    width: 90%;
+    width: 95%;
     background-color: $main;
     overflow-y: scroll;
-    max-height: 240px;
+    height: 500px;
     justify-content: flex-start;
     box-shadow: 0px 0px 10px 2px rgba($bg, 0.75);
-
+    margin-bottom: 10rem;
 
     &::-webkit-scrollbar {
         display: none;
@@ -31,6 +31,11 @@
         @include centerDiv(row);
         justify-content: flex-start;
         padding: 2vmin 0;
+        border-bottom: 1px solid white;
+
+        &:last-child {
+            border-bottom: none;
+        }
 
         .reservationData {
             @include centerDiv(row);
@@ -40,6 +45,10 @@
                 @include centerDiv(row);
                 margin: .5vmin 1vmin;
                 color: white;
+
+                p {
+                    text-align: center;
+                }
 
                 &:nth-child(1) {
                     width: 80%;

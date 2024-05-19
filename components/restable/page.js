@@ -68,8 +68,8 @@ export default function ReservationTable(props) {
           <div className={styles.data}>Név</div>
           <div className={styles.data}>Email</div>
           <div className={styles.data}>Telefon</div>
-          <div className={styles.data}>Felnőttek</div>
-          <div className={styles.data}>Gyerekek</div>
+          <div className={styles.data}>Felnőtt</div>
+          <div className={styles.data}>Gyerek</div>
           <div className={styles.data}>Érkezés</div>
           <div className={styles.data}>Távozás</div>
           <div className={styles.data}>Apartman</div>
