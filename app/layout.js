@@ -5,6 +5,7 @@
 import GlobalContextProvider from "@/context/globalcontext";
 import "./globals.css";
 import GlobalDateContextProvider from "@/context/datecontext";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function RootLayout({ children }) {
   return (
@@ -18,7 +19,7 @@ export default function RootLayout({ children }) {
               name="viewport"
               content="width=device-width, initial-scale=1.0"
             />
-            <title>Dream Apartman Komplexumok</title>
+            <title>Dream Komplexumok</title>
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link
               rel="preconnect"
@@ -39,9 +40,22 @@ export default function RootLayout({ children }) {
               href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap"
               rel="stylesheet"
             />
+            <meta
+              name="description"
+              content="A Dream Komplexumok egy két helyből álló, összesen 7 apartmannal rendelkező komplexum. BalatonLellén, ha a tóparton, vagy a városhoz közel szeretne pihenni, velünk mind megteheti. Kattintson és foglaljon már most!"
+            />
+            <meta
+              name="keywords"
+              content="Dream, apartman, Dream apartman, BalatonLelle, lelle, tópart, szállás"
+            />
+            <meta
+              name="robots"
+              content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+            />
           </head>
           <body>
-              {children}
+            {children}
+            <Analytics />
           </body>
         </html>
       </GlobalDateContextProvider>

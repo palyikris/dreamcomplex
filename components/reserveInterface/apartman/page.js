@@ -30,10 +30,8 @@ export default function ReserveApartmanComponent(props) {
             <h3>1-es Apartman</h3>
             <div className={styles.sep} />
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-              neque error earum quod quaerat? Nesciunt labore perspiciatis
-              suscipit enim facilis reiciendis aut maxime corrupti? Quibusdam
-              excepturi non numquam placeat eius.
+              Férőhely: 4+3 fő, Lakóterület: 65 m2, Szobák száma: 1 nappali, 2
+              szoba, Konyha, Fürdőszoba zuhanyzóval, Külön WC, Terasz
             </p>
             <div className={styles.sep} />
             <div className={styles.services}>
@@ -121,7 +119,7 @@ export default function ReserveApartmanComponent(props) {
             <div className={styles.sep} />
             <p>
               Férőhely: 2 + 1 fő. Lakóterület: 45m<sup>2</sup>. Szobák száma: 1
-              nappali, 1 háló 2 főnek (egyben), 1 alhóhelyiség (1 főnek),
+              nappali, 1 háló 2 főnek (egyben), 1 alvóhelyiség (1 főnek),
               Konyha, Zuhanyzó, WC (egyben), Terasz: 8m<sup>2</sup>.
             </p>
             <div className={styles.sep} />

@@ -108,10 +108,10 @@ export default function Page() {
           </h1>
           <div className={styles.sep} />
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-            praesentium alias distinctio officiis possimus! Sequi quis,
-            voluptate tenetur iste quam assumenda quo, officia harum dolor,
-            praesentium quibusdam sit possimus maiores.
+            A Balaton mindig egy jó választás nyaralásra. Gyere és nézz körül
+            nálunk, milyen lehetőséget tudunk kínálni számodra! Balatonlellén 2
+            szállás lehetőségünk van, amik nagyon kellemes és pihentető
+            nyaralást tudnak kínálni.
           </p>
           <div className={styles.sep} />
           <motion.button

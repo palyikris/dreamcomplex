@@ -158,10 +158,10 @@ export default function OptionsPage() {
               <h1>Dream Apartman</h1>
               <div className={styles.sep} />
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam,
-                quisquam est dolorum maiores aperiam pariatur. Id ratione
-                nesciunt soluta magnam, sunt ipsa commodi possimus? Neque
-                deserunt rerum fuga dolorum eligendi!
+                A Balaton közelében a legjobb pihenni, ehhez nyújtanak
+                lehetőségeket a Dream Apartmanok. Modern apartmanok mellett
+                játszóteret, grillezőt, jakuzzit, csócsó- és pingpong asztalt
+                biztosítunk.
               </p>
               <button
                 onClick={() => {
@@ -259,10 +259,10 @@ export default function OptionsPage() {
               <h1>Dream Tópart</h1>
               <div className={styles.sep} />
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam,
-                quisquam est dolorum maiores aperiam pariatur. Id ratione
-                nesciunt soluta magnam, sunt ipsa commodi possimus? Neque
-                deserunt rerum fuga dolorum eligendi!
+                Ha szereted a Balaton látványát közelről, akkor ez a szállás
+                neked való. Újonnan felújított 3 apartmanból álló kellemes
+                környezetű ház. Játszótér, kemence, pingpong- és csócsó asztal
+                mind rendelkezésre áll nálunk.
               </p>
               <button
                 onClick={() => {

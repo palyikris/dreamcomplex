@@ -26,13 +26,11 @@ export default function ReserveTopartComponent(props) {
         </div>
         <div className={styles.details}>
           <div className={styles.text}>
-            <h3>1-es Apartman</h3>
+            <h3>Nárcisz Apartman</h3>
             <div className={styles.sep} />
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-              neque error earum quod quaerat? Nesciunt labore perspiciatis
-              suscipit enim facilis reiciendis aut maxime corrupti? Quibusdam
-              excepturi non numquam placeat eius.
+              Férőhely: 4+2 fő, 2 hálószoba, Jól felszerelt konyha, Nappali
+              étkezővel, Terasz Balatoni látvánnyal, Fürdőszoba zuhanyzóval
             </p>
             <div className={styles.sep} />
             <div className={styles.services}>
@@ -116,13 +114,11 @@ export default function ReserveTopartComponent(props) {
         </div>
         <div className={styles.details}>
           <div className={styles.text}>
-            <h3>2-es Apartman</h3>
+            <h3>Tulipán Apartman</h3>
             <div className={styles.sep} />
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-              neque error earum quod quaerat? Nesciunt labore perspiciatis
-              suscipit enim facilis reiciendis aut maxime corrupti? Quibusdam
-              excepturi non numquam placeat eius.
+              Férőhely: 4 fő, 2 hálószoba, Jól felszerelt konyha, Hangulatos
+              terasz, Fürdőszoba zuhanyzóval
             </p>
             <div className={styles.sep} />
             <div className={styles.services}>
@@ -206,13 +202,12 @@ export default function ReserveTopartComponent(props) {
         </div>
         <div className={styles.details}>
           <div className={styles.text}>
-            <h3>3-as Apartman</h3>
+            <h3>Hóvirág Apartman</h3>
             <div className={styles.sep} />
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-              neque error earum quod quaerat? Nesciunt labore perspiciatis
-              suscipit enim facilis reiciendis aut maxime corrupti? Quibusdam
-              excepturi non numquam placeat eius.
+              Férőhely: 2+2 fő, 1 hálószoba, Jól felszerelt konyha, Balatoni
+              kilátás, Nagy nappali étkezővel és kanapéval, Fürdőszoba
+              zuhanyzóval, Külön WC
             </p>
             <div className={styles.sep} />
             <div className={styles.services}>

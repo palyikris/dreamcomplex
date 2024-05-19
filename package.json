@@ -18,6 +18,7 @@
     "@mui/x-date-pickers-pro": "^6.16.2",
     "@react-google-maps/api": "^2.19.2",
     "@sendgrid/mail": "^7.7.0",
+    "@vercel/analytics": "^1.2.2",
     "axios": "^1.6.2",
     "dayjs": "^1.11.10",
     "dotenv": "^16.3.1",
