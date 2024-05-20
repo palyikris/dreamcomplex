@@ -10,6 +10,7 @@ import { useGlobalDate } from "@/context/datecontexthook";
 import { GenerateDate } from "@/lib/generatedate";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import { handleSubmit } from "@/lib/sendemail";
 
 export default function ReserveForm(props) {
   let { apartmanNumber, type } = props;
@@ -27,38 +28,6 @@ export default function ReserveForm(props) {
   let { arrDate, depDate } = useGlobalDate();
 
   let router = useRouter();
-
-  const postData = async () => {
-    try {
-      let apType = "";
-      if (type == "dreamhouse") {
-        apType = "Dream House";
-      } else if (type == "dreamapartman") {
-        apType = "Dream Apartman";
-      } else if (type == "dreamtopart") {
-        apType = "Dream Tópart";
-      }
-
-      const response = await axios.post(
-        "https://dreamcomplex.vercel.app/api/email_api",
-        {
-          email: email,
-          phone: phoneNumber,
-          name: name,
-          arr: GenerateDate(arrDate),
-          dep: GenerateDate(depDate),
-          adult: parents,
-          children: children,
-          type: apType,
-          number: apartmanNumber,
-          note: note
-        }
-      );
-      console.log(response.data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
 
   function checkData() {
     let isInputValid = true;
@@ -109,10 +78,12 @@ export default function ReserveForm(props) {
       if (result === false) {
         alert("Valami hiba történt!");
       } else {
-        postData();
         setReservationId(result);
         setIsAfterReservation(true);
-        setLoading(false);
+
+        handleSubmit(email, result, dataArrDate, dataDepDate).then(() => {
+          setLoading(false);
+        });
       }
     });
   }
