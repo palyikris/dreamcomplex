@@ -31,6 +31,7 @@ export default function Page() {
           objectFit="cover"
           placeholder="blur"
           blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABKUlEQVQ4jZ2Tz0vDQBDGJx"
+          priority={true}
         />
         <motion.div
           initial={{ opacity: 0, y: 15 }}
