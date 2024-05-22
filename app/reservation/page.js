@@ -26,6 +26,15 @@ export default function ReservationPage() {
     <div className={styles.container}>
       <Topnav />
       <div className={styles.heroSections}>
+        <Image
+          src={"/public/narancslemente.jpg"}
+          alt="Balaton part naplemente"
+          layout="fill"
+          objectFit="cover"
+          placeholder="blur"
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABKUlEQVQ4jZ2Tz0vDQBDGJx"
+          priority={true}
+        />
         <motion.div
           className={styles.heroElements}
           initial={{ opacity: 0, y: 15 }}

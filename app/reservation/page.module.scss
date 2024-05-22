@@ -8,9 +8,8 @@
     align-items: flex-start;
     height: auto;
     min-height: 100vh;
-    background-image: url("../../public/narancslemente.jpg");
-    @include pic();
-    padding: 8rem 0 5rem 0;
+    // background-image: url("../../public/narancslemente.jpg");
+    // @include pic();    padding: 8rem 0 5rem 0;
     justify-content: flex-end;
 
     .heroElements {
@@ -21,6 +20,7 @@
       position: relative;
       border-right: 0;
       margin-left: 5rem;
+      position: relative;
 
       &::after {
         content: "";

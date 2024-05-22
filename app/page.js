@@ -19,9 +19,6 @@ export default function Page() {
 
   return (
     <div className={styles.container}>
-      <Head>
-        <link rel="preload" href="../public/partdark.jpg" />
-      </Head>
       <Topnav />
       <div className={styles.heroSections}>
         <Image

@@ -7,8 +7,9 @@
     @include centerDiv(column);
     align-items: flex-start;
     height: 100vh;
-    background-image: url("../../public/narancslemente.jpg");
-    @include pic();
+    // background-image: url("../../public/narancslemente.jpg");
+    // @include pic();
+    position: relative;
     padding-bottom: 1rem;
 
 
