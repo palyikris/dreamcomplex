@@ -16,11 +16,6 @@ import Loader from "@/components/loader/page";
 export default function Page() {
   let router = useRouter();
   let [trackId, setTrackId] = useState("");
-  let [loading, setLoading] = useState(true);
-
-  if (loading) {
-    return <Loader main={true} />;
-  }
 
   return (
     <div className={styles.container}>
@@ -34,9 +29,8 @@ export default function Page() {
           alt="Balaton part"
           layout="fill"
           objectFit="cover"
-          onLoad={() => {
-            setLoading(false);
-          }}
+          placeholder="blur"
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABKUlEQVQ4jZ2Tz0vDQBDGJx"
         />
         <motion.div
           initial={{ opacity: 0, y: 15 }}
