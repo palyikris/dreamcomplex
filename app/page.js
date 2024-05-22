@@ -11,10 +11,16 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Head from "next/head";
+import Loader from "@/components/loader/page";
 
 export default function Page() {
   let router = useRouter();
   let [trackId, setTrackId] = useState("");
+  let [loading, setLoading] = useState(true);
+
+  if (loading) {
+    return <Loader main={true} />;
+  }
 
   return (
     <div className={styles.container}>
@@ -28,6 +34,9 @@ export default function Page() {
           alt="Balaton part"
           layout="fill"
           objectFit="cover"
+          onLoad={() => {
+            setLoading(false);
+          }}
         />
         <motion.div
           initial={{ opacity: 0, y: 15 }}
