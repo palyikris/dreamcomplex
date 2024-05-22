@@ -11,6 +11,7 @@ import PicSlide from "./../../components/picSlide/page";
 import { useApartman } from "@/context/contexthook";
 import MapsPage from "./../../components/maps/page";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function OptionsPage() {
   let router = useRouter();

@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import Footer from "@/components/footer/page";
 import { useGlobalDate } from "@/context/datecontexthook";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function ReservationPage() {
   let {
