@@ -28,7 +28,7 @@ export default function OptionsPage() {
       <Topnav />
       <div className={styles.heroSections}>
         <Image
-          src={"/public/narancslemente.jpg"}
+          src={"/narancslemente.jpg"}
           alt="Balaton part naplemente"
           layout="fill"
           objectFit="cover"
