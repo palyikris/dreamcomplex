@@ -7,9 +7,11 @@
     @include centerDiv(row);
     justify-content: flex-start;
     height: 100vh;
-    background-image: url("../public/partdark.jpg");
-    @include pic();
+    // background-image: url("../public/partdark.jpg");
+    // @include pic();
     padding-left: 10rem;
+    position: relative;
+
 
     .heroElements {
       @include centerDiv(column);

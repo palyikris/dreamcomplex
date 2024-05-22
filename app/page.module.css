@@ -13,11 +13,8 @@
   flex-direction: row;
   justify-content: flex-start;
   height: 100vh;
-  background-image: url("../public/partdark.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   padding-left: 10rem;
+  position: relative;
 }
 .container .heroSections .heroElements {
   display: flex;

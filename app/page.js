@@ -8,9 +8,9 @@ import Topnav from "./../components/topnav/page";
 import Footer from "@/components/footer/page";
 import Link from "next/link";
 import { useState } from "react";
-import MapsPage from "./../components/maps/page";
-import BasicAnimationWrapper from "./../components/appwrapper/page";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import Head from "next/head";
 
 export default function Page() {
   let router = useRouter();
@@ -18,8 +18,17 @@ export default function Page() {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <link rel="preload" href="../public/partdark.jpg" />
+      </Head>
       <Topnav />
       <div className={styles.heroSections}>
+        <Image
+          src={"/partdark.jpg"}
+          alt="Balaton part"
+          layout="fill"
+          objectFit="cover"
+        />
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}

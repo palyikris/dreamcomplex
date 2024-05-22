@@ -76,33 +76,13 @@ export default function Topnav() {
   } = useApartman();
 
   return (
-    <BasicAnimationWrapper>
-      <div className={styles.container}>
-        {links.map((link, index) => {
-          if (links[index].href === path) {
-            return (
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                className={styles.nav}
-                key={index}
-                onClick={() => {
-                  setIsDreamApartmanOpen(false);
-                  setIsDreamHouseOpen(false);
-                  setIsDreamTopartOpen(false);
-                  router.push(link.href);
-                }}
-              >
-                {link.svg}
-                <p style={{ color: "#daa06d" }}>
-                  {link.text}
-                </p>
-              </motion.button>
-            );
-          }
+    // <BasicAnimationWrapper>
+    <div className={styles.container}>
+      {links.map((link, index) => {
+        if (links[index].href === path) {
           return (
             <motion.button
               whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 1.05 }}
               className={styles.nav}
               key={index}
               onClick={() => {
@@ -113,13 +93,33 @@ export default function Topnav() {
               }}
             >
               {link.svg}
-              <p>
+              <p style={{ color: "#daa06d" }}>
                 {link.text}
               </p>
             </motion.button>
           );
-        })}
-      </div>
-    </BasicAnimationWrapper>
+        }
+        return (
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 1.05 }}
+            className={styles.nav}
+            key={index}
+            onClick={() => {
+              setIsDreamApartmanOpen(false);
+              setIsDreamHouseOpen(false);
+              setIsDreamTopartOpen(false);
+              router.push(link.href);
+            }}
+          >
+            {link.svg}
+            <p>
+              {link.text}
+            </p>
+          </motion.button>
+        );
+      })}
+    </div>
+    // </BasicAnimationWrapper>
   );
 }
