@@ -2,22 +2,28 @@
 import nodemailer from "nodemailer";
 
 export async function POST(req) {
-  const { email, code, startDate, endDate } = await req.json();
+  const {
+    name,
+    apartmanType,
+    apartmanNumber,
+    startDate,
+    endDate
+  } = await req.json();
   const message = `
-  Kedves Vendégünk!
+  Szia Ancsa/Keró!
   
-  Köszönjük, hogy a DreamKomplexumokat választotta. A foglalását sikeresen rögzítettük.
-  Visszaigazolásig várjon kérjük türelemmel, amíg fel nem vesszük Önnel a kapcsolatot.
-  A következő időpontra foglalt:
+  Foglalás történt a következő adatokkal:
   Érkezés: ${startDate}
   Távozás: ${endDate}
+  Név: ${name}
+  Apartman típusa: ${apartmanType}
+  Apartman száma: ${apartmanNumber}
   
-  Az oldalunkon a következő kóddal tudja ellenőrizni a foglalását: ${code}
-  Kérjük, ne válaszoljon erre az email-re!
-  Kellemes és pihentető nyaralást kívánunk!
+  Ez az email a zseniális Kristóf által lett elküldve.
+  Adjatok imát értem, hogy ilyen jó vagyok.
 
-  Üdvözlettel,
-  DreamKomplex Csapata
+  Puszi,
+  Pályi "istenkirálycsászár" Kristóf
   
   `;
 
@@ -33,8 +39,8 @@ export async function POST(req) {
   // Email options
   let mailOptions = {
     from: process.env.EMAIL_USERNAME,
-    to: email,
-    subject: "Foglalás",
+    to: "kerozoltan@gmail.com",
+    subject: "Új Foglalás",
     text: message
   };
 

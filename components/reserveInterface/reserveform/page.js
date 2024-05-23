@@ -10,7 +10,7 @@ import { useGlobalDate } from "@/context/datecontexthook";
 import { GenerateDate } from "@/lib/generatedate";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import { handleSubmit } from "@/lib/sendemail";
+import { handleKeroSubmit, handleSubmit } from "@/lib/sendemail";
 
 export default function ReserveForm(props) {
   let { apartmanNumber, type } = props;
@@ -82,7 +82,15 @@ export default function ReserveForm(props) {
         setIsAfterReservation(true);
 
         handleSubmit(email, result, dataArrDate, dataDepDate).then(() => {
-          setLoading(false);
+          handleKeroSubmit(
+            name,
+            type,
+            apartmanNumber,
+            dataArrDate,
+            dataDepDate
+          ).then(() => {
+            setLoading(false);
+          });
         });
       }
     });
