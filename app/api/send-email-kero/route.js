@@ -16,15 +16,7 @@ export async function POST(req) {
   Érkezés: ${startDate}
   Távozás: ${endDate}
   Név: ${name}
-  Apartman típusa: ${apartmanType}
   Apartman száma: ${apartmanNumber}
-  
-  Ez az email a zseniális Kristóf által lett elküldve.
-  Adjatok imát értem, hogy ilyen jó vagyok.
-
-  Puszi,
-  Pályi "istenkirálycsászár" Kristóf
-  
   `;
 
   // Create a transporter object using SMTP transport
@@ -36,13 +28,23 @@ export async function POST(req) {
     }
   });
 
-  // Email options
-  let mailOptions = {
-    from: process.env.EMAIL_USERNAME,
-    to: "kerozoltan@gmail.com",
-    subject: "Új Foglalás",
-    text: message
-  };
+  let mailOptions = {};
+  // Email options;
+  if (apartmanType === "dreamapartman") {
+    mailOptions = {
+      from: process.env.EMAIL_USERNAME,
+      to: "dreamapartman.hu@gmail.com",
+      subject: "Új Foglalás",
+      text: message
+    };
+  } else {
+    mailOptions = {
+      from: process.env.EMAIL_USERNAME,
+      to: "dreamtopart@gmail.com",
+      subject: "Új Foglalás",
+      text: message
+    };
+  }
 
   try {
     // Send email
