@@ -6,7 +6,7 @@ export async function POST(req) {
   const message = `
   Kedves Vendégünk!
   
-  Köszönjük, hogy a DreamKomplexumokat választotta. A foglalását sikeresen rögzítettük.
+  Köszönjük, hogy a DreamKomplexumokat választotta. Foglalását sikeresen rögzítettük.
   Visszaigazolásig várjon kérjük türelemmel, amíg fel nem vesszük Önnel a kapcsolatot.
   A következő időpontra foglalt:
   Érkezés: ${startDate}
