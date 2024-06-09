@@ -12,6 +12,46 @@
       border: 1px solid $main;
       padding: 1rem 1rem 1rem 0;
       margin: 1rem 0;
+      position: relative;
+
+      .currencyWrapper {
+        position: absolute;
+        @include centerDiv(row);
+        top: 1rem;
+        left: 1rem;
+        width: auto;
+        border-radius: 20px;
+        border: 1px solid $main;
+        z-index: 1000;
+
+        button {
+          border: none;
+          background-color: white;
+          padding: 0 .5rem;
+          font-size: 1rem;
+          color: $main;
+          cursor: pointer;
+          transition: all 0.3s;
+
+          &:nth-child(1) {
+            border-radius: 20px 0 0 20px;
+          }
+
+          &:nth-child(2) {
+            border-radius: 0 20px 20px 0;
+          }
+
+          &:hover {
+            background-color: $main;
+            color: white;
+          }
+        }
+
+        .active {
+          background-color: $main;
+          color: white;
+        }
+      }
 
       &:nth-child(1) {
         .details {
@@ -120,11 +160,14 @@
           @include centerDiv(column);
           cursor: pointer;
 
+
+
           h3 {
             font-size: 30px;
-            width: 100%;
             text-align: center;
           }
+
+
 
           .sep {
             width: 40%;
@@ -146,9 +189,21 @@
             }
           }
 
-          p {
+          .desc {
+            @include centerDiv(column);
             width: 90%;
-            text-align: center;
+
+            p {
+              text-align: center;
+              margin: 0;
+            }
+
+            .price {
+              @include centerDiv(row);
+              justify-content: space-between;
+              width: 40%;
+              margin-top: 1rem;
+            }
           }
 
           .services {

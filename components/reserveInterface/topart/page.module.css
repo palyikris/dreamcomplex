@@ -150,7 +150,14 @@
   flex-direction: column;
   cursor: pointer;
 }
-.container .apartman .details .text h3 {
+.container .apartman .details .text .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+}
+.container .apartman .details .text .title h3 {
   font-size: 30px;
   width: 100%;
   text-align: center;
@@ -462,7 +469,14 @@
   flex-direction: column;
   cursor: pointer;
 }
-.container .apartman .details .text h3 {
+.container .apartman .details .text .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+}
+.container .apartman .details .text .title h3 {
   font-size: 30px;
   width: 100%;
   text-align: center;

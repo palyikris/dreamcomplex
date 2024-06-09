@@ -7,12 +7,34 @@ import ReserveForm from "../reserveform/page";
 
 export default function ReserveApartmanComponent(props) {
   let [apartmanNumber, setApartmanNumber] = useState(0);
+  let [isHuf, setIsHuf] = useState(true);
+  let [isEur, setIsEur] = useState(false);
   let router = useRouter();
   let { type } = props;
 
   return (
     <div className={styles.container}>
       <div className={styles.apartman}>
+        <div className={styles.currencyWrapper}>
+          <button
+            onClick={() => {
+              setIsHuf(true);
+              setIsEur(false);
+            }}
+            className={isHuf ? styles.active : ""}
+          >
+            HUF
+          </button>
+          <button
+            onClick={() => {
+              setIsHuf(false);
+              setIsEur(true);
+            }}
+            className={isEur ? styles.active : ""}
+          >
+            EUR
+          </button>
+        </div>
         <div className={styles.radioItem}>
           <input
             name="radio"
@@ -36,11 +58,19 @@ export default function ReserveApartmanComponent(props) {
           >
             <h3>1-es Apartman</h3>
             <div className={styles.sep} />
-            <p>
-              Férőhely: 4 - 6 fő, Lakóterület: 65 m<sup>2</sup>, Szobák száma: 1
-              nappali + étkező, 2 Hálószoba, Konyha, Fürdőszoba zuhanyzóval,
-              Külön WC, Terasz
-            </p>
+            <div className={styles.desc}>
+              {isHuf
+                ? <p>
+                    Férőhely: 4 - 6 fő, Lakóterület: 65 m<sup>2</sup>, Szobák
+                    száma: 1 nappali + étkező, 2 Hálószoba, Konyha, Fürdőszoba
+                    zuhanyzóval, Külön WC, Terasz
+                  </p>
+                : <p />}
+              <div className={styles.price}>
+                <p>11800 HUF/fő/éj</p>
+                <p>Minimum 4 fő</p>
+              </div>
+            </div>
             <div className={styles.sep} />
             <div className={styles.services}>
               <div className={styles.service}>
