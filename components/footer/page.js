@@ -7,7 +7,7 @@ export default function Footer() {
       <div className={styles.logoContainer}>
         <div className={styles.logo}>Valami logo</div>
         <div className={styles.logoDescription}>
-          <h1>Dream Konplexumok</h1>
+          <h1>Dream Komplexumok</h1>
           <p>Nagyon örülünk, hogy minket választ a nyaralásához!</p>
         </div>
       </div>
@@ -17,28 +17,10 @@ export default function Footer() {
           <p>Másik példa</p>
         </div>
         <div className={styles.social}>
-          <p>Kövess minket!</p>
+          <p>Kérjük érdeklődjön telefonon, vagy email-ben:</p>
           <div className={styles.socialApps}>
-            <SocialIcon
-              url="https://twitter.com/"
-              fgColor="#daa06d"
-              bgColor="#FFFFFF"
-            />
-            <SocialIcon
-              url="https://facebook.com/"
-              fgColor="#daa06d"
-              bgColor="#FFFFFF"
-            />
-            <SocialIcon
-              url="https://instagram.com/"
-              fgColor="#daa06d"
-              bgColor="#FFFFFF"
-            />
-            <SocialIcon
-              url="https://tiktok.com/"
-              fgColor="#daa06d"
-              bgColor="#FFFFFF"
-            />
+            <p>+36 70 373 3772</p>
+            <p>kerekesnetollar@gmail.com</p>
           </div>
         </div>
       </div>

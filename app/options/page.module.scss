@@ -3,6 +3,39 @@
 .container {
   @include centerDiv(column);
 
+  .magImageContainer {
+    @include centerDiv(column);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100000;
+
+    .magImageButton {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 2rem;
+      height: 2rem;
+      color: white;
+      background-color: transparent;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .magImage {
+      width: 90%;
+      height: 90%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      cursor: pointer;
+    }
+  }
+
   .heroSections {
     @include centerDiv(column);
     align-items: flex-start;
@@ -80,6 +113,36 @@
       .intro {
         @include centerDiv(row);
         padding-left: 6rem;
+
+        .magImages {
+          background-color: none;
+          border: none;
+          @include centerDiv(row);
+          width: auto;
+          height: auto;
+          cursor: pointer;
+          position: relative;
+
+
+          &::after {
+            content: "Kattints a nagyításhoz!";
+            position: absolute;
+            z-index: 1000;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            top: 0;
+            left: 0;
+            @include centerDiv(row);
+            color: white;
+            transition: all 0.5s;
+            opacity: 0;
+          }
+
+          &:hover::after {
+            opacity: 1;
+          }
+        }
 
         .description {
           padding: 1rem 3rem;

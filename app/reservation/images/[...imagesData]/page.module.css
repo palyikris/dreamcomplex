@@ -105,6 +105,28 @@
   background-image: url("../../../../public/apartman/4/Balatonlelle_Nádor_4-es_WC.jpg");
 }
 
+.ap5 {
+  width: 100%;
+  height: 100vh;
+  display: block;
+  float: left;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.ap5:nth-child(1) {
+  background-image: url("../../../../public/apartman/general/Balatonlelle_Nádor_Apartmanház.jpg");
+}
+.ap5:nth-child(2) {
+  background-image: url("../../../../public/apartman/general/Balatonlelle_Nádor_Kert1.jpg");
+}
+.ap5:nth-child(3) {
+  background-image: url("../../../../public/apartman/general/Balatonlelle_Nádor_Kert2.jpg");
+}
+.ap5:nth-child(4) {
+  background-image: url("../../../../public/apartman/general/Balatonlelle_Nádor_Apartmanház.jpg");
+}
+
 .to1 {
   width: 100%;
   height: 100vh;
@@ -186,4 +208,36 @@
 }
 .to2:nth-child(9) {
   background-image: url("../../../../public/topart/2/Dream Tópart_1 emelet_Bal apartman_Szoba_2_2.jpg");
+}
+
+.to3 {
+  width: 100%;
+  height: 100vh;
+  display: block;
+  float: left;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.to4 {
+  width: 100%;
+  height: 100vh;
+  display: block;
+  float: left;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.to4:nth-child(1) {
+  background-image: url("../../../../public/topart/general/toparthaz1.jpg");
+}
+.to4:nth-child(2) {
+  background-image: url("../../../../public/topart/general/Dream Tópart_Kerti kapu.jpg");
+}
+.to4:nth-child(3) {
+  background-image: url("../../../../public/topart/general/Dream Tópart_Kerti kapu_2.jpg");
+}
+.to4:nth-child(4) {
+  background-image: url("../../../../public/topart/general/toparthaz2.jpg");
 }/*# sourceMappingURL=page.module.css.map */

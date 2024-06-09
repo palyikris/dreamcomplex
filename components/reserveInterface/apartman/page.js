@@ -37,8 +37,9 @@ export default function ReserveApartmanComponent(props) {
             <h3>1-es Apartman</h3>
             <div className={styles.sep} />
             <p>
-              Férőhely: 4+3 fő, Lakóterület: 65 m2, Szobák száma: 1 nappali, 2
-              szoba, Konyha, Fürdőszoba zuhanyzóval, Külön WC, Terasz
+              Férőhely: 4 - 6 fő, Lakóterület: 65 m<sup>2</sup>, Szobák száma: 1
+              nappali + étkező, 2 Hálószoba, Konyha, Fürdőszoba zuhanyzóval,
+              Külön WC, Terasz
             </p>
             <div className={styles.sep} />
             <div className={styles.services}>
@@ -132,9 +133,9 @@ export default function ReserveApartmanComponent(props) {
             <h3>2-es Apartman</h3>
             <div className={styles.sep} />
             <p>
-              Férőhely: 2 + 1 fő. Lakóterület: 45m<sup>2</sup>. Szobák száma: 1
+              Férőhely: 2 - 3 fő. Lakóterület: 45m<sup>2</sup>. Szobák száma: 1
               nappali, 1 háló 2 főnek (egyben), 1 alvóhelyiség (1 főnek),
-              Konyha, Zuhanyzó, WC (egyben), Terasz: 8m<sup>2</sup>.
+              Konyha, Zuhanyzó + WC (egyben), Terasz
             </p>
             <div className={styles.sep} />
             <div className={styles.services}>
@@ -228,9 +229,9 @@ export default function ReserveApartmanComponent(props) {
             <h3>3-as Apartman</h3>
             <div className={styles.sep} />
             <p>
-              Férőhely: 4 - 6 fő. Lakóterület: 65m<sup>2</sup>. Szobák száma: 2
-              szoba + 1 nappali, Konyha, Fürdőszoba zuhanyzóval, Külön WC,
-              Terasz: 8m<sup>2</sup>.
+              Férőhely: 4 - 6 fő, Lakóterület: 65 m<sup>2</sup>, Szobák száma: 1
+              nappali + étkező, 2 Hálószoba, Konyha, Fürdőszoba zuhanyzóval,
+              Külön WC, Terasz
             </p>
             <div className={styles.sep} />
             <div className={styles.services}>
@@ -326,7 +327,7 @@ export default function ReserveApartmanComponent(props) {
             <p>
               Férőhely: 4 - 6 fő. Lakóterület: 65m<sup>2</sup>. Szobák száma: 2
               szoba + 1 nappali, Konyha, Fürdőszoba zuhanyzóval, Külön WC,
-              Terasz: 4,5m<sup>2</sup>.
+              Terasz
             </p>
             <div className={styles.sep} />
             <div className={styles.services}>

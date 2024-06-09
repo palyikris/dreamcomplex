@@ -41,17 +41,18 @@
     .social {
       @include centerDiv(column);
       border-left: 1px solid white;
+      padding-left: 1rem;
 
-      p {
-        font-size: 20px;
-        margin-bottom: 2rem;
-      }
+
 
       .socialApps {
-        @include centerDiv(row);
+        @include centerDiv(column);
+        margin-top: 1rem;
 
-        a {
+        p {
           margin: 0 0.5rem;
+          font-weight: 400;
+          font-size: 1rem;
         }
       }
     }

@@ -54,7 +54,7 @@ export default function ImagesPage() {
           <div className={styles.ap3} />
         </ImagesComponentForApartmans>
       );
-    } else {
+    } else if (apartmanNumber === 4) {
       return (
         <ImagesComponentForApartmans startingNum={1} nOfChildren={6}>
           <div className={styles.ap4} />
@@ -63,6 +63,20 @@ export default function ImagesPage() {
           <div className={styles.ap4} />
           <div className={styles.ap4} />
           <div className={styles.ap4} />
+        </ImagesComponentForApartmans>
+      );
+    } else {
+      return (
+        <ImagesComponentForApartmans
+          startingNum={1}
+          nOfChildren={4}
+          isGeneral={true}
+          route={"dreamApartman"}
+        >
+          <div className={styles.ap5} />
+          <div className={styles.ap5} />
+          <div className={styles.ap5} />
+          <div className={styles.ap5} />
         </ImagesComponentForApartmans>
       );
     }
@@ -98,12 +112,26 @@ export default function ImagesPage() {
           <div className={styles.to2} />
         </ImagesComponentForApartmans>
       );
-    } else {
+    } else if (apartmanNumber === 3) {
       return (
         <ImagesComponentForApartmans startingNum={1} nOfChildren={3}>
           <div className={styles.to3} />
           <div className={styles.to3} />
           <div className={styles.to3} />
+        </ImagesComponentForApartmans>
+      );
+    } else {
+      return (
+        <ImagesComponentForApartmans
+          startingNum={1}
+          nOfChildren={4}
+          isGeneral={true}
+          route={"dreamTopart"}
+        >
+          <div className={styles.to4} />
+          <div className={styles.to4} />
+          <div className={styles.to4} />
+          <div className={styles.to4} />
         </ImagesComponentForApartmans>
       );
     }

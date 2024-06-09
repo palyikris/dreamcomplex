@@ -12,10 +12,12 @@ import { useApartman } from "@/context/contexthook";
 import MapsPage from "./../../components/maps/page";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function OptionsPage() {
   let router = useRouter();
-
+  let [showMagImage, setShowMagImage] = useState(false); // prompt: state for showing the magnified image
+  let [magImage, setMagImage] = useState(""); // prompt: state for the magnified image
   let {
     setIsDreamHouseOpen,
     setIsDreamApartmanOpen,
@@ -26,6 +28,32 @@ export default function OptionsPage() {
   return (
     <div className={styles.container}>
       <Topnav />
+      {showMagImage ? (<div className={styles.magImageContainer}>
+        <button className={styles.magImageButton} onClick={() => {
+          setShowMagImage(false);
+          setMagImage("");
+        }}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className="size-6"
+          >
+            <path
+              fillRule="evenodd"
+              d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </button>
+        <Image
+          src={magImage}
+          alt="Magnified Image of Apartman"
+          width={100}
+          height={100}
+          className={styles.magImage}
+        />
+      </div>) : (<></>)}
       <div className={styles.heroSections}>
         <Image
           src={"/narancslemente.jpg"}
@@ -158,19 +186,47 @@ export default function OptionsPage() {
         </div> */}
         <div className={styles.apartmanDetailed} id="dreamApartman">
           <div className={styles.intro}>
-            <PicSlide text="Dream Apartman">
-              <div className={styles.pic} />
-              <div className={styles.pic} />
-              <div className={styles.pic} />
-              <div className={styles.pic} />
-            </PicSlide>
+            <button className={styles.magImages} onClick={() => {
+              router.push("/reservation/images/dreamapartman/general")
+            }}>
+              <PicSlide text="Dream Apartman">
+                <Image
+                  src={"/apartman/general/Balatonlelle_Nádor_Apartmanház.jpg"}
+                  alt="Dream Apartman külső kép"
+                  width={1200}
+                  height={600}
+                  className={styles.pic}
+                />
+                <Image
+                  src={"/apartman/general/Balatonlelle_Nádor_Kert1.jpg"}
+                  alt="Dream Apartman kert kép"
+                  width={1200}
+                  height={600}
+                  className={styles.pic}
+                />
+                <Image
+                  src={"/apartman/general/Balatonlelle_Nádor_Kert2.jpg"}
+                  alt="Dream Apartman kert kép"
+                  width={1200}
+                  height={600}
+                  className={styles.pic}
+                />
+                <Image
+                  src={"/apartman/general/Balatonlelle_Nádor_Apartmanház.jpg"}
+                  alt="Dream Apartman külső kép"
+                  width={1200}
+                  height={600}
+                  className={styles.pic}
+                />
+              </PicSlide>
+            </button>
             <div className={styles.description}>
               <h1>Dream Apartman</h1>
               <div className={styles.sep} />
               <p>
                 A Balaton közelében a legjobb pihenni, ehhez nyújtanak
                 lehetőségeket a Dream Apartmanok. Modern apartmanok mellett
-                játszóteret, grillezőt, jakuzzit, csócsó- és pingpong asztalt
+                játszóteret, grillezőt, jakuzzit, csocsó- és pingpong asztalt
                 biztosítunk.
               </p>
               <button
@@ -259,19 +315,47 @@ export default function OptionsPage() {
         </div>
         <div className={styles.apartmanDetailed} id="dreamTopart">
           <div className={styles.intro}>
-            <PicSlide text="Dream Tópart">
-              <div className={styles.pic1} />
-              <div className={styles.pic1} />
-              <div className={styles.pic1} />
-              <div className={styles.pic1} />
-            </PicSlide>
+            <button className={styles.magImages} onClick={() => {
+              router.push("/reservation/images/dreamtopart/general")
+            }}>
+              <PicSlide text="Dream Tópart">
+                <Image
+                  src={"/topart/general/toparthaz1.jpg"}
+                  alt="Dream Apartman külső kép"
+                  width={1200}
+                  height={600}
+                  className={styles.pic1}
+                />
+                <Image
+                  src={"/topart/general/Dream Tópart_Kerti kapu.jpg"}
+                  alt="Dream Apartman kert kép"
+                  width={1200}
+                  height={600}
+                  className={styles.pic1}
+                />
+                <Image
+                  src={"/topart/general/Dream Tópart_Kerti kapu_2.jpg"}
+                  alt="Dream Apartman kert kép"
+                  width={1200}
+                  height={600}
+                  className={styles.pic1}
+                />
+                <Image
+                  src={"/topart/general/toparthaz2.jpg"}
+                  alt="Dream Apartman külső kép"
+                  width={1200}
+                  height={600}
+                  className={styles.pic1}
+                />
+              </PicSlide>
+            </button>
             <div className={styles.description}>
               <h1>Dream Tópart</h1>
               <div className={styles.sep} />
               <p>
                 Ha szereted a Balaton látványát közelről, akkor ez a szállás
-                neked való. Újonnan felújított 3 apartmanból álló kellemes
-                környezetű ház. Játszótér, kemence, pingpong- és csócsó asztal
+                nekedvaló. Újonnan felújított 3 apartmanból álló kellemes
+                környezetű ház. Játszótér, kemence, pingpong- és csocsó asztal
                 mind rendelkezésre áll nálunk.
               </p>
               <button
@@ -293,16 +377,12 @@ export default function OptionsPage() {
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="currentColor"
-                  className="w-6 h-6"
+                  className="size-6"
                 >
-                  <path d="M19.006 3.705a.75.75 0 00-.512-1.41L6 6.838V3a.75.75 0 00-.75-.75h-1.5A.75.75 0 003 3v4.93l-1.006.365a.75.75 0 00.512 1.41l16.5-6z" />
-                  <path
-                    fillRule="evenodd"
-                    d="M3.019 11.115L18 5.667V9.09l4.006 1.456a.75.75 0 11-.512 1.41l-.494-.18v8.475h.75a.75.75 0 010 1.5H2.25a.75.75 0 010-1.5H3v-9.129l.019-.006zM18 20.25v-9.565l1.5.545v9.02H18zm-9-6a.75.75 0 00-.75.75v4.5c0 .414.336.75.75.75h3a.75.75 0 00.75-.75V15a.75.75 0 00-.75-.75H9z"
-                    clipRule="evenodd"
-                  />
+                  <path d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z" />
                 </svg>
-                <p>Esztétikus modern szobák</p>
+
+                <p>Kemence, grillező, bográcsozó</p>
               </div>
               <div className={styles.service}>
                 <svg
@@ -317,7 +397,7 @@ export default function OptionsPage() {
                     clipRule="evenodd"
                   />
                 </svg>
-                <p>Tv, wifi minden szobához</p>
+                <p>Tv, wifi minden apartmanhoz</p>
               </div>
               <div className={styles.service}>
                 <svg

@@ -5,7 +5,7 @@ import styles from "./page.module.css";
 import { useRouter } from "next/navigation";
 
 export default function ImagesComponentForApartmans(props) {
-  let { startingNum, nOfChildren } = props;
+  let { startingNum, nOfChildren, isGeneral, route } = props;
   let imagesRef = useRef();
   let [currImageNumberForDisplay, setCurrImageNumberForDisplay] = useState(1);
   let router = useRouter();
@@ -35,13 +35,21 @@ export default function ImagesComponentForApartmans(props) {
   return (
     <div className={styles.container}>
       <div className={styles.backButton}>
-        <button
-          onClick={() => {
-            router.push("/reservation");
-          }}
-        >
-          Vissza
-        </button>
+        {isGeneral
+          ? <button
+              onClick={() => {
+                router.push(`/options#${route}`);
+              }}
+            >
+              Vissza
+            </button>
+          : <button
+              onClick={() => {
+                router.push("/reservation");
+              }}
+            >
+              Vissza
+            </button>}
       </div>
       <div className={styles.numberDisplay}>
         <p>
@@ -82,9 +90,7 @@ export default function ImagesComponentForApartmans(props) {
         <div
           className={styles.images}
           ref={imagesRef}
-          style={{
-            width: `${nOfChildren * 100}%`
-          }}
+          style={{ width: `${nOfChildren * 100}%` }}
         >
           {props.children}
         </div>
