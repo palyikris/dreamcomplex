@@ -64,6 +64,7 @@
         font-style: italic;
         background-color: none;
         border: none;
+        font-size: 1.2rem;
       }
 
       .icons {
@@ -81,7 +82,7 @@
 
           p {
             font-style: normal;
-            font-size: .8em;
+            font-size: 1rem;
             width: 100%;
             text-align: center;
             color: white;
@@ -178,6 +179,11 @@
         }
       }
 
+      p{
+        font-size: 1.2rem;
+        text-align: center;
+      }
+
       .sep {
         width: 60%;
         height: 0.1rem;
@@ -205,6 +211,7 @@
 
       button {
         @include MyButton();
+        font-size: 1rem;
       }
     }
   }
@@ -381,6 +388,7 @@
 
     button {
       @include MyButton();
+      font-size: 1rem;
     }
   }
 

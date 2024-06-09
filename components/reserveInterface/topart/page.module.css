@@ -17,6 +17,7 @@
   border: 1px solid #daa06d;
   padding: 1rem 1rem 1rem 0;
   margin: 1rem 0;
+  position: relative;
 }
 .container .apartman .radioItem [type=radio] {
   display: none;
@@ -60,6 +61,43 @@
   opacity: 1;
   visibility: visible;
   transform: scale(1);
+}
+.container .apartman .currencyWrapper {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  top: 1rem;
+  left: 1rem;
+  width: auto;
+  border-radius: 20px;
+  border: 1px solid #daa06d;
+  z-index: 1000;
+}
+.container .apartman .currencyWrapper button {
+  border: none;
+  background-color: white;
+  padding: 0 0.5rem;
+  font-size: 1rem;
+  color: #daa06d;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.container .apartman .currencyWrapper button:nth-child(1) {
+  border-radius: 20px 0 0 20px;
+}
+.container .apartman .currencyWrapper button:nth-child(2) {
+  border-radius: 0 20px 20px 0;
+}
+.container .apartman .currencyWrapper button:hover {
+  background-color: #daa06d;
+  color: white;
+}
+.container .apartman .currencyWrapper .active {
+  background-color: #daa06d;
+  color: white;
 }
 .container .apartman:nth-child(1) .details .pic {
   background-image: url("../../../public/apartman/1/Balatonlelle_Nádor_1-es_Szoba1.jpg");
@@ -132,7 +170,7 @@
   padding: 0.5rem;
   background-color: #daa06d;
   color: white;
-  font-size: 12px;
+  font-size: 0.8rem;
 }
 .container .apartman .details .pic:hover,
 .container .apartman .details .pic1:hover {
@@ -150,16 +188,8 @@
   flex-direction: column;
   cursor: pointer;
 }
-.container .apartman .details .text .title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  flex-direction: row;
-}
-.container .apartman .details .text .title h3 {
+.container .apartman .details .text h3 {
   font-size: 30px;
-  width: 100%;
   text-align: center;
 }
 .container .apartman .details .text .sep {
@@ -180,9 +210,27 @@
   left: calc(50% - 0.55rem);
   border: 1px solid #daa06d;
 }
-.container .apartman .details .text p {
+.container .apartman .details .text .desc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
   width: 90%;
+}
+.container .apartman .details .text .desc p {
   text-align: center;
+  margin: 0;
+}
+.container .apartman .details .text .desc .price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 40%;
+  margin-top: 1rem;
 }
 .container .apartman .details .text .services {
   display: flex;
@@ -212,7 +260,7 @@
   margin-top: 0;
   color: white;
   font-weight: 400;
-  font-size: 10px;
+  font-size: 1rem;
   width: 100%;
   text-align: left;
   padding-left: 0.5rem;
@@ -336,6 +384,7 @@
   border: 1px solid #daa06d;
   padding: 1rem 1rem 1rem 0;
   margin: 1rem 0;
+  position: relative;
 }
 .container .apartman .radioItem [type=radio] {
   display: none;
@@ -379,6 +428,43 @@
   opacity: 1;
   visibility: visible;
   transform: scale(1);
+}
+.container .apartman .currencyWrapper {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  top: 1rem;
+  left: 1rem;
+  width: auto;
+  border-radius: 20px;
+  border: 1px solid #daa06d;
+  z-index: 1000;
+}
+.container .apartman .currencyWrapper button {
+  border: none;
+  background-color: white;
+  padding: 0 0.5rem;
+  font-size: 1rem;
+  color: #daa06d;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.container .apartman .currencyWrapper button:nth-child(1) {
+  border-radius: 20px 0 0 20px;
+}
+.container .apartman .currencyWrapper button:nth-child(2) {
+  border-radius: 0 20px 20px 0;
+}
+.container .apartman .currencyWrapper button:hover {
+  background-color: #daa06d;
+  color: white;
+}
+.container .apartman .currencyWrapper .active {
+  background-color: #daa06d;
+  color: white;
 }
 .container .apartman:nth-child(1) .details .pic {
   background-image: url("../../../public/apartman/1/Balatonlelle_Nádor_1-es_Szoba1.jpg");
@@ -451,7 +537,7 @@
   padding: 0.5rem;
   background-color: #daa06d;
   color: white;
-  font-size: 12px;
+  font-size: 0.8rem;
 }
 .container .apartman .details .pic:hover,
 .container .apartman .details .pic1:hover {
@@ -469,16 +555,8 @@
   flex-direction: column;
   cursor: pointer;
 }
-.container .apartman .details .text .title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  flex-direction: row;
-}
-.container .apartman .details .text .title h3 {
+.container .apartman .details .text h3 {
   font-size: 30px;
-  width: 100%;
   text-align: center;
 }
 .container .apartman .details .text .sep {
@@ -499,9 +577,27 @@
   left: calc(50% - 0.55rem);
   border: 1px solid #daa06d;
 }
-.container .apartman .details .text p {
+.container .apartman .details .text .desc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
   width: 90%;
+}
+.container .apartman .details .text .desc p {
   text-align: center;
+  margin: 0;
+}
+.container .apartman .details .text .desc .price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 40%;
+  margin-top: 1rem;
 }
 .container .apartman .details .text .services {
   display: flex;
@@ -531,7 +627,7 @@
   margin-top: 0;
   color: white;
   font-weight: 400;
-  font-size: 10px;
+  font-size: 1rem;
   width: 100%;
   text-align: left;
   padding-left: 0.5rem;

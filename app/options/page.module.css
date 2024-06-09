@@ -101,6 +101,8 @@
   color: white;
   text-decoration: underline;
   font-style: italic;
+  font-size: 1.2rem;
+  margin-top: 1rem;
 }
 .container .apartmansDetailed {
   display: flex;
@@ -169,6 +171,7 @@
   align-items: center;
   width: 100%;
   flex-direction: column;
+  width: 60%;
 }
 .container .apartmansDetailed .apartmanDetailed .intro .description h1 {
   width: 100%;
@@ -181,8 +184,9 @@
 }
 .container .apartmansDetailed .apartmanDetailed .intro .description p {
   text-align: center;
-  width: 100%;
+  width: 80%;
   padding-bottom: 3rem;
+  font-size: 1.2rem;
 }
 .container .apartmansDetailed .apartmanDetailed .intro .description button {
   background-color: transparent;

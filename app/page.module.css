@@ -66,6 +66,7 @@
   font-style: italic;
   background-color: none;
   border: none;
+  font-size: 1.2rem;
 }
 .container .heroSections .heroElements .icons {
   display: flex;
@@ -89,7 +90,7 @@
 }
 .container .heroSections .heroElements .icons .icon p {
   font-style: normal;
-  font-size: 0.8em;
+  font-size: 1rem;
   width: 100%;
   text-align: center;
   color: white;
@@ -189,6 +190,10 @@
 .container .detailElement .details h1 span {
   color: #daa06d;
 }
+.container .detailElement .details p {
+  font-size: 1.2rem;
+  text-align: center;
+}
 .container .detailElement .details .sep {
   width: 60%;
   height: 0.1rem;
@@ -218,6 +223,7 @@
   padding: 1rem 4rem;
   color: #daa06d;
   transition: all 0.6s;
+  font-size: 1rem;
 }
 .container .detailElement .details button::after {
   content: "";
@@ -460,6 +466,7 @@
   padding: 1rem 4rem;
   color: #daa06d;
   transition: all 0.6s;
+  font-size: 1rem;
 }
 .container .myReservationRoute button::after {
   content: "";

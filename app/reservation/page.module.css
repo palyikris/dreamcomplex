@@ -113,13 +113,14 @@
   border-right: 2px solid #daa06d;
 }
 .container .heroSections .apartmans .apartman h1 {
-  font-size: 25px;
+  font-size: 2rem;
 }
 .container .heroSections .apartmans .apartman p {
   font-style: italic;
   width: 80%;
   text-align: center;
   margin-top: 1rem;
+  font-size: 1.1rem;
 }
 
 @media only screen and (max-width: 920px) {

@@ -97,6 +97,8 @@
         color: white;
         text-decoration: underline;
         font-style: italic;
+        font-size: 1.2rem;
+        margin-top: 1rem;
       }
     }
   }
@@ -148,6 +150,7 @@
           padding: 1rem 3rem;
           margin-left: 5rem;
           @include centerDiv(column);
+          width: 60%;
 
           h1 {
             width: 100%;
@@ -162,8 +165,9 @@
 
           p {
             text-align: center;
-            width: 100%;
+            width: 80%;
             padding-bottom: 3rem;
+            font-size: 1.2rem;
           }
 
           button {

@@ -65,10 +65,14 @@ export default function ReserveApartmanComponent(props) {
                     száma: 1 nappali + étkező, 2 Hálószoba, Konyha, Fürdőszoba
                     zuhanyzóval, Külön WC, Terasz
                   </p>
-                : <p />}
+                : <p>
+                    Space: 4 - 6 person, Area 65 m<sup>2</sup>, Number of rooms:
+                    1 living room + 1 dining room, 2 bedrooms, Kitchen, Bathroom
+                    with shower, 1 Separate Toilette, Terrace
+                  </p>}
               <div className={styles.price}>
-                <p>11800 HUF/fő/éj</p>
-                <p>Minimum 4 fő</p>
+                {isHuf ? <p>11800 HUF/fő/éj</p> : <p>30 EUR/person/night</p>}
+                {isHuf ? <p>Minimum 4 fő</p> : <p>At least 4 people</p>}
               </div>
             </div>
             <div className={styles.sep} />
@@ -139,6 +143,26 @@ export default function ReserveApartmanComponent(props) {
         </div>
       </div>
       <div className={styles.apartman}>
+        <div className={styles.currencyWrapper}>
+          <button
+            onClick={() => {
+              setIsHuf(true);
+              setIsEur(false);
+            }}
+            className={isHuf ? styles.active : ""}
+          >
+            HUF
+          </button>
+          <button
+            onClick={() => {
+              setIsHuf(false);
+              setIsEur(true);
+            }}
+            className={isEur ? styles.active : ""}
+          >
+            EUR
+          </button>
+        </div>
         <div className={styles.radioItem}>
           <input
             name="radio"
@@ -150,7 +174,7 @@ export default function ReserveApartmanComponent(props) {
             }}
             checked={apartmanNumber == 2}
           />
-          <label for="radio2" />
+          <label for="radio1" />
         </div>
         <div className={styles.details}>
           <div
@@ -162,11 +186,23 @@ export default function ReserveApartmanComponent(props) {
           >
             <h3>2-es Apartman</h3>
             <div className={styles.sep} />
-            <p>
-              Férőhely: 2 - 3 fő. Lakóterület: 45m<sup>2</sup>. Szobák száma: 1
-              nappali, 1 háló 2 főnek (egyben), 1 alvóhelyiség (1 főnek),
-              Konyha, Zuhanyzó + WC (egyben), Terasz
-            </p>
+            <div className={styles.desc}>
+              {isHuf
+                ? <p>
+                    Férőhely: 2 - 3 fő. Lakóterület: 45m<sup>2</sup>. Szobák
+                    száma: 1 nappali, 1 háló 2 főnek (egyben), 1 alvóhelyiség (1
+                    főnek), Konyha, Zuhanyzó + WC (egyben), Terasz
+                  </p>
+                : <p>
+                    Space: 2 - 3 person, Area 45 m<sup>2</sup>, Number of rooms:
+                    1 living room, 1 bedroom for 2 people, 1 bedroom for 1
+                    person, Kitchen, Bathroom with shower, Terrace
+                  </p>}
+              <div className={styles.price}>
+                {isHuf ? <p>11800 HUF/fő/éj</p> : <p>30 EUR/person/night</p>}
+                {isHuf ? <p>Minimum 2 fő</p> : <p>At least 2 people</p>}
+              </div>
+            </div>
             <div className={styles.sep} />
             <div className={styles.services}>
               <div className={styles.service}>
@@ -234,7 +270,27 @@ export default function ReserveApartmanComponent(props) {
           </div>
         </div>
       </div>
-      <div className={styles.apartman}>
+     <div className={styles.apartman}>
+        <div className={styles.currencyWrapper}>
+          <button
+            onClick={() => {
+              setIsHuf(true);
+              setIsEur(false);
+            }}
+            className={isHuf ? styles.active : ""}
+          >
+            HUF
+          </button>
+          <button
+            onClick={() => {
+              setIsHuf(false);
+              setIsEur(true);
+            }}
+            className={isEur ? styles.active : ""}
+          >
+            EUR
+          </button>
+        </div>
         <div className={styles.radioItem}>
           <input
             name="radio"
@@ -246,7 +302,7 @@ export default function ReserveApartmanComponent(props) {
             }}
             checked={apartmanNumber == 3}
           />
-          <label for="radio3" />
+          <label for="radio1" />
         </div>
         <div className={styles.details}>
           <div
@@ -258,11 +314,23 @@ export default function ReserveApartmanComponent(props) {
           >
             <h3>3-as Apartman</h3>
             <div className={styles.sep} />
-            <p>
-              Férőhely: 4 - 6 fő, Lakóterület: 65 m<sup>2</sup>, Szobák száma: 1
-              nappali + étkező, 2 Hálószoba, Konyha, Fürdőszoba zuhanyzóval,
-              Külön WC, Terasz
-            </p>
+            <div className={styles.desc}>
+              {isHuf
+                ? <p>
+                    Férőhely: 4 - 6 fő, Lakóterület: 65 m<sup>2</sup>, Szobák
+                    száma: 1 nappali + étkező, 2 Hálószoba, Konyha, Fürdőszoba
+                    zuhanyzóval, Külön WC, Terasz
+                  </p>
+                : <p>
+                    Space: 4 - 6 person, Area 65 m<sup>2</sup>, Number of rooms:
+                    1 living room + 1 dining room, 2 bedrooms, Kitchen, Bathroom
+                    with shower, 1 Separate Toilette, Terrace
+                  </p>}
+              <div className={styles.price}>
+                {isHuf ? <p>11800 HUF/fő/éj</p> : <p>30 EUR/person/night</p>}
+                {isHuf ? <p>Minimum 4 fő</p> : <p>At least 4 people</p>}
+              </div>
+            </div>
             <div className={styles.sep} />
             <div className={styles.services}>
               <div className={styles.service}>
@@ -331,6 +399,26 @@ export default function ReserveApartmanComponent(props) {
         </div>
       </div>
       <div className={styles.apartman}>
+        <div className={styles.currencyWrapper}>
+          <button
+            onClick={() => {
+              setIsHuf(true);
+              setIsEur(false);
+            }}
+            className={isHuf ? styles.active : ""}
+          >
+            HUF
+          </button>
+          <button
+            onClick={() => {
+              setIsHuf(false);
+              setIsEur(true);
+            }}
+            className={isEur ? styles.active : ""}
+          >
+            EUR
+          </button>
+        </div>
         <div className={styles.radioItem}>
           <input
             name="radio"
@@ -342,7 +430,7 @@ export default function ReserveApartmanComponent(props) {
             }}
             checked={apartmanNumber == 4}
           />
-          <label for="radio4" />
+          <label for="radio1" />
         </div>
         <div className={styles.details}>
           <div
@@ -354,11 +442,23 @@ export default function ReserveApartmanComponent(props) {
           >
             <h3>4-es Apartman</h3>
             <div className={styles.sep} />
-            <p>
-              Férőhely: 4 - 6 fő. Lakóterület: 65m<sup>2</sup>. Szobák száma: 2
-              szoba + 1 nappali, Konyha, Fürdőszoba zuhanyzóval, Külön WC,
-              Terasz
-            </p>
+            <div className={styles.desc}>
+              {isHuf
+                ? <p>
+                    Férőhely: 4 - 6 fő, Lakóterület: 65 m<sup>2</sup>, Szobák
+                    száma: 1 nappali + étkező, Konyha, Fürdőszoba
+                    zuhanyzóval, Külön WC, Terasz
+                  </p>
+                : <p>
+                    Space: 4 - 6 person, Area 65 m<sup>2</sup>, Number of rooms:
+                    1 living room + 1 dining room, Kitchen, Bathroom
+                    with shower, 1 Separate Toilette, Terrace
+                  </p>}
+              <div className={styles.price}>
+                {isHuf ? <p>11800 HUF/fő/éj</p> : <p>30 EUR/person/night</p>}
+                {isHuf ? <p>Minimum 4 fő</p> : <p>At least 4 people</p>}
+              </div>
+            </div>
             <div className={styles.sep} />
             <div className={styles.services}>
               <div className={styles.service}>
