@@ -47,8 +47,9 @@
   width: 100%;
   flex-direction: column;
 }
-.footer .else .documents p {
+.footer .else .documents a {
   margin: 1rem 0;
+  color: white;
 }
 .footer .else .social {
   display: flex;

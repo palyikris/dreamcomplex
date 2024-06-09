@@ -13,8 +13,7 @@ export default function Footer() {
       </div>
       <div className={styles.else}>
         <div className={styles.documents}>
-          <p>Példa valami</p>
-          <p>Másik példa</p>
+          <a href="/public/hazirend.docx">Házirend</a>
         </div>
         <div className={styles.social}>
           <p>Kérjük érdeklődjön telefonon, vagy email-ben:</p>
