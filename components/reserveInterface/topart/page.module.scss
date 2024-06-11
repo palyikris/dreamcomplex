@@ -2,3 +2,15 @@
 @import "../apartman/page.module";
 
 @include ApartmanStyle();
+
+.container {
+  .apartman {
+    .details {
+      .text {
+        p {
+          width: 90%;
+        }
+      }
+    }
+  }
+}

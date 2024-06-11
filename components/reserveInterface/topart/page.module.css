@@ -732,4 +732,7 @@
   .container .apartman .details .text .services .service p {
     text-align: center;
   }
+}
+.container .apartman .details .text p {
+  width: 90%;
 }/*# sourceMappingURL=page.module.css.map */

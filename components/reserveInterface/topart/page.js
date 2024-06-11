@@ -33,7 +33,7 @@ export default function ReserveTopartComponent(props) {
               router.push("/reservation#reserveFocus");
             }}
           >
-            <h3>Nárcisz Apartman</h3>
+            <h3>Tulipán Apartman</h3>
             <div className={styles.sep} />
             <p>
               Férőhely: 4+2 fő, 2 hálószoba, Jól felszerelt konyha, Nappali
@@ -128,7 +128,7 @@ export default function ReserveTopartComponent(props) {
               router.push("/reservation#reserveFocus");
             }}
           >
-            <h3>Tulipán Apartman</h3>
+            <h3>Nárcisz Apartman</h3>
             <div className={styles.sep} />
             <p>
               Férőhely: 4 fő, 2 hálószoba, Jól felszerelt konyha, Hangulatos
