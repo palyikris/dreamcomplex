@@ -81,7 +81,7 @@ export default function ImagesPage() {
       );
     }
   } else {
-    if (apartmanNumber === 1) {
+    if (apartmanNumber === 2) {
       return (
         <ImagesComponentForApartmans startingNum={1} nOfChildren={12}>
           <div className={styles.to1} />
@@ -98,7 +98,7 @@ export default function ImagesPage() {
           <div className={styles.to1} />
         </ImagesComponentForApartmans>
       );
-    } else if (apartmanNumber === 2) {
+    } else if (apartmanNumber === 1) {
       return (
         <ImagesComponentForApartmans startingNum={1} nOfChildren={9}>
           <div className={styles.to2} />
