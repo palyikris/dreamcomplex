@@ -1,11 +1,18 @@
 import { SocialIcon } from "react-social-icons";
 import styles from "./page.module.css";
+import Image from "next/image";
 
 export default function Footer() {
   return (
     <div className={styles.footer}>
       <div className={styles.logoContainer}>
-        <div className={styles.logo}>Valami logo</div>
+        <Image
+          src={"/icon.jpg"}
+          alt="Dream Komplexum icon"
+          width={200}
+          height={150}
+          className={styles.logo}
+        />
         <div className={styles.logoDescription}>
           <h1>Dream Komplexumok</h1>
           <p>Nagyon örülünk, hogy minket választ a nyaralásához!</p>
@@ -13,7 +20,9 @@ export default function Footer() {
       </div>
       <div className={styles.else}>
         <div className={styles.documents}>
-          <a href="/public/hazirend.docx">Házirend</a>
+          <a href="/hazirend.docx" download={true}>
+            Házirend
+          </a>
         </div>
         <div className={styles.social}>
           <p>Kérjük érdeklődjön telefonon, vagy email-ben:</p>

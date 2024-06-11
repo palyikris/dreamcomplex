@@ -11,9 +11,10 @@
     @include centerDiv(column);
 
     .logo {
-      width: 10rem;
+      width: 12rem;
       height: 10rem;
       border: 1px solid white;
+      border-radius: 5px;
     }
 
     .logoDescription {
