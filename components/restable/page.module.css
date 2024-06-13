@@ -75,6 +75,45 @@
   width: 100%;
   flex-direction: row;
   justify-content: flex-start;
+  position: relative;
+}
+.reservationTable .reservation .reservationData:hover .deleteWrapper {
+  opacity: 1;
+}
+.reservationTable .reservation .reservationData .deleteWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  height: 100%;
+  position: absolute;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  z-index: 100;
+}
+.reservationTable .reservation .reservationData .deleteWrapper .delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  width: auto;
+  padding: 0.5rem 3rem;
+  border-radius: 10px;
+  border: none;
+  background-color: white;
+  color: #daa06d;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.reservationTable .reservation .reservationData .deleteWrapper .delete:hover {
+  transform: scale(1.05);
+}
+.reservationTable .reservation .reservationData .deleteWrapper .delete svg {
+  width: 2rem;
 }
 .reservationTable .reservation .reservationData .data {
   display: flex;
