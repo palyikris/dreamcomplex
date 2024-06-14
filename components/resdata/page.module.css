@@ -24,6 +24,7 @@
   max-width: 70%;
   height: 100vh;
   box-shadow: 0 0 10px 2px rgba(218, 160, 109, 0.5);
+  padding-top: 3rem;
 }
 .container .dataContainer .dataWrapper .data {
   display: flex;
@@ -33,7 +34,7 @@
   flex-direction: row;
   margin: 0.5rem 0;
   align-items: flex-end;
-  padding: 0 1vmin;
+  padding: 1vmin;
 }
 .container .dataContainer .dataWrapper .data svg {
   width: 2rem;
@@ -60,6 +61,28 @@
   color: white;
   width: 100%;
   text-align: left;
+}
+.container .dataContainer .dataWrapper .data:last-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-end;
+  padding-bottom: 5rem;
+}
+.container .dataContainer .dataWrapper .data:last-child button {
+  padding: 1rem 2rem;
+  background-color: white;
+  color: #daa06d;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.container .dataContainer .dataWrapper .data:last-child button:hover {
+  transform: scale(1.05);
 }
 .container .dataContainer .calendarWrapper {
   display: flex;

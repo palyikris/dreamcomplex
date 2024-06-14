@@ -71,6 +71,14 @@ export default function AuthPage(props) {
         </div>
         <div className={styles.buttons}>
           <button type="submit">Bejelentkezés</button>
+          <button
+            type="button"
+            onClick={() => {
+              router.push("/");
+            }}
+          >
+            Vissza a főoldalra
+          </button>
         </div>
         <p>
           {error}

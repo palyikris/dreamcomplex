@@ -28,8 +28,23 @@ export default function ReservationTable(props) {
         let sortedData = data.sort((a, b) => {
           return new Date(b.arrDate) - new Date(a.arrDate);
         });
+        sortedData.map(reservation => {
+          if (reservation.apartmanType === "dreamtopart") {
+            if (reservation.apartmanNumber === 1) {
+              reservation.apartmanNumber = "Nárcisz apartman";
+              return reservation;
+            } else if (reservation.apartmanNumber === 2) {
+              reservation.apartmanNumber = "Tulipán apartman";
+              return reservation;
+            } else {
+              reservation.apartmanNumber = "Hóvirág apartman";
+              return reservation;
+            }
+          }
+        });
         setNOfRows(sortedData.length);
         sortedData = sortedData.slice(0, nOfRows);
+
         setReservations(sortedData);
         setIsLoading(false);
       });

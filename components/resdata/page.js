@@ -1,3 +1,4 @@
+import { useRouter } from "next/navigation";
 import DisabledCalendar from "../calendar/discalendar/page";
 import styles from "./page.module.css";
 
@@ -14,6 +15,18 @@ export default function ReservationData(props) {
     arrDate,
     depDate
   } = props.data;
+
+  if (apartmanType === "dreamtopart") {
+    if (apartmanNumber === 1) {
+      apartmanNumber = "Nárcisz apartman";
+    } else if (apartmanNumber === 2) {
+      apartmanNumber = "Tulipán apartman";
+    } else {
+      apartmanNumber = "Hóvirág apartman";
+    }
+  }
+
+  let router = useRouter();
 
   return (
     <div className={styles.container}>
@@ -176,6 +189,16 @@ export default function ReservationData(props) {
                 </div>
               </div>
             : <div />}
+
+          <div className={styles.data}>
+            <button
+              onClick={() => {
+                router.push("/");
+              }}
+            >
+              Vissza a főoldalra
+            </button>
+          </div>
         </div>
         <div className={styles.calendarWrapper}>
           <div className={styles.calendar}>
