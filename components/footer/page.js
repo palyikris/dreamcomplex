@@ -23,6 +23,7 @@ export default function Footer() {
           <a href="/hazirend.docx" download={true}>
             Házirend
           </a>
+          <a href="https://www.balatonlelle.hu/hu/varosunk/látnivalók" target="_blank">Látniválók</a>
         </div>
         <div className={styles.social}>
           <p>Kérjük érdeklődjön telefonon, vagy email-ben:</p>
