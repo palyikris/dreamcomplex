@@ -1,0 +1,66 @@
+@import "../../uniform/style.module";
+
+.diagram {
+  @include centerDiv(column);
+  width: 90%;
+  overflow-x: scroll;
+
+  .row {
+    @include centerDiv(row);
+    width: 100%;
+
+    .rowTitle {
+      @include centerDiv(row);
+      width: 10rem;
+      padding: 2rem 1rem;
+      border-right: 2px solid $main;
+      height: 100%;
+    }
+
+    .slot,
+    .resSlot {
+      @include centerDiv(row);
+      width: 2rem;
+      padding: 1rem;
+      height: 100%;
+    }
+
+    .resSlot {
+      background-color: $main;
+    }
+  }
+
+  .controls {
+    @include centerDiv(row);
+    width: 100%;
+    padding: 1rem;
+
+    button {
+      margin: 0 1rem;
+      @include centerDiv(row);
+      width: auto;
+      border-radius: 100%;
+      border: 1px solid $main;
+      background-color: white;
+      color: $main;
+      padding: .2rem;
+      cursor: pointer;
+      transition: all .3s ease-in-out;
+
+      svg {
+        width: 2rem;
+        height: 2rem;
+      }
+
+      &:hover {
+        background-color: $main;
+        color: white;
+      }
+    }
+
+    span {
+      margin: 0 1rem;
+      color: $main;
+    }
+  }
+}

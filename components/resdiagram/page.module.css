@@ -1,0 +1,79 @@
+.diagram {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  width: 90%;
+  overflow-x: scroll;
+}
+.diagram .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  width: 100%;
+}
+.diagram .row .rowTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  width: 10rem;
+  padding: 2rem 1rem;
+  border-right: 2px solid #daa06d;
+  height: 100%;
+}
+.diagram .row .slot,
+.diagram .row .resSlot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  width: 2rem;
+  padding: 1rem;
+  height: 100%;
+}
+.diagram .row .resSlot {
+  background-color: #daa06d;
+}
+.diagram .controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  width: 100%;
+  padding: 1rem;
+}
+.diagram .controls button {
+  margin: 0 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  width: auto;
+  border-radius: 100%;
+  border: 1px solid #daa06d;
+  background-color: white;
+  color: #daa06d;
+  padding: 0.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.diagram .controls button svg {
+  width: 2rem;
+  height: 2rem;
+}
+.diagram .controls button:hover {
+  background-color: #daa06d;
+  color: white;
+}
+.diagram .controls span {
+  margin: 0 1rem;
+  color: #daa06d;
+}/*# sourceMappingURL=page.module.css.map */

@@ -17,7 +17,7 @@ export default function Error({ error, reset }) {
   return (
     <div className={styles.container}>
       <div className={styles.error}>
-        <h2>Valami hiba tortent!</h2>
+        <h2>Valami hiba történt!</h2>
         <button
           onClick={// Attempt to recover by trying to re-render the segment
           () => reset()}
