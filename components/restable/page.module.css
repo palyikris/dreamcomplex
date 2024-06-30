@@ -127,31 +127,31 @@
 .reservationTable .reservation .reservationData .data p {
   text-align: center;
 }
-.reservationTable .reservation .reservationData .data:nth-child(1) {
-  width: 80%;
-}
 .reservationTable .reservation .reservationData .data:nth-child(2) {
-  width: 120%;
+  width: 50%;
 }
 .reservationTable .reservation .reservationData .data:nth-child(3) {
-  width: 80%;
+  width: 120%;
 }
 .reservationTable .reservation .reservationData .data:nth-child(4) {
-  width: 40%;
+  width: 80%;
 }
 .reservationTable .reservation .reservationData .data:nth-child(5) {
   width: 40%;
 }
 .reservationTable .reservation .reservationData .data:nth-child(6) {
-  width: 50%;
+  width: 40%;
 }
 .reservationTable .reservation .reservationData .data:nth-child(7) {
   width: 50%;
 }
 .reservationTable .reservation .reservationData .data:nth-child(8) {
-  width: 40%;
+  width: 50%;
 }
 .reservationTable .reservation .reservationData .data:nth-child(9) {
+  width: 40%;
+}
+.reservationTable .reservation .reservationData .data:nth-child(10) {
   width: 80%;
 }
 .reservationTable .reservation .seen,
