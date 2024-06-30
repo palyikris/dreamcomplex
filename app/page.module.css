@@ -675,4 +675,42 @@
     width: 80%;
     padding: 1rem;
   }
+}
+@media only screen and (max-width: 450px) {
+  .container {
+    overflow: hidden !important;
+  }
+  .heroSections {
+    padding-left: 1rem !important;
+  }
+  .heroSections .heroElements {
+    width: 95% !important;
+    margin: 0 !important;
+  }
+  .pic {
+    width: 90% !important;
+  }
+  .helper,
+  .text {
+    width: 40% !important;
+  }
+  .details {
+    padding: 0 !important;
+  }
+  .details p {
+    text-align: left !important;
+  }
+  .titleWrapper h1 {
+    font-size: 45px !important;
+    margin-right: 0 !important;
+  }
+  .cardPic,
+  .cardPic1,
+  .description {
+    height: 20rem !important;
+  }
+  .myReservationRoute {
+    padding-right: 0 !important;
+    justify-content: center !important;
+  }
 }/*# sourceMappingURL=page.module.css.map */
