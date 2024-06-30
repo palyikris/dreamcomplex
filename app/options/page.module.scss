@@ -352,3 +352,37 @@
     padding: 1rem;
   }
 }
+
+@media only screen and (max-width: 450px) {
+  .heroSections {
+    padding-left: 1rem !important;
+
+    .heroElements {
+      width: 95% !important;
+      margin: 0 !important;
+    }
+  }
+
+  .magImages {
+    background-color: transparent;
+    width: 100% !important;
+  }
+
+  .description {
+    width: 100% !important;
+
+    h1 {
+      font-size: 45px !important;
+    }
+
+    p {
+      text-align: left !important;
+    }
+  }
+
+  .interiors {
+    div {
+      display: none;
+    }
+  }
+}

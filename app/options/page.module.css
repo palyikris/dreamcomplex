@@ -378,4 +378,29 @@
   .container .apartmansDetailed .apartmanDetailed .details .interiors {
     padding: 1rem;
   }
+}
+@media only screen and (max-width: 450px) {
+  .heroSections {
+    padding-left: 1rem !important;
+  }
+  .heroSections .heroElements {
+    width: 95% !important;
+    margin: 0 !important;
+  }
+  .magImages {
+    background-color: transparent;
+    width: 100% !important;
+  }
+  .description {
+    width: 100% !important;
+  }
+  .description h1 {
+    font-size: 45px !important;
+  }
+  .description p {
+    text-align: left !important;
+  }
+  .interiors div {
+    display: none;
+  }
 }/*# sourceMappingURL=page.module.css.map */
