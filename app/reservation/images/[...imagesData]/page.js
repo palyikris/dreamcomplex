@@ -114,7 +114,10 @@ export default function ImagesPage() {
       );
     } else if (apartmanNumber === 3) {
       return (
-        <ImagesComponentForApartmans startingNum={1} nOfChildren={3}>
+        <ImagesComponentForApartmans startingNum={1} nOfChildren={6}>
+          <div className={styles.to3} />
+          <div className={styles.to3} />
+          <div className={styles.to3} />
           <div className={styles.to3} />
           <div className={styles.to3} />
           <div className={styles.to3} />

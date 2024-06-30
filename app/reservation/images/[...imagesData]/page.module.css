@@ -219,6 +219,24 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+.to3:nth-child(1) {
+  background-image: url("../../../../public/topart/3/0b1243c3-4883-4b04-8be1-479d25eedeb7.jpg");
+}
+.to3:nth-child(2) {
+  background-image: url("../../../../public/topart/3/0b8e1394-4783-432a-93fd-60ad11a7af0b.jpg");
+}
+.to3:nth-child(3) {
+  background-image: url("../../../../public/topart/3/6dabf24c-6953-473d-9717-41d49910d975.jpg");
+}
+.to3:nth-child(4) {
+  background-image: url("../../../../public/topart/3/99d77b48-259f-4f80-8473-575eb79ec8c1.jpg");
+}
+.to3:nth-child(5) {
+  background-image: url("../../../../public/topart/3/a85df734-305d-43c0-a449-5913fc5285a1.jpg");
+}
+.to3:nth-child(6) {
+  background-image: url("../../../../public/topart/3/ac6cc67c-737f-4e42-bc83-5eba8baad0a4.jpg");
+}
 
 .to4 {
   width: 100%;
