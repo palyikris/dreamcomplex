@@ -26,11 +26,11 @@ export async function POST(req) {
   });
 
   // Email options;
-  mailOptions = {
+  let mailOptions = {
     from: process.env.EMAIL_USERNAME,
     to: email,
     subject: "Hogy telt a nyaralás?",
-    text: message
+    html: message
   }
 
   try {
