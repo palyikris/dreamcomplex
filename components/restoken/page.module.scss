@@ -1,0 +1,78 @@
+@import "../../uniform/style.module";
+
+
+.container {
+  @include centerDiv(column);
+  padding-bottom: 10rem;
+
+  .tokenWrapper {
+    @include centerDiv(column);
+    width: 80%;
+    border-radius: 10px;
+    background-color: $main;
+    box-shadow: 0 0 10px rgba(black, 0.5);
+    height: auto;
+    max-height: 50vh;
+    overflow-y: scroll;
+    justify-content: flex-start;
+
+    &::-webkit-scrollbar {
+      display: none
+    }
+
+    scrollbar-width: none;
+
+    .token {
+      @include centerDiv(row);
+      width: 100%;
+      padding: 1rem;
+      border-bottom: 1px solid white;
+      color: white;
+
+      .tokenData {
+        @include centerDiv(row);
+        justify-content: space-evenly;
+
+        p {
+          width: 100%;
+          text-align: center;
+        }
+      }
+
+      .handler {
+        @include centerDiv(row);
+        justify-content: center;
+        width: auto;
+
+        button {
+          padding: .5rem;
+          border-radius: 10px;
+          border: none;
+          background-color: transparent;
+          @include centerDiv(row);
+          width: auto;
+          transition: all .3s ease-in-out;
+          cursor: pointer;
+
+          svg {
+            width: 1.5rem;
+            color: white;
+            transition: inherit;
+          }
+
+          &:hover {
+            background-color: white;
+
+            svg {
+              color: $main;
+            }
+          }
+        }
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}

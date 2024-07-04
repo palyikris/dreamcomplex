@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import styles from "./page.module.css";
 import ReservationTable from "./../../components/restable/page";
-import ReservationDiagram from "@/components/resdiagram/page";
+import ReservationTokenComponent from './../../components/restoken/page';
 
 export default function ReservationsPage() {
   let router = useRouter();
@@ -116,11 +116,10 @@ export default function ReservationsPage() {
       </div>
       {type === ""
         ? <h1 className={styles.typeTitle}>Válassz típust!</h1>
-        : <ReservationTable type={type} />}
-      {type === ""
-        ? null
-        : <ReservationDiagram type={type}></ReservationDiagram>
+        : <ReservationTable type={type} />
       }
+      <div className={styles.sep}></div>
+      <ReservationTokenComponent></ReservationTokenComponent>
     </div>
   );
 }

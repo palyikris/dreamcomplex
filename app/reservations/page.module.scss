@@ -87,4 +87,24 @@
         margin: 0;
         margin-top: 10vmin;
     }
+
+    .sep {
+        width: 80%;
+        height: 1px;
+        background-color: $main;
+        margin: 15vmin 0;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 1rem;
+            height: 1rem;
+            background-color: transparent;
+            border: .1rem solid $main;
+            border-radius: 100%;
+            left: calc(50% - .55rem);
+            top: calc(50% - .55rem);
+        }
+    }
 }
