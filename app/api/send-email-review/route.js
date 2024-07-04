@@ -9,8 +9,9 @@ export async function POST(req) {
   Kedves Vendégünk!<br><br>
   
   Reméljük, kellemesen telt az időtöltés a Dream Komplexumokban.<br>Kérjük, hogy értékelje szállásunkat az alábbi linken:<br>
-  <a href="https://www.dreamkomplexumok/reviews/${type}/${token}">Kattintson az értékeléshez!</a>
+  <a href="https://www.dreamkomplexum.com/reviews/${type}/${token}">Kattintson az értékeléshez!</a>
   <br>Várjuk visszajelzését! Köszönjük!<br><br>
+  Ne válaszoljon erre az email-re!<br><br>
 
   Üdvözlettel,<br>
   DreamKomplex csapata
