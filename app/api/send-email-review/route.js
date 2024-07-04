@@ -8,12 +8,12 @@ export async function POST(req) {
   const message = `
   Kedves Vengédünk!
   
-  Reméljük kellemesen telt az időtöltés a Dream Apartmanban. Kérjük, hogy értékelje szállásunkat az alábbi linken:
-  <a href="https://dreamapartman.hu/review/${type}/${token}">Kattintson az értékeléshez!</a>
+  Reméljük kellemesen telt az időtöltés a Dream Komplexumokban. Kérjük, hogy értékelje szállásunkat az alábbi linken:
+  <a href="https://www.dreamkomplexumok/reviews/${type}/${token}">Kattintson az értékeléshez!</a>
   Várjuk visszajelzését! Köszönjük!
 
   Üdvözlettel,
-  Dream Komplex csapata
+  DreamKomplex csapata
   `;
 
   // Create a transporter object using SMTP transport
