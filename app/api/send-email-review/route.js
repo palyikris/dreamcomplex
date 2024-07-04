@@ -6,11 +6,11 @@ export async function POST(req) {
   const {email, type, token} = await req.json();
 
   const message = `
-  Kedves Vengédünk!
+  Kedves Vendégünk!<br><br>
   
-  Reméljük kellemesen telt az időtöltés a Dream Komplexumokban. Kérjük, hogy értékelje szállásunkat az alábbi linken:
+  Reméljük, kellemesen telt az időtöltés a Dream Komplexumokban.<br>Kérjük, hogy értékelje szállásunkat az alábbi linken:<br>
   <a href="https://www.dreamkomplexumok/reviews/${type}/${token}">Kattintson az értékeléshez!</a>
-  Várjuk visszajelzését! Köszönjük!
+  <br>Várjuk visszajelzését! Köszönjük!<br><br>
 
   Üdvözlettel,
   DreamKomplex csapata
