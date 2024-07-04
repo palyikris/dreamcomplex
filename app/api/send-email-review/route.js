@@ -30,7 +30,7 @@ export async function POST(req) {
     from: process.env.EMAIL_USERNAME,
     to: email,
     subject: "Hogy telt a nyaralás?",
-    html: message
+    text: message
   }
 
   try {
