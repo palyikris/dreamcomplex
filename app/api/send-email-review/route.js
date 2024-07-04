@@ -12,7 +12,7 @@ export async function POST(req) {
   <a href="https://www.dreamkomplexumok/reviews/${type}/${token}">Kattintson az értékeléshez!</a>
   <br>Várjuk visszajelzését! Köszönjük!<br><br>
 
-  Üdvözlettel,
+  Üdvözlettel,<br>
   DreamKomplex csapata
   `;
 
