@@ -177,4 +177,28 @@
   background-color: #daa06d;
   transform: skewX(-10deg);
   box-shadow: none;
+}
+
+@media screen and (max-width: 700px) {
+  .container .starsWrapper {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 550px) {
+  .container .starsWrapper h1 {
+    font-size: 2em;
+  }
+}
+@media screen and (max-width: 450px) {
+  .container .starsWrapper h1 {
+    font-size: 1.5em;
+    text-align: center;
+  }
+  .container .starsWrapper .stars .buttons button {
+    width: auto;
+    padding: 0.5rem 2rem;
+  }
+  .container .starsWrapper .stars .data label {
+    font-size: 1em;
+  }
 }/*# sourceMappingURL=page.module.css.map */

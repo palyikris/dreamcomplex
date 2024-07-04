@@ -37,6 +37,14 @@
           width: 100%;
           text-align: center;
         }
+
+        .reviewBool {
+          @include centerDiv(row);
+
+          svg {
+            width: 1.5rem;
+          }
+        }
       }
 
       .handler {

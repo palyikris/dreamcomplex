@@ -48,6 +48,16 @@
   width: 100%;
   text-align: center;
 }
+.container .tokenWrapper .token .tokenData .reviewBool {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+}
+.container .tokenWrapper .token .tokenData .reviewBool svg {
+  width: 1.5rem;
+}
 .container .tokenWrapper .token .handler {
   display: flex;
   justify-content: center;

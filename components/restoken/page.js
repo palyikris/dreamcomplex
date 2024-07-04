@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react"
 import styles from "./page.module.css"
 import { DeleteToken, FetchTokens } from "@/lib/firebase"
@@ -9,6 +10,7 @@ export default function ReservationTokenComponent() {
 
   useEffect(() => {
     FetchTokens().then(data => {
+      console.log(data)
       setTokens(data)
       setIsLoading(false)
     })
@@ -30,12 +32,34 @@ export default function ReservationTokenComponent() {
     <div className={styles.container}> 
       <div className={styles.tokenWrapper}>
         {tokens.map((data) => {
+          let message = ""
+          if (data.hasBeenReviewed) {
+            message = "Az értékelést már elvégezték!"
+          }
+          else {
+            message = "Az értékelés még nem történt meg!"
+          }
+
           return (
             <div className={styles.token} key={data.id}>
               <div className={styles.tokenData}>
                 <p>{data.name}</p>
                 <p>{data.email}</p>
                 <p>{data.token}</p>
+                <div className={styles.reviewBool} title={message}>
+                  {data.hasBeenReviewed ?
+                    (
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                      </svg>
+                    )
+                    :
+                    (
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+                      </svg>
+                    )}
+                </div>
               </div>
               <div className={styles.handler}>
                 <button onClick={() => {
