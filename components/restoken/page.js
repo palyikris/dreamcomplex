@@ -2,6 +2,8 @@
 import { useEffect, useState } from "react"
 import styles from "./page.module.css"
 import { DeleteToken, FetchTokens } from "@/lib/firebase"
+import ReactStars from "react-rating-stars-component";
+import { useRouter } from "next/navigation";
 
 export default function ReservationTokenComponent() {
 
@@ -9,6 +11,8 @@ export default function ReservationTokenComponent() {
   const [tokens, setTokens] = useState([])
   const [seeReview, setSeeReview] = useState(false)
   const [reviewData, setReviewData] = useState("")
+  const [rating, setRating] = useState(0)
+  let router = useRouter()
 
   useEffect(() => {
     FetchTokens().then(data => {
@@ -30,10 +34,10 @@ export default function ReservationTokenComponent() {
     }
   }
 
-  const SeeReview = (review) => {
+  const SeeReview = (review, rating) => {
     setSeeReview(true)
     setReviewData(review)
-    console.log(review)
+    setRating(rating)
   }
 
   return (
@@ -42,10 +46,22 @@ export default function ReservationTokenComponent() {
         <div className={styles.reviewWrapper}>
           <div className={styles.reviewData}>
             <textarea name="review" id="review" rows={6} cols={80} value={reviewData}></textarea>
+            <ReactStars
+              count={5}
+              value={rating}
+              isHalf={false}
+              size={36}
+              activeColor="#ffffff"
+              color="rgba(255, 255, 255, 0.5)"
+              edit={false}
+            ></ReactStars>
           </div>
           <div className={styles.reviewHandler}>
             <button onClick={() => {
               setSeeReview(false)
+              setTimeout(() => {
+                router.push("/reservations#tokenWrapper")
+              }, 100);
             }}>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
@@ -54,7 +70,8 @@ export default function ReservationTokenComponent() {
           </div>
         </div>
       ) : null}
-      <div className={styles.tokenWrapper}>
+      {seeReview ? null : (
+        <div className={styles.tokenWrapper} id="tokenWrapper">
         {tokens.map((data) => {
           let message = ""
           if (data.hasBeenReviewed) {
@@ -74,7 +91,7 @@ export default function ReservationTokenComponent() {
                   {data.hasBeenReviewed ?
                     (
                       <button className={styles.seeReview} onClick={() => {
-                        SeeReview(data.review)
+                        SeeReview(data.review, data.rating)
                       }}>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                           <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
@@ -102,6 +119,7 @@ export default function ReservationTokenComponent() {
           )
         })}
       </div>
+      )}
     </div>
   )
 }

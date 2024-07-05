@@ -4,6 +4,7 @@
 .container {
   @include centerDiv(column);
   padding-bottom: 10rem;
+  scroll-behavior: smooth;
 
   .reviewWrapper {
     @include centerDiv(column);
@@ -11,18 +12,23 @@
     border-radius: 10px;
     background-color: $main;
     box-shadow: 0 0 10px rgba(black, 0.5);
-    position: sticky;
-    margin-bottom: 5rem;
+    position: fixed;
     padding: 1rem 0;
+    height: 50vh;
+    top: calc(50% - 25vh);
+    left: calc(50% - 40%);
+    z-index: 1000;
 
     .reviewData {
-      @include centerDiv(row);
+      @include centerDiv(column);
 
       textarea {
         border-radius: 10px;
         padding: .5rem;
         border: none;
         resize: none;
+        margin-bottom: 1rem;
+        color: $bg;
       }
     }
 
