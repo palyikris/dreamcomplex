@@ -6,6 +6,66 @@
   flex-direction: column;
   padding-bottom: 10rem;
 }
+.container .reviewWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  width: 80%;
+  border-radius: 10px;
+  background-color: #daa06d;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  position: sticky;
+  margin-bottom: 5rem;
+  padding: 1rem 0;
+}
+.container .reviewWrapper .reviewData {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+}
+.container .reviewWrapper .reviewData textarea {
+  border-radius: 10px;
+  padding: 0.5rem;
+  border: none;
+  resize: none;
+}
+.container .reviewWrapper .reviewHandler {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  padding-top: 2rem;
+}
+.container .reviewWrapper .reviewHandler button {
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: 1px solid white;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  width: auto;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.container .reviewWrapper .reviewHandler button svg {
+  width: 1.5rem;
+  color: white;
+  transition: inherit;
+}
+.container .reviewWrapper .reviewHandler button:hover {
+  background-color: white;
+}
+.container .reviewWrapper .reviewHandler button:hover svg {
+  color: #daa06d;
+}
 .container .tokenWrapper {
   display: flex;
   justify-content: center;
@@ -57,6 +117,31 @@
 }
 .container .tokenWrapper .token .tokenData .reviewBool svg {
   width: 1.5rem;
+}
+.container .tokenWrapper .token .tokenData .reviewBool .seeReview {
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  width: auto;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.container .tokenWrapper .token .tokenData .reviewBool .seeReview svg {
+  width: 1.5rem;
+  color: white;
+  transition: inherit;
+}
+.container .tokenWrapper .token .tokenData .reviewBool .seeReview:hover {
+  background-color: white;
+}
+.container .tokenWrapper .token .tokenData .reviewBool .seeReview:hover svg {
+  color: #daa06d;
 }
 .container .tokenWrapper .token .handler {
   display: flex;

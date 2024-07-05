@@ -7,6 +7,8 @@ export default function ReservationTokenComponent() {
 
   const [isLoading, setIsLoading] = useState(true)
   const [tokens, setTokens] = useState([])
+  const [seeReview, setSeeReview] = useState(false)
+  const [reviewData, setReviewData] = useState("")
 
   useEffect(() => {
     FetchTokens().then(data => {
@@ -28,8 +30,30 @@ export default function ReservationTokenComponent() {
     }
   }
 
+  const SeeReview = (review) => {
+    setSeeReview(true)
+    setReviewData(review)
+    console.log(review)
+  }
+
   return (
     <div className={styles.container}> 
+      {seeReview ? (
+        <div className={styles.reviewWrapper}>
+          <div className={styles.reviewData}>
+            <textarea name="review" id="review" rows={6} cols={80} value={reviewData}></textarea>
+          </div>
+          <div className={styles.reviewHandler}>
+            <button onClick={() => {
+              setSeeReview(false)
+            }}>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      ) : null}
       <div className={styles.tokenWrapper}>
         {tokens.map((data) => {
           let message = ""
@@ -49,9 +73,13 @@ export default function ReservationTokenComponent() {
                 <div className={styles.reviewBool} title={message}>
                   {data.hasBeenReviewed ?
                     (
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                      </svg>
+                      <button className={styles.seeReview} onClick={() => {
+                        SeeReview(data.review)
+                      }}>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                      </button>
                     )
                     :
                     (
