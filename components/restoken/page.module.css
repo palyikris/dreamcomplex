@@ -65,6 +65,7 @@
 }
 .container .reviewWrapper .reviewHandler button:hover svg {
   color: #daa06d;
+  transform: rotateZ(360deg);
 }
 .container .tokenWrapper {
   display: flex;
