@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import styles from "./page.module.css";
 import ReservationTable from "./../../components/restable/page";
 import ReservationTokenComponent from './../../components/restoken/page';
+import ReviewSenderComponent from "@/components/reviewsender/page";
 
 export default function ReservationsPage() {
   let router = useRouter();
@@ -120,6 +121,7 @@ export default function ReservationsPage() {
       }
       <div className={styles.sep}></div>
       <ReservationTokenComponent></ReservationTokenComponent>
+      <ReviewSenderComponent></ReviewSenderComponent>
     </div>
   );
 }
