@@ -4,6 +4,7 @@ import styles from "./page.module.css"
 import { DeleteToken, FetchTokens } from "@/lib/firebase"
 import ReactStars from "react-rating-stars-component";
 import { useRouter } from "next/navigation";
+import Swal from "sweetalert2";
 
 export default function ReservationTokenComponent() {
 
@@ -23,12 +24,32 @@ export default function ReservationTokenComponent() {
   }, [])
 
   const HandleDelete = async (id) => {
+    let result = await Swal.fire({
+      title: "Biztos törlöd?",
+      text: "Ezt nem lehet visszacsinálni!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#C35355",
+      cancelButtonColor: "#daa06d",
+      cancelButtonText: "Mégse",
+      confirmButtonText: "Igen, töröld!",
+    })
+    if (!result.isConfirmed) {
+      return
+    }
     try {
       let response = await DeleteToken(id)
       if(response){
         let newTokens = tokens.filter(token => token.id !== id)
         setTokens(newTokens)
       }
+      Swal.fire({
+        title: "Törölve!",
+        text: "Az akinek küldted, már nem tud véleményt írni.",
+        icon: "success",
+        confirmButtonText: "Rendben",
+        confirmButtonColor: "#daa06d"
+      });
     } catch (error) {
       console.error(error)
     }

@@ -8,6 +8,7 @@ import { useState } from "react";
 import { AddZero } from "@/lib/addzero";
 import { useGlobalDate } from "@/context/datecontexthook";
 import Loader from "@/components/loader/page";
+import { createTheme, ThemeProvider } from "@mui/material";
 
 export default function ArrivalCalendar(props) {
   let { setArrDate } = useGlobalDate();
@@ -21,6 +22,14 @@ export default function ArrivalCalendar(props) {
   )}-${AddZero(date.getDate())}`;
   let [value, setValue] = useState(dayjs(dateForCalendarDefaultValue));
   let [datesToDisable, setDatesToDisable] = useState([]);
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: "#daa06d",
+        dark: "#daa06d"
+      }
+    }
+  });
 
   // if (isLoading) {
   //   return <Loader />;
@@ -35,28 +44,30 @@ export default function ArrivalCalendar(props) {
   };
 
   return (
-    <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <DemoContainer components={["DateCalendar", "DateCalendar"]}>
-        <DemoItem>
-          <DateCalendar
-            value={value}
-            onChange={newValue => {
-              setValue(newValue);
-              setArrDate(newValue);
-            }}
-            views={["year", "month", "day"]}
-            showDaysOutsideCurrentMonth
-            disablePast
-            fixedWeekNumber={6}
-            maxDate={dayjs(dateForCalendarMaxValue)} //   sx={{
-            //     bgcolor: "#e9c6a7",
-            //     borderRadius: "10px"
-            //   }}
-            shouldDisableDate={disableDates}
-            className={styles.calendar}
-          />
-        </DemoItem>
-      </DemoContainer>
-    </LocalizationProvider>
+    <ThemeProvider theme={theme}>
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <DemoContainer components={["DateCalendar", "DateCalendar"]}>
+          <DemoItem>
+            <DateCalendar
+              value={value}
+              onChange={newValue => {
+                setValue(newValue);
+                setArrDate(newValue);
+              }}
+              views={["year", "month", "day"]}
+              showDaysOutsideCurrentMonth
+              disablePast
+              fixedWeekNumber={6}
+              maxDate={dayjs(dateForCalendarMaxValue)} //   sx={{
+              //     bgcolor: "#e9c6a7",
+              //     borderRadius: "10px"
+              //   }}
+              shouldDisableDate={disableDates}
+              className={styles.calendar}
+            />
+          </DemoItem>
+        </DemoContainer>
+      </LocalizationProvider>
+    </ThemeProvider>    
   );
 }

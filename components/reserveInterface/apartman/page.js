@@ -4,6 +4,7 @@ import { useState } from "react";
 import styles from "./page.module.css";
 import { useRouter } from "next/navigation";
 import ReserveForm from "../reserveform/page";
+import Swal from "sweetalert2";
 
 export default function ReserveApartmanComponent(props) {
   let [apartmanNumber, setApartmanNumber] = useState(0);
@@ -11,6 +12,7 @@ export default function ReserveApartmanComponent(props) {
   let [isEur, setIsEur] = useState(false);
   let router = useRouter();
   let { type } = props;
+  
 
   return (
     <div className={styles.container}>

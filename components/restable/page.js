@@ -8,6 +8,8 @@ import {
 import Loader from "../loader/page";
 import { SendInvitation } from "@/lib/sendinv";
 import { makeId } from "@/lib/random";
+import Swal from "sweetalert2";
+import { set } from "date-fns";
 
 export default function ReservationTable(props) {
   let { type } = props;
@@ -17,16 +19,38 @@ export default function ReservationTable(props) {
 
   const HandleDeletion = (type, id) => {
     setIsLoading(true);
-    let confirm = window.confirm("Biztosan törölni szeretnéd?");
-    if (confirm) {
-      DeleteReservation(type, id).then(() => {
-        setNOfRows(nOfRows - 1);
-        setIsLoading(false);
-      });
-    }
-    else{
-      setIsLoading(false)
-    }
+    Swal.fire({
+      title: "Biztos törlöd?",
+      text: "Ezt nem lehet visszacsinálni!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#C35355",
+      cancelButtonColor: "#daa06d",
+      cancelButtonText: "Mégse",
+      confirmButtonText: "Igen, töröld!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        DeleteReservation(type, id).then(() => {
+          Swal.fire({
+            title: "Törölve!",
+            text: "Ezt a foglalást már nem találod sehol.",
+            icon: "success",
+            confirmButtonText: "Rendben",
+            confirmButtonColor: "#daa06d"
+          }).then((result) => {
+            if (result.isConfirmed) {
+              setNOfRows(nOfRows - 1);
+              setIsLoading(false);
+            }
+          })
+          
+        });
+      }
+      else{
+        setIsLoading(false)
+      }
+    });
+    
   };
 
   const HandleInvSend = (type, email, name) => {
@@ -34,15 +58,35 @@ export default function ReservationTable(props) {
     console.log(type, email)
     let token = makeId(20); // prompt: making an id for the new reservation in the database
     token = token.replace(/\s+/g, "");
-    let confirm = window.confirm("Biztosan elküldöd az emailt?");
-    if (confirm) {
-      SendInvitation(email, token, name, type).then(() => {
-        setIsLoading(false);
-      });
-    }
-    else {
-      setIsLoading(false)
-    }
+    Swal.fire({
+      title: "Biztos elküldöd?",
+      text: "Ezt nem lehet visszacsinálni!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#007F4D",
+      cancelButtonColor: "#daa06d",
+      cancelButtonText: "Mégse",
+      confirmButtonText: "Igen, elküldöm!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        SendInvitation(email, token, name, type).then(() => {
+          Swal.fire({
+            title: "Elküldve!",
+            text: "A vendég rövidesen megkapja az emailt.",
+            icon: "success",
+            confirmButtonText: "Rendben",
+            confirmButtonColor: "#daa06d"
+          }).then((result) => {
+            if (result.isConfirmed) {
+              setIsLoading(false);
+            }
+          })
+        });
+      }
+      else{
+        setIsLoading(false)
+      }
+    });
   }
 
   useEffect(

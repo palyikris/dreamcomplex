@@ -6,6 +6,7 @@ import styles from "./page.module.css"
 import Loader from "@/components/loader/page";
 import { AddNewReview, IsReviewValid } from "@/lib/firebase";
 import { usePathname, useRouter } from "next/navigation";
+import Swal from "sweetalert2";
 
 
 export default function ReviewsPage() {
@@ -23,6 +24,17 @@ export default function ReviewsPage() {
   const [email, setEmail] = useState("")
   const [review, setReview] = useState("")
   const [isLoading, setIsLoading] = useState(true)
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 1500,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.onmouseenter = Swal.stopTimer;
+      toast.onmouseleave = Swal.resumeTimer;
+    }
+  });
 
   useEffect(() => {
     if (!token || !type) {
@@ -47,19 +59,54 @@ export default function ReviewsPage() {
   const handleReviewSubmission = (e) => {
     e.preventDefault()
     setIsLoading(true)
-    if (name === "" || email === "" || review === "" || rating === 0) {
-      alert("Minden mezőt ki kell tölteni! (Csillagot is állítani kell!)")
+    if (name === "") {
+      Toast.fire({
+        icon: "error",
+        title: "Töltsd ki a név mezőt!"
+      });
+      setIsLoading(false)
+      return;
+    }
+    if (email === "") {
+      Toast.fire({
+        icon: "error",
+        title: "Töltsd ki az email mezőt!"
+      });
+      setIsLoading(false)
+      return;
+    }
+    if (review === "") {
+      Toast.fire({
+        icon: "error",
+        title: "Töltsd ki az értékelés mezőt!"
+      });
+      setIsLoading(false)
+      return;
+    }
+    if (rating === 0) {
+      Toast.fire({
+        icon: "error",
+        title: "Értékelj legalább 1 csillagot!"
+      });
       setIsLoading(false)
       return
     }
     AddNewReview({ name, email, review, rating, token, type }).then(() => {
-      alert("Vélemény sikeresen beküldve!")
-      setIsLoading(false)
-      setName("")
-      setEmail("")
-      setReview("")
-      setRating(0)
-      router.push("/")
+      Swal.fire({
+        icon: "success",
+        title: "Köszönjük!",
+        text: "Az értékelésedet sikeresen elküldtük! Várunk vissza!",
+        confirmButtonText: "Rendben",
+        confirmButtonColor: "#daa06d"
+      }).then(() => {
+        setIsLoading(false)
+        setName("")
+        setEmail("")
+        setReview("")
+        setRating(0)
+        router.push("/")
+      })
+      
     })
     
   }
@@ -96,14 +143,14 @@ export default function ReviewsPage() {
           </div>
           <div className={styles.data}>
             <label htmlFor="name">Név</label>
-            <input type="text" id="name" required value={name} onChange={(e) => {setName(e.target.value)}} placeholder="Pl.: Példa János"/>
+            <input type="text" id="name"  value={name} onChange={(e) => {setName(e.target.value)}} placeholder="Pl.: Példa János"/>
           </div>
           <div className={styles.data}>
             <label htmlFor="email">Email</label>
-            <input type="email" id="email" required value={email} onChange={(e) => {setEmail(e.target.value)}} placeholder="Pl.: peldajani@gmail.com"/>
+            <input type="email" id="email"  value={email} onChange={(e) => {setEmail(e.target.value)}} placeholder="Pl.: peldajani@gmail.com"/>
           </div>
           <div className={styles.data}>
-            <textarea id="review" maxLength={300} required rows={6} cols={80} style={{resize: "none"}} value={review} onChange={(e) => {setReview(e.target.value)}} placeholder="Szerintem a Dream Komplexumok..."></textarea>
+            <textarea id="review" maxLength={300}  rows={6} cols={80} style={{resize: "none"}} value={review} onChange={(e) => {setReview(e.target.value)}} placeholder="Szerintem a Dream Komplexumok..."></textarea>
           </div>
           <div className={styles.buttons}>
             <button type="submit" className={styles.submit}>Küldés</button>

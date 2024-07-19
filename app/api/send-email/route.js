@@ -17,7 +17,8 @@ export async function POST(req) {
   Kellemes és pihentető nyaralást kívánunk!
 
   Üdvözlettel,
-  DreamKomplex Csapata
+  Kerekesné Tollár Anikó
+  +36 70 373 3772
   
   `;
 

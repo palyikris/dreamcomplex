@@ -11,6 +11,7 @@ import { GenerateDate } from "@/lib/generatedate";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { handleKeroSubmit, handleSubmit } from "@/lib/sendemail";
+import Swal from "sweetalert2";
 
 export default function ReserveForm(props) {
   let { apartmanNumber, type } = props;
@@ -26,6 +27,17 @@ export default function ReserveForm(props) {
   let [loading, setLoading] = useState(false);
   let [copied, setCopied] = useState(false);
   let { arrDate, depDate } = useGlobalDate();
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 1500,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.onmouseenter = Swal.stopTimer;
+      toast.onmouseleave = Swal.resumeTimer;
+    }
+  });
 
   let router = useRouter();
 
@@ -34,8 +46,69 @@ export default function ReserveForm(props) {
 
     if (apartmanNumber === 0) {
       isInputValid = false;
+      Toast.fire({
+        icon: "error",
+        title: "Válasszon egy apartmant!"
+      });
       return isInputValid;
     }
+    if (email === "") {
+      isInputValid = false;
+      Toast.fire({
+        icon: "error",
+        title: "Töltse ki az email mezőt!"
+      });
+      return isInputValid;
+    }
+    if (name === "") {
+      isInputValid = false;
+      Toast.fire({
+        icon: "error",
+        title: "Töltse ki a név mezőt!"
+      });
+      return isInputValid;
+    }
+    if (phoneNumber === "") {
+      isInputValid = false;
+      Toast.fire({
+        icon: "error",
+        title: "Töltse ki a telefonszám mezőt!"
+      });
+      return isInputValid;
+    }
+    if (parents === "") {
+      isInputValid = false;
+      Toast.fire({
+        icon: "error",
+        title: "Töltse ki a felnőttek mezőt!"
+      });
+      return isInputValid;
+    }
+    if (children === "") {
+      isInputValid = false;
+      Toast.fire({
+        icon: "error",
+        title: "Töltse ki a gyerekek mezőt!"
+      });
+      return isInputValid;
+    }
+    if (arrDate === null) {
+      isInputValid = false;
+      Toast.fire({
+        icon: "error",
+        title: "Válassza ki az érkezési dátumot!"
+      });
+      return isInputValid;
+    }
+    if (depDate === null) {
+      isInputValid = false;
+      Toast.fire({
+        icon: "error",
+        title: "Válassza ki a távozási dátumot!"
+      });
+      return isInputValid;
+    }
+
 
     return isInputValid;
   }
@@ -46,15 +119,6 @@ export default function ReserveForm(props) {
     let isInputValid = checkData();
 
     if (isInputValid === false) {
-      alert("Töltse ki az összes mezőt, és jelöljön meg egy apartmant!");
-      setIsAfterReservation(false);
-      setEmail("");
-      setName("");
-      setChildren("");
-      setName("");
-      setPhoneNumber("");
-      setNote("");
-      setLoading(false);
       setLoading(false);
       return;
     }
@@ -219,7 +283,7 @@ export default function ReserveForm(props) {
               setEmail(e.target.value);
             }}
             value={email}
-            required
+            
           />
         </div>
       </div>
@@ -245,7 +309,7 @@ export default function ReserveForm(props) {
               setName(e.target.value);
             }}
             value={name}
-            required
+            
           />
         </div>
       </div>
@@ -272,7 +336,7 @@ export default function ReserveForm(props) {
               setPhoneNumber(e.target.value);
             }}
             value={phoneNumber}
-            required
+            
           />
         </div>
       </div>
@@ -300,7 +364,7 @@ export default function ReserveForm(props) {
               setParents(e.target.value);
             }}
             value={parents}
-            required
+            
           />
         </div>
         <div className={styles.input}>
@@ -312,7 +376,7 @@ export default function ReserveForm(props) {
               setChildren(e.target.value);
             }}
             value={children}
-            required
+            
           />
         </div>
       </div>

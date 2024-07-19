@@ -1,9 +1,10 @@
 import { useState } from "react";
 import styles from "./page.module.css"
-import { set } from "date-fns";
 import Loader from './../loader/page';
 import { makeId } from "@/lib/random";
 import { SendInvitation } from "@/lib/sendinv";
+import Swal from "sweetalert2";
+
 
 export default function ReviewSenderComponent() {
 
@@ -14,12 +15,40 @@ export default function ReviewSenderComponent() {
 
   const handleReviewSendSubmit = async(e) => {
     e.preventDefault();
-    if (type === "0") {
-      alert("Válassz apartman típust!")
+    if (email === "" || name === "") {
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 1500,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        }
+      });
+      Toast.fire({
+        icon: "error",
+        title: "Töltsd ki az összes mezőt!"
+      });
       return;
     }
-    if (email === "" || name === "") {
-      alert("Tölts ki minden mezőt!")
+    if (type === "0") {
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 1500,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        }
+      });
+      Toast.fire({
+        icon: "error",
+        title: "Válassz apartman típust!"
+      });
       return;
     }
     setIsLoading(true)
@@ -35,15 +64,33 @@ export default function ReviewSenderComponent() {
     console.log(type, email)
     let token = makeId(20); // prompt: making an id for the new reservation in the database
     token = token.replace(/\s+/g, "");
-    let confirm = window.confirm("Biztosan elküldöd az emailt?");
-    if (confirm) {
-      SendInvitation(email, token, name, type).then(() => {
+    Swal.fire({
+      title: "Biztos elküldöd?",
+      text: "Ezt nem lehet visszacsinálni!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#007F4D",
+      cancelButtonColor: "#daa06d",
+      cancelButtonText: "Mégse",
+      confirmButtonText: "Igen, elküldöm!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        SendInvitation(email, token, name, type).then(() => {
+          Swal.fire({
+            title: "Elküldve!",
+            text: "A vendég rövidesen megkapja az emailt.",
+            icon: "success",
+            confirmButtonText: "Rendben",
+            confirmButtonColor: "#daa06d"
+          }).then(() => {
+            setIsLoading(false);
+          });
+        });
+      }
+      else {
         setIsLoading(false);
-      });
-    }
-    else {
-      setIsLoading(false)
-    }
+      }
+    });
   }
 
   if (isLoading) {
