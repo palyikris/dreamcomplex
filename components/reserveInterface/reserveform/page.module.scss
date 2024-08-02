@@ -123,8 +123,79 @@
     }
   }
 
-  .submitButton {
-    @include MyButton();
-    margin: 5rem 0 3rem 0;
+  /* From Uiverse.io by Gaurav-WebDev */
+  .button {
+    height: 50px;
+    width: 200px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    margin: 3rem 0;
+    border: 1.5px solid $main;
+  }
+
+
+  .button,
+  .type1 {
+    background-color: transparent;
+
+    span {
+      @include centerDiv(row);
+      width: auto;
+
+      svg {
+        width: 1.5rem;
+        transition: all .2s ease-in-out;
+      }
+    }
+  }
+
+  .type1 .after {
+    height: 50px;
+    width: 200px;
+    background-color: $main;
+    color: #fff;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    transform: translateY(50px);
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .type1 .before {
+    content: "Foglalás";
+    height: 50px;
+    width: 200px;
+    color: $main;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    transform: translateY(0px) scale(1.2);
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .type1:hover .after {
+    transform: translateY(0) scale(1.2);
+  }
+
+  .type1:hover .before {
+    transform: translateY(-50px) scale(0) rotate(120deg);
+  }
+
+  .type1:active .after svg {
+    transform: translateY(0) scale(1.1);
   }
 }
