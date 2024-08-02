@@ -86,7 +86,7 @@
   align-items: center;
   width: 100%;
   flex-direction: row;
-  margin: 1rem 0;
+  margin: 1.5rem 0;
 }
 .reserveForm .data svg {
   width: 2rem;
@@ -108,16 +108,93 @@
   font-size: small;
   font-style: italic;
 }
-.reserveForm .data .input input {
+.reserveForm .data .input .group {
+  position: relative;
   width: 100%;
-  padding: 0.5rem;
+}
+.reserveForm .data .input .input {
+  font-size: 16px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 100%;
   border: none;
-  border-bottom: 1.5px solid #daa06d;
+  border-bottom: 1px solid rgba(218, 160, 109, 0.7);
+  background: transparent;
+  color: #2f4858;
+}
+.reserveForm .data .input .input:focus {
+  outline: none;
+}
+.reserveForm .data .input .label {
+  color: rgba(218, 160, 109, 0.7);
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+.reserveForm .data .input .input:not(:-moz-placeholder-shown) ~ label {
+  top: -20px;
+  font-size: 14px;
   color: #daa06d;
 }
-.reserveForm .data:nth-child(7) .input {
-  width: 30%;
-  padding: 0 1rem;
+.reserveForm .data .input .input:focus ~ label,
+.reserveForm .data .input .input:not(:placeholder-shown) ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: #daa06d;
+}
+.reserveForm .data .input .bar {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+.reserveForm .data .input .bar:before,
+.reserveForm .data .input .bar:after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #daa06d;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+.reserveForm .data .input .bar:before {
+  left: 50%;
+}
+.reserveForm .data .input .bar:after {
+  right: 50%;
+}
+.reserveForm .data .input .input:focus ~ .bar:before,
+.reserveForm .data .input .input:focus ~ .bar:after {
+  width: 50%;
+}
+.reserveForm .data .input .highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+.reserveForm .data .input .input:focus ~ .highlight {
+  animation: inputHighlighter 0.3s ease;
+}
+@keyframes inputHighlighter {
+  from {
+    background: #daa06d;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
 }
 .reserveForm .calendarData {
   display: flex;
