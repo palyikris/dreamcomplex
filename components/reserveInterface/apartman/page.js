@@ -51,8 +51,9 @@ export default function ReserveApartmanComponent(props) {
                     Space: 4 - 6 person, Area 65 m<sup>2</sup>, Number of rooms: 1 living room + 1 dining room, 2 bedrooms, Kitchen, Bathroom with shower, 1 Separate Toilette, Terrace
                   </p>}
               <div className={styles.price}>
-                {isHuf ? <p>11800 HUF/fő/éj</p> : <p>30 EUR/person/night</p>}
+                {isHuf ? <p>12800 HUF/fő/éj</p> : <p>32 EUR/person/night</p>}
                 {isHuf ? <p>Minimum 4 fő</p> : <p>At least 4 people</p>}
+                {isHuf ? <p>Minimum 4 éjszaka</p> : <p>At least 4 nights</p>}
               </div>
             </div>
             <div className={styles.sep} />
@@ -131,8 +132,9 @@ export default function ReserveApartmanComponent(props) {
                     Space: 2 - 3 person, Area 45 m<sup>2</sup>, Number of rooms: 1 living room, 1 bedroom for 2 people, 1 bedroom for 1 person, Kitchen, Bathroom with shower, Terrace
                   </p>}
               <div className={styles.price}>
-                {isHuf ? <p>11800 HUF/fő/éj</p> : <p>30 EUR/person/night</p>}
+                {isHuf ? <p>12800 HUF/fő/éj</p> : <p>32 EUR/person/night</p>}
                 {isHuf ? <p>Minimum 2 fő</p> : <p>At least 2 people</p>}
+                {isHuf ? <p>Minimum 4 éjszaka</p> : <p>At least 4 nights</p>}
               </div>
             </div>
             <div className={styles.sep} />
@@ -211,8 +213,9 @@ export default function ReserveApartmanComponent(props) {
                     Space: 4 - 6 person, Area 65 m<sup>2</sup>, Number of rooms: 1 living room + 1 dining room, 2 bedrooms, Kitchen, Bathroom with shower, 1 Separate Toilette, Terrace
                   </p>}
               <div className={styles.price}>
-                {isHuf ? <p>11800 HUF/fő/éj</p> : <p>30 EUR/person/night</p>}
+                {isHuf ? <p>12800 HUF/fő/éj</p> : <p>32 EUR/person/night</p>}
                 {isHuf ? <p>Minimum 4 fő</p> : <p>At least 4 people</p>}
+                {isHuf ? <p>Minimum 4 éjszaka</p> : <p>At least 4 nights</p>}
               </div>
             </div>
             <div className={styles.sep} />
@@ -291,8 +294,9 @@ export default function ReserveApartmanComponent(props) {
                     Space: 4 - 6 person, Area 65 m<sup>2</sup>, Number of rooms: 1 living room + 1 dining room, Kitchen, Bathroom with shower, 1 Separate Toilette, Terrace
                   </p>}
               <div className={styles.price}>
-                {isHuf ? <p>11800 HUF/fő/éj</p> : <p>30 EUR/person/night</p>}
+                {isHuf ? <p>12800 HUF/fő/éj</p> : <p>32 EUR/person/night</p>}
                 {isHuf ? <p>Minimum 4 fő</p> : <p>At least 4 people</p>}
+                {isHuf ? <p>Minimum 4 éjszaka</p> : <p>At least 4 nights</p>}
               </div>
             </div>
             <div className={styles.sep} />
