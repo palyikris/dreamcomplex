@@ -288,7 +288,7 @@ export default function ReserveForm(props) {
               </label>}
           <DateCalendarComponent reservation={true} isDisabled={false} apartmanNumber={apartmanNumber} type={type} />
         </div>
-        <div className={styles.calendar}>
+        <div className={styles.calendar} style={{ opacity: arrDate ? 1 : 0.5, cursor: arrDate ? "default" : "not-allowed" }}>
           {depDate != undefined && depDate != null ? <label>
                 Távozás dátuma: {GenerateDate(depDate)}
               </label> : <label>

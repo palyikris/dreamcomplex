@@ -13,6 +13,9 @@ import { GeneratePastDates } from "@/lib/generatepast";
 import { GenerateFutureDates } from "@/lib/generatefut";
 import { GenerateDate } from "@/lib/generatedate";
 import { createTheme, ThemeProvider } from "@mui/material";
+import styled from "@emotion/styled";
+import { PickersDay } from "@mui/x-date-pickers";
+import "dayjs/locale/hu";
 
 export default function DepartureCalendar(props) {
   let { arrDate, setDepDate } = useGlobalDate();
@@ -58,6 +61,17 @@ export default function DepartureCalendar(props) {
     );
   };
 
+  const CustomDay = styled(PickersDay, {
+    shouldForwardProp: prop => prop !== "disabledDay"
+  })(({ theme, disabledDay }) => ({
+    ...(disabledDay && {
+      textDecoration: "line-through",
+      opacity: 0.6,
+      pointerEvents: "none",
+      cursor: "not-allowed"
+    })
+  }));
+
   useEffect(
     () => {
       if (arrDate) {
@@ -88,7 +102,7 @@ export default function DepartureCalendar(props) {
 
   return (
     <ThemeProvider theme={theme}>
-      <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="hu">
         <DemoContainer components={["DateCalendar", "DateCalendar"]}>
           <DemoItem>
             <DateCalendar
@@ -101,11 +115,25 @@ export default function DepartureCalendar(props) {
               showDaysOutsideCurrentMonth
               disablePast
               fixedWeekNumber={6}
-              maxDate={dayjs(dateForCalendarMaxValue)} //     bgcolor: "#e9c6a7", //   sx={{
-              //     borderRadius: "10px"
+              maxDate={dayjs(dateForCalendarMaxValue)} //     borderRadius: "10px" //     bgcolor: "#e9c6a7", //   sx={{
               //   }}
               className={styles.calendar}
               shouldDisableDate={disableDates}
+              slots={{
+                day: props => {
+                  const isDisabled = disableDates(props.day);
+                  console.log(props);
+
+                  return (
+                    <CustomDay
+                      {...props}
+                      disabledDay={isDisabled || props.disabled}
+                    >
+                      {props.day.date()}
+                    </CustomDay>
+                  );
+                }
+              }}
             />
           </DemoItem>
         </DemoContainer>
