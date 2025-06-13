@@ -16,7 +16,6 @@ export default function DateCalendarComponent(props) {
         data = CreateListOfDisabledDates(data);
         setDatesReserved(data);
       });
-      console.log("hay");
     },
     [apartmanNumber, type]
   );
